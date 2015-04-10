@@ -36,11 +36,11 @@ binding
   ANI_input     =    scalar(1.000);  # ignoring horizontalAnisotropy
   resistance    =    scalar(1.000);  # 1 day 
 
-  QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
-  AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
+# QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
+# AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
 
-# QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\discharge_2006.map;              # m3/s average discharge                             
-# AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\gwRecharge_daily_2006_30sec.map; # m/day average groundwater recharge                                     
+  QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\discharge_2006.map;              # m3/s average discharge                             
+  AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\gwRecharge_daily_2006_30sec.map; # m/day average groundwater recharge                                     
 
 areamap
  LANDMASK;
@@ -92,6 +92,7 @@ report ibound.map = l1_ibound;
  wMean = max(0.5, tau * (QAVERAGE ** phi)); # width
  
  RIV_DEPTH = yMean;
+ RIV_DEPTH = min(100, RIV_DEPTH);
  RIV_WIDTH = max(5, wMean);
   rivcond = cover( (1/resistance) *  RIV_WIDTH * ((CELLAREA*2)**0.5), 1.0);
   rivbott = cover( DEM30sec - RIV_DEPTH, DEM30sec) ; 
@@ -150,6 +151,7 @@ report riverNetwork.map = riverNetwork;
 ## RECHARGE PACKAGE
 
  #AVG_RECH = max(0.,AVG_RECH);
+  AVG_RECH = cover(AVG_RECH, 0.0);
   AVG_RECH = windowaverage(AVG_RECH, 5*celllength());
   recharge = if(l1_ibound eq 1, AVG_RECH*CELLAREA/((0.5/60)*(0.5/60)),0);                  # can be used from 0.5 PCR results  input is recharge op PCRcell; use frac Acell/Acell mod to calculate recharge per MODF cell 
   res = mf::setRecharge(recharge,1);
