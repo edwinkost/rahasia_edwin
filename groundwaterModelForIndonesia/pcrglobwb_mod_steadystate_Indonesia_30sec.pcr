@@ -3,21 +3,17 @@
 # - This is a transient model for estimating the initial groundwater head. and the initial slow response component of baseflow (from MODFLOW). 
 # - Before running this script, we have to run pcrglobwb_rm_steadysta_MAR2012.mod 
 #
-#
-#
 # used for Rhine and Meuse Basin:
 # -  created by Edwin H. Sutanudjaja --- 19 March 2012
 #
 # - modified by Edwin H. Sutanudjaja --- 04  June 2012
 #   -   changed the PCG parameters to: HCLOSE = 0.100
 # -
-# used for the WORLD (1layer of MODFLOW)
-# - modified by Inge de Graaf --- March 2013
-# - reads depth average input maps as results of MonteCarlo.py ---- 2 okt 2013
-# - hydraulic conductivities are calculated (input from MonteCarloKsat.py) -------- 8 okt 2013
-# -
 # used for Indonesia, at 30 arc-second resolution (steady-state) 
 # - modified by Edwin H. Sutanudjaja --- 4 November 2013
+# -
+# used for Indonesia, at 30 arc-second resolution (steady-state) 
+# - modified by Edwin H. Sutanudjaja --- 10 April   2015
 
 #=============================================================================================================================================
 
@@ -27,25 +23,21 @@ binding
 #===============================================================================================================================
 # I N P U T S
 #===========================================================================
-  Duration      =    scalar(1);                                           # daily time step calculation
-  CLONEMAP      =    input\IndonesiaCorrect30sec.map;                     # lat-lon coordinate system, cellsize = 30 arc-sec
-  CELLAREA      =    input\cellsize30sec_Indonesia.map;                   # m2 cell area (entirely, not distinguishing land or water cells)
+  CLONEMAP      =    \home\sutan101\data\input_for_indonesia_groundwater_model\IndonesiaCorrect30sec.map;                     # lat-lon coordinate system, cellsize = 30 arc-sec
+  CELLAREA      =    \home\sutan101\data\input_for_indonesia_groundwater_model\cellsize30sec_Indonesia.map;                   # m2 cell area (entirely, not distinguishing land or water cells)
 
  DZS3INFLUENCED =    scalar(5.0);
-  LDD           =    input\Indonesia_LDD30sec31July2013.ldd;                                   
-	
-  DEM30sec_inp  =    input\demIndonesia30sec.map;                         # 
+  LDD           =    \home\sutan101\data\input_for_indonesia_groundwater_model\Indonesia_LDD30sec31July2013.ldd;                                   
+  DEM30sec_inp  =    \home\sutan101\data\input_for_indonesia_groundwater_model\demIndonesia30sec.map;
 
-  QAVERAGE      =    input\qaverage_2000.map;                             # m3/s average discharge (from the year 2000)                             
-
-  AVG_RECH      =    input\gwRecharge_annuaAvg_2000.30sec.map;            # m/day average groundwater recharge (from the year 2000)                                     
-
-  satConduct    =    input\Indonesia_SatHydraulicConductivity_29Oct2013.map; 
+  satConduct    =    \home\sutan101\data\input_for_indonesia_groundwater_model\Indonesia_SatHydraulicConductivity_29Oct2013.map; 
   aquifer_thick =    scalar(100.0);  
 
-  ANI_input     =    scalar(1.000);                                       # value for horizontalAnisotropy cp from Edwin-script
+  ANI_input     =    scalar(1.000);  # ignoring horizontalAnisotropy
+  resistance    =    scalar(1.000);  # 1 day 
 
-  resistance    =    scalar(1.000);                                       # 1 day 
+  QAVERAGE      =    \home\sutan101\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
+  AVG_RECH      =    \home\sutan101\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
 
 areamap
  LANDMASK;
