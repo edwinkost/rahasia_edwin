@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# pcraster map
+*.map
+
 # C extensions
 *.so
 
