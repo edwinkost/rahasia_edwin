@@ -87,6 +87,7 @@ report ibound.map = l1_ibound;
  tau = 8.00;
  phi = 0.58;
  QAVERAGE = cover(QAVERAGE, 0.0);
+ QAVERAGE = max(0.0, QAVERAGE)
  yMean = max(0.5, eta * (QAVERAGE ** nu )); # depth
  wMean = max(0.5, tau * (QAVERAGE ** phi)); # width
  
