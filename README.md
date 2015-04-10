@@ -1,2 +1,2 @@
 # rahasia_edwin
-Mau tahuuuuu aja. 
+Mau tahuuuuu aja !!!!
