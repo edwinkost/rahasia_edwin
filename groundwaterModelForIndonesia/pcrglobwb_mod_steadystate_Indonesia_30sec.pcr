@@ -145,7 +145,7 @@ report riverNetwork.map = riverNetwork;
 
 ## RECHARGE PACKAGE
 
-  AVG_RECH = max(0.,AVG_RECH);
+ #AVG_RECH = max(0.,AVG_RECH);
   AVG_RECH = windowaverage(AVG_RECH, 5*celllength());
   recharge = if(l1_ibound eq 1, AVG_RECH*CELLAREA/((0.5/60)*(0.5/60)),0);                  # can be used from 0.5 PCR results  input is recharge op PCRcell; use frac Acell/Acell mod to calculate recharge per MODF cell 
   res = mf::setRecharge(recharge,1);
