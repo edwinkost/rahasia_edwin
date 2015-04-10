@@ -36,11 +36,11 @@ binding
   ANI_input     =    scalar(1.000);  # ignoring horizontalAnisotropy
   resistance    =    scalar(1.000);  # 1 day 
 
-# QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
-# AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
+  QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
+  AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
 
-  QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\discharge_2006.map;              # m3/s average discharge                             
-  AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\gwRecharge_daily_2006_30sec.map; # m/day average groundwater recharge                                     
+# QAVERAGE      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\discharge_2006.map;              # m3/s average discharge                             
+# AVG_RECH      =    \home\edwinhs\data\input_for_indonesia_groundwater_model\version_2015_04_10\natural\gwRecharge_daily_2006_30sec.map; # m/day average groundwater recharge                                     
 
 areamap
  LANDMASK;
