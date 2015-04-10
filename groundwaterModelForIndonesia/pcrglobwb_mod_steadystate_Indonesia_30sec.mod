@@ -1,0 +1,169 @@
+#=============================================================================================================================================
+# PCRGLOB-WB-MOD :
+# - This is a transient model for estimating the initial groundwater head. and the initial slow response component of baseflow (from MODFLOW). 
+# - Before running this script, we have to run pcrglobwb_rm_steadysta_MAR2012.mod 
+#
+#
+#
+# used for Rhine and Meuse Basin:
+# -  created by Edwin H. Sutanudjaja --- 19 March 2012
+#
+# - modified by Edwin H. Sutanudjaja --- 04  June 2012
+#   -   changed the PCG parameters to: HCLOSE = 0.100
+# -
+# used for the WORLD (1layer of MODFLOW)
+# - modified by Inge de Graaf --- March 2013
+# - reads depth average input maps as results of MonteCarlo.py ---- 2 okt 2013
+# - hydraulic conductivities are calculated (input from MonteCarloKsat.py) -------- 8 okt 2013
+# -
+# used for Indonesia, at 30 arc-second resolution (steady-state) 
+# - modified by Edwin H. Sutanudjaja --- 4 November 2013
+
+#=============================================================================================================================================
+
+binding
+
+# G E N E R A L
+#===============================================================================================================================
+# I N P U T S
+#===========================================================================
+  Duration      =    scalar(1);                                           # daily time step calculation
+  CLONEMAP      =    input\IndonesiaCorrect30sec.map;                     # lat-lon coordinate system, cellsize = 30 arc-sec
+  CELLAREA      =    input\cellsize30sec_Indonesia.map;                   # m2 cell area (entirely, not distinguishing land or water cells)
+
+ DZS3INFLUENCED =    scalar(5.0);
+  LDD           =    input\Indonesia_LDD30sec31July2013.ldd;                                   
+	
+  DEM30sec_inp  =    input\demIndonesia30sec.map;                         # 
+
+  QAVERAGE      =    input\qaverage_2000.map;                             # m3/s average discharge (from the year 2000)                             
+
+  AVG_RECH      =    input\gwRecharge_annuaAvg_2000.30sec.map;            # m/day average groundwater recharge (from the year 2000)                                     
+
+  satConduct    =    input\Indonesia_SatHydraulicConductivity_29Oct2013.map; 
+  aquifer_thick =    scalar(100.0);  
+
+  ANI_input     =    scalar(1.000);                                       # value for horizontalAnisotropy cp from Edwin-script
+
+  resistance    =    scalar(1.000);                                       # 1 day 
+
+areamap
+ LANDMASK;
+
+timer
+ 1 1 1;                                                                      #  starting step, end step, daily time step
+ rep_y = endtime;                                                            #  yearly report, end report, for time series
+
+initial
+ 
+# G E N E R A L
+#=============================================================================
+  DEM30sec = if(CLONEMAP,cover(DEM30sec_inp,0));                                  # DEM based on 30arcsec HydroSHEDS
+  DEM30sec = max(0,DEM30sec);
+# DEM30sec = windowaverage(DEM30sec, 3*celllength());
+  object mf = pcraster_modflow:: initialise();
+  
+## create Layer information                                                 
+  l1_top= cover(DEM30sec,0);  
+  bottom= l1_top-scalar(aquifer_thick);                                              
+  res	= mf::createBottomLayer(bottom,l1_top); 
+    
+## Boundary conditions
+  LANDMASK = defined(LDD);
+  l1_ibound= nominal(if(LANDMASK,1,-1));
+  res	= mf::setBoundary(l1_ibound,1);                                       
+
+report ibound.map = l1_ibound;
+
+## set Initialhead
+  iHead= l1_top;                                                             
+  res	= mf::setInitialHead(iHead,1);
+
+##set Anisitrophy values
+  ani_value= cover(ANI_input, scalar(1));
+  res	= mf::setHorizontalAnisotropy(ani_value,1);
+
+## RIVER PACKAGE
+  
+#RIV_WIDTH = max(1,4.8 * QAVERAGE**(0.5)); # bankfull discharge formula
+ 
+ eta = 0.25;
+ nu  = 0.40;
+ tau = 8.00;
+ phi = 0.58;
+ QAVERAGE = cover(QAVERAGE, 0.0);
+ yMean = max(0.5, eta * (QAVERAGE ** nu )); # depth
+ wMean = max(0.5, tau * (QAVERAGE ** phi)); # width
+ 
+ RIV_DEPTH = yMean;
+ RIV_WIDTH = max(5, wMean);
+  rivcond = cover( (1/resistance) *  RIV_WIDTH * ((CELLAREA*2)**0.5), 1.0);
+  rivbott = cover( DEM30sec - RIV_DEPTH, DEM30sec) ; 
+ 
+ res = mf::setRiver(DEM30sec,rivbott,rivcond,1)	;
+
+# riverNetwork = if(wMean gt 5.0, boolean(1));
+  upstreamArea = catchmenttotal(scalar(1.0), LDD);
+  riverNetwork = if(upstreamArea gt 100, boolean(1));
+
+  riverNetwork = cover(riverNetwork,boolean(pit(LDD)));
+report riverNetwork.map = riverNetwork;
+
+## set Conductivity
+  kriver = if(riverNetwork, mapmaximum(satConduct));
+# kriver = windowmaximum(kriver, 3*celllength());
+  khorz = cover(kriver, satConduct, mapmaximum(satConduct));
+  khorz = max(0.001,khorz);
+##khorz = min(20,khorz);
+  kvert = if(khorz gt -999.99,scalar(1000));
+  res	= mf::setConductivity(00,khorz,kvert,1);  
+
+# DRAIN PACKAGE for simulating the linear reservoir of S3  
+#################################################################################################################################################################
+
+# Base of groundwater storage (that can contribute to linear reservoirs):
+  baseS3       = cover(DEM30sec,0.0);
+  baseS3       = max(0.,baseS3);
+  baseS3       = areaminimum(baseS3,subcatchment(LDD,nominal(uniqueid(riverNetwork))));
+ #baseS3       = baseS3 -     DZS3INFLUENCED;
+  baseS3       = baseS3 - min(DZS3INFLUENCED,RIV_DEPTH);
+  baseS3       = max(baseS3,downstream(LDD,baseS3));
+  baseS3       = max(0,baseS3);
+  baseS3       = cover(baseS3, 0.0);
+  baseS3       = min(baseS3, windowaverage(baseS3, 5*celllength()));
+  baseS3       = max(0,baseS3);
+  baseS3       = min(DEM30sec,baseS3);
+#report baseS3.map = baseS3;
+
+  PI    = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067;
+  hcKQ3 = khorz    ;
+  scoef_act = 0.05 ;
+  LSLOPE    = 250  ;
+  KQ3   = min(1, (PI)*(PI) * hcKQ3 * aquifer_thick / (4*scoef_act*LSLOPE*LSLOPE)) ;
+  KQ3   = if(LANDMASK, cover(KQ3, scalar(0)))				    ;         # day-1   groundwater linear recession coefficient
+
+  KQ3_x_Sy    = min(1, cover(KQ3 * scoef_act, scalar(0)))		;
+  KQ3_x_Sy_AR = (KQ3_x_Sy)*CELLAREA	;
+  res = mf::setDrain( baseS3, KQ3_x_Sy_AR, 1)			        ; # DRAIN PACKAGE for simulating the linear reservoir.
+
+## MODFLOW simulation PARAMETERS
+  ## solver
+  res = mf::setPCG(1000,1250, 1, 0.001,1., 0.98, 2, 1);                                                   
+  res	= mf::setDISParameter(4,2,1,1,1,1);
+
+## RECHARGE PACKAGE
+
+  AVG_RECH = max(0.,AVG_RECH);
+  AVG_RECH = windowaverage(AVG_RECH, 5*celllength());
+  recharge = if(l1_ibound eq 1, AVG_RECH*CELLAREA/((0.5/60)*(0.5/60)),0);                  # can be used from 0.5 PCR results  input is recharge op PCRcell; use frac Acell/Acell mod to calculate recharge per MODF cell 
+  res = mf::setRecharge(recharge,1);
+
+#=======================================================================================
+  res	= mf::run();                                                      # running MODFLOW
+#=======================================================================================
+
+# retrieve head values:getRiverLeakage
+  gw_head_mod= mf::getHeads(1);
+
+report gw_head.map  = if(LANDMASK, gw_head_mod);
+report gw_depth.map = if(LANDMASK, DEM30sec-gw_head_mod); 
