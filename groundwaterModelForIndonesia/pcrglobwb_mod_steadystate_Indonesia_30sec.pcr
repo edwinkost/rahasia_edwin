@@ -23,21 +23,21 @@ binding
 #===============================================================================================================================
 # I N P U T S
 #===========================================================================
-  CLONEMAP      =    \home\sutan101\data\input_for_indonesia_groundwater_model\IndonesiaCorrect30sec.map;                     # lat-lon coordinate system, cellsize = 30 arc-sec
-  CELLAREA      =    \home\sutan101\data\input_for_indonesia_groundwater_model\cellsize30sec_Indonesia.map;                   # m2 cell area (entirely, not distinguishing land or water cells)
+  CLONEMAP      =    ..\..\..\..\data\input_for_indonesia_groundwater_model\IndonesiaCorrect30sec.map;                               # lat-lon coordinate system, cellsize = 30 arc-sec
+  CELLAREA      =    ..\..\..\..\data\input_for_indonesia_groundwater_model\cellsize30sec_Indonesia.map;                             # m2 cell area (entirely, not distinguishing land or water cells)
 
  DZS3INFLUENCED =    scalar(5.0);
-  LDD           =    \home\sutan101\data\input_for_indonesia_groundwater_model\Indonesia_LDD30sec31July2013.ldd;                                   
-  DEM30sec_inp  =    \home\sutan101\data\input_for_indonesia_groundwater_model\demIndonesia30sec.map;
+  LDD           =    ..\..\..\..\data\input_for_indonesia_groundwater_model\Indonesia_LDD30sec31July2013.ldd;                                   
+  DEM30sec_inp  =    ..\..\..\..\data\input_for_indonesia_groundwater_model\demIndonesia30sec.map;
 
-  satConduct    =    \home\sutan101\data\input_for_indonesia_groundwater_model\Indonesia_SatHydraulicConductivity_29Oct2013.map; 
+  satConduct    =    ..\..\..\..\data\input_for_indonesia_groundwater_model\Indonesia_SatHydraulicConductivity_29Oct2013.map; 
   aquifer_thick =    scalar(100.0);  
 
   ANI_input     =    scalar(1.000);  # ignoring horizontalAnisotropy
   resistance    =    scalar(1.000);  # 1 day 
 
-  QAVERAGE      =    \home\sutan101\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
-  AVG_RECH      =    \home\sutan101\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
+  QAVERAGE      =    ..\..\..\..\data\input_for_indonesia_groundwater_model\version_2013_11_04\qaverage_2000.map;                    # m3/s average discharge                             
+  AVG_RECH      =    ..\..\..\..\data\input_for_indonesia_groundwater_model\version_2013_11_04\gwRecharge_annuaAvg_2000.30sec.map;   # m/day average groundwater recharge (from the year 2000)                                     
 
 areamap
  LANDMASK;
