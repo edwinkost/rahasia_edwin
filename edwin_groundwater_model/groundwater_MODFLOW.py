@@ -19,7 +19,12 @@ class GroundwaterModflow(object):
     
     def getState(self):
         result = {}
-        result['groundwaterHead'] = self.groundwaterHead       # unit: m
+        
+        # groundwater head (unit: m) for all layers
+        for i in range(1, self.number_of_layers):
+            var_name = 'groundwaterHeadLayer'+str(i)
+            result[var_name] = vars(self)[var_name]
+        
         return result
 
 
@@ -36,6 +41,9 @@ class GroundwaterModflow(object):
         # configuration from the ini file
         self.iniItems = iniItems
                 
+        # number of modflow layers:
+        self.number_of_layers = int(iniItems.modflowParameterOptions['number_of_layers'])
+        
         # topography properties: read several variables from the netcdf file
         for var in ['dem_minimum','dem_maximum','dem_average','dem_standard_deviation',\
                     'slopeLength','orographyBeta','tanslope',\
@@ -168,22 +176,55 @@ class GroundwaterModflow(object):
 
         logger.info("Initializing pcraster modflow.")
         
-        # initialise 
+        # initialise pcraster modflow
         self.pcr_modflow = None
         self.pcr_modflow = pcr.initialise(pcr.clone())
         
+        # setup the DIS package specifying the grids/layers used for the groundwater model
+        # - Note the layer specification must start with the bottom layer (layer 1 is the lowermost layer)
+        if self.number_of_layers == 1: self.set_grid_for_one_layer_model()
+        if self.number_of_layers == 2: self.set_grid_for_two_layer_model()
+         
+        # specification for the boundary condition (ibound)
+        # - active cells only in landmask
+        # - constant head for outside the landmask
+        ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
+        ibound = pcr.cover(ibound, pcr.nominal(-1))
+        for i in range(1, self.number_of_layers): self.pcr_modflow.setBoundary(ibound, i)
+        
+        # setup the BCF package 
+        if self.number_of_layers == 1: self.set_bcf_for_one_layer_model()
+
+        # TODO: defining/incorporating anisotrophy values
+
+    def set_grid_for_one_layer_model(self):
+
         # grid specification - one layer model
         top    = self.dem_average
         bottom = top - self.totalGroundwaterThickness
         self.pcr_modflow.createBottomLayer(bottom, top) 
         
-        # specification for the boundary condition (IBOUND, BAS package)
-        # - active cells only in landmask
-        # - constant head for outside the landmask
-        ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
-        ibound = pcr.cover(ibound, pcr.nominal(-1))
-        self.pcr_modflow.setBoundary(ibound, 1)
+    def set_grid_for_two_layer_model(self):
+
+        # grid specification - two layer model
+        top_layer_2          = self.dem_average
+        # - thickness of layer 1 is at least 10% of totalGroundwaterThickness
+        bottom_layer_2       = self.dem_average - 0.10 * self.totalGroundwaterThickness
+        # - thickness of layer 1 should be until 5 m below the river bed
+        bottom_layer_2       = pcr.min(self.dem_riverbed - 5.0, bottom_layer_2)
+        # - make sure that the minimum thickness of layer 2 is at least 0.1 m
+        thickness_of_layer_2 = pcr.max(0.1, top_layer_2 - bottom_layer_2)
+        bottom_layer_2       = top_layer_2 - thickness_of_layer_2
+        # - thickness of layer 1 is at least 5.0 m
+        thickness_of_layer_1 = pcr.max(5.0, self.totalGroundwaterThickness - thickness_of_layer_2)
+        bottom_layer_1       = bottom_layer_2 - thickness_of_layer_1
+        self.pcr_modflow.createBottomLayer(bottom_layer_1, bottom_layer_2)
+        self.pcr_modflow.addLayer(top_layer_2)
         
+        # TODO: Incorporating the confining layer.
+
+    def set_bcf_for_one_layer_model(self):
+
         # specification for conductivities (BCF package)
         horizontal_conductivity = self.kSatAquifer # unit: m/day
         # set the minimum value for transmissivity; (Deltares's default value: 10 m2/day)
@@ -193,45 +234,92 @@ class GroundwaterModflow(object):
         vertical_conductivity   = horizontal_conductivity               # dummy values, as one layer model is used
         self.pcr_modflow.setConductivity(00, horizontal_conductivity, \
                                              vertical_conductivity, 1)              
+
+        # specification for storage coefficient
+        # - correction due to the usage of lat/lon coordinates
+        primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
+        primary = pcr.max(1e-10, primary)
+        secondary = primary                                            # dummy values as we used the layer type 00
+        self.pcr_modflow.setStorage(primary, secondary, 1)
+        
+    def set_bcf_for_two_layer_model(self):
+
+        # specification for conductivities (BCF package)
+        horizontal_conductivity = self.kSatAquifer # unit: m/day
+        # set the minimum value for transmissivity; (Deltares's default value: 10 m2/day)
+        minimimumTransmissivity = 10.
+
+        # layer 2 (upper layer)
+        horizontal_conductivity_layer_2 = pcr.max(minimimumTransmissivity, \
+                                          horizontal_conductivity * thickness_of_layer_2) / thickness_of_layer_2
+        vertical_conductivity_layer_2   = self.kSatAquifer * self.cellAreaMap/\
+                                          (pcr.clone().cellSize()*pcr.clone().cellSize())
+        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
+                                             vertical_conductivity_layer_2, 2)              
+        
+        # TODO: Incorporating the confining layer (e.g. specifying minimum value for vertical conductivity)
+
+        # layer 1 (lower layer)
+        horizontal_conductivity_layer_1 = pcr.max(minimimumTransmissivity, \
+                                          horizontal_conductivity * thickness_of_layer_1) / thickness_of_layer_1
+        vertical_conductivity_layer_1   = vertical_conductivity_layer_2    # dummy values 
+        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
+                                             vertical_conductivity_layer_1, 1)              
         
         # specification for storage coefficient
         # - correction due to the usage of lat/lon coordinates
         primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         primary = pcr.max(1e-20, primary)
-        secondary = primary                                            # dummy values as we used the layer type 00
+        secondary = primary                                           # dummy values as we used layer type 00
         self.pcr_modflow.setStorage(primary, secondary, 1)
-        
-        # TODO: defining/incorporating anisotrophy values
+        self.pcr_modflow.setStorage(primary, secondary, 2)
 
     def get_initial_heads(self):
 		
-        if self.iniItems.modflowTransientInputOptions['groundwaterHeadIni'] != "None": 
+        if self.iniItems.modflowTransientInputOptions['usingPredefinedInitialHead'] == "True": 
         
-            # using a pre-defined groundwater head described in the ini/configuration file
+            # using pre-defined groundwater head(s) described in the ini/configuration file
             self.groundwaterHead = vos.readPCRmapClone(self.modflowTransientInputOptions['groundwaterHeadIni'],\
                                                        self.cloneMap, self.tmpDir, self.inputDir)
+
+            # groundwater head (unit: m) for all layers
+            for i in range(1, self.number_of_layers):
+                var_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_name] = vos.readPCRmapClone(self.modflowTransientInputOptions[var_name+'Ini'],\
+                                                           self.cloneMap, self.tmpDir, self.inputDir)
+                vars(self)[var_name] = pcr.cover(vars(self)[var_name], 0.0)                                           
+
         else:    
 
             # using the digital elevation model as the initial head
-            self.groundwaterHead = self.dem_average
+            for i in range(1, self.number_of_layers):
+                var_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_name] = self.dem_average
 
-            # calculate/simulate a steady state condition (until the modflow converge)
+            # calculate/simulate a steady state condition (until the modflow converges)
             self.modflow_converged = False
             while self.modflow_converged == False:
-                self.modflow_simulation("steady-state", self.groundwaterHead, None,1,1,self.criteria_HCLOSE[self.iteration_HCLOSE],\
-                                                                                       self.criteria_RCLOSE[self.iteration_RCLOSE])
+                # get the current state(s) of groundwater head and put them in a dictionary
+                groundwaterHead = self.getState()
+                self.modflow_simulation("steady-state", groundwaterHead, None,1,1,self.criteria_HCLOSE[self.iteration_HCLOSE],\
+                                                                                  self.criteria_RCLOSE[self.iteration_RCLOSE])
             
-            # extrapolating the calculated heads for areas/cells outside the landmask (to remove isolated cells) # TODO: Using Deltares's trick to remove isolated cells. 
+            # extrapolating the calculated heads for areas/cells outside the landmask (to remove isolated cells) 
             # 
             # - the calculate groundwater head within the landmask region
-            self.groundwaterHead = pcr.ifthen(self.landmask, self.groundwaterHead)
-            # - keep the ocean values (dem <= 0.0) - this is in order to maintain the 'behaviors' of sub marine groundwater discharge
-            self.groundwaterHead = pcr.cover(self.groundwaterHead, pcr.ifthen(self.dem_average <= 0.0, self.dem_average))
-            # - extrapolation # 
-            self.groundwaterHead = pcr.cover(self.groundwaterHead, pcr.windowaverage(self.groundwaterHead, 3.*pcr.clone().cellSize()))
-            self.groundwaterHead = pcr.cover(self.groundwaterHead, pcr.windowaverage(self.groundwaterHead, 5.*pcr.clone().cellSize()))
-            self.groundwaterHead = pcr.cover(self.groundwaterHead, self.dem_average)
-            # TODO: Define the window sizes as part of the configuration file.
+            for i in range(1, self.number_of_layers):
+                var_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_name] = pcr.ifthen(self.landmask, vars(self)[var_name])
+                # keep the ocean values (dem <= 0.0) - this is in order to maintain the 'behaviors' of sub marine groundwater discharge
+                vars(self)[var_name] = pcr.cover(vars(self)[var_name], pcr.ifthen(self.dem_average <= 0.0, self.dem_average))
+                # extrapolation  
+                vars(self)[var_name] = pcr.cover(vars(self)[var_name], pcr.windowaverage(vars(self)[var_name], 3.*pcr.clone().cellSize()))
+                vars(self)[var_name] = pcr.cover(vars(self)[var_name], pcr.windowaverage(vars(self)[var_name], 5.*pcr.clone().cellSize()))
+                vars(self)[var_name] = pcr.cover(vars(self)[var_name], pcr.windowaverage(vars(self)[var_name], 7.*pcr.clone().cellSize()))
+                vars(self)[var_name] = pcr.cover(vars(self)[var_name], self.dem_average)
+                # TODO: Define the window sizes as part of the configuration file. Also consider to use the inverse distance method. 
+            
+            # TODO: Also please consider to use Deltares's trick to remove isolated cells. 
         
         # after having the initial head, set the following variable to True to indicate the first month of the model simulation
         self.firstMonthOfSimulation = True      
@@ -263,11 +351,14 @@ class GroundwaterModflow(object):
         bottom_of_bank_storage = pcr.min(bottom_of_bank_storage, self.dem_average)
         bottom_of_bank_storage = pcr.cover(bottom_of_bank_storage, self.dem_average)
 
+        # define values only in landmask region
+        bottom_of_bank_storage = pcr.ifthen(self.landmask, bottom_of_bank_storage)
+        
         # TODO: Check again this concept. 
         
-        # TODO: We may want to improve this concept - by incorporating the following 
+        # TODO: We may want to improve this concept - by incorporating the following:
         # - smooth bottom_elevation
-        # - upstream areas in the mountainous regions and above perrenial stream starting points may also be drained (otherwise water will accumulate) 
+        # - upstream areas in the mountainous regions and above perrenial stream starting points may also be drained (otherwise water will be accumulated and trapped there) 
         # - bottom_elevation > minimum elevation that is estimated from the maximum of S3 from the PCR-GLOBWB simulation
         
         return bottom_of_bank_storage
@@ -360,12 +451,13 @@ class GroundwaterModflow(object):
         if currTimeStep.isLastDayOfMonth():
             # calculate modflow until it converges
             self.modflow_converged = False
-            while self.modflow_converged == False: self.modflow_simulation("transient",self.groundwaterHead,currTimeStep,currTimeStep.day,currTimeStep.day,self.criteria_HCLOSE[self.iteration_HCLOSE],\
-                                                                                                                                                           self.criteria_RCLOSE[self.iteration_RCLOSE])
+            groundwaterHead = self.getState()
+            while self.modflow_converged == False: self.modflow_simulation("transient",groundwaterHead,currTimeStep,currTimeStep.day,currTimeStep.day,self.criteria_HCLOSE[self.iteration_HCLOSE],\
+                                                                                                                                                      self.criteria_RCLOSE[self.iteration_RCLOSE])
 
     def modflow_simulation(self,\
                            simulation_type,\
-                           initial_head,\
+                           initialGroundwaterHeadInADictionary,\
                            currTimeStep = None,\
                            PERLEN = 1.0, 
                            NSTP   = 1, \
@@ -411,10 +503,12 @@ class GroundwaterModflow(object):
                                                   cellArea = self.cellAreaMap, \
                                                   ldd = self.lddMap)        
 
-        print "here"
-
-        # using dem_average as the initial groundwater head value 
-        self.pcr_modflow.setInitialHead(initial_head, 1)
+        # extract and set initial head for modflow simulation
+        groundwaterHead =initialGroundwaterHeadInADictionary
+        for i in range(1, self.number_of_layers):
+            var_name = 'groundwaterHeadLayer'+str(i)
+            initial_head = groundwaterHead[var_name]
+            self.pcr_modflow.setInitialHead(initial_head, i)
         
         # set parameter values for the DIS package and PCG solver
         self.pcr_modflow.setDISParameter(ITMUNI, LENUNI, PERLEN, NSTP, TSMULT, SSTR)
@@ -491,8 +585,12 @@ class GroundwaterModflow(object):
             self.modflow_has_been_called = False
             
             # for the steady state simulation, we still save the calculated head as the initial estimate for the next iteration
-            if simulation_type == "steady-state": self.groundwaterHead = self.pcr_modflow.getHeads(1)
-            # NOTE: We cannot implement this principle for transient simulation 
+            if simulation_type == "steady-state": 
+                for i in range(1, self.number_of_layers):
+                    var_name = 'groundwaterHeadLayer'+str(i)
+                    vars(self)[var_name] = None
+                    vars(self)[var_name] = self.pcr_modflow.getHeads(i)
+            # NOTE: We should not implement this principle for a transient simulation result that does not converge.
             
         else:
 
@@ -506,16 +604,18 @@ class GroundwaterModflow(object):
             self.modflow_has_been_called = True
             
             # obtaining the results from modflow simulation
-            self.groundwaterHead = None
-            self.groundwaterHead = self.pcr_modflow.getHeads(1)  
-            
-            # calculate groundwater depth only in the landmask region
-            self.groundwaterDepth = pcr.ifthen(self.landmask, self.dem_average - self.groundwaterHead)
+            for i in range(1, self.number_of_layers):
+                # groundwater head (unit: m)
+                var_head_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_head_name] = None
+                vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
+                # calculate groundwater depth (unit: m), only in the landmask region
+                var_depth_name = 'groundwaterDepthLayer'+str(i)
+                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
             
             #~ # for debuging only
-            #~ pcr.report(self.groundwaterHead , "gw_head.map")
-            #~ pcr.report(self.groundwaterDepth, "gw_depth.map")
-            #~ pcr.report(self.surface_water_elevation, "surface_water_elevation.map")
+            #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
+            #~ pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
 
     def check_modflow_convergence(self, file_name = "pcrmf.lst"):
         
@@ -628,10 +728,16 @@ class GroundwaterModflow(object):
         # - make sure that HRIV >= RBOT ; no infiltration if HRIV = RBOT (and h < RBOT)  
         self.surface_water_elevation = pcr.max(surface_water_elevation, self.surface_water_bed_elevation)
         #
-        # - pass the values to the RIV package 
-        self.pcr_modflow.setRiver(self.surface_water_elevation, self.surface_water_bed_elevation, self.bed_conductance, 1)
+        # reducing the size of table by ignoring cells with zero conductance and outside the landmask regions
+        self.bed_conductance = pcr.ifthen(self.landmask, self.bed_conductance)
+        self.bed_conductance = pcr.ifthen(self.bed_conductance > 0.0, self.bed_conductance)
+        self.surface_water_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_elevation)
+        self.surface_water_bed_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_bed_elevation)
+        #
+        # set the RIV package only to the uppermost layer
+        self.pcr_modflow.setRiver(self.surface_water_elevation, self.surface_water_bed_elevation, self.bed_conductance, self.number_of_layers)
         
-        # TODO: Improve this concept, particularly while calculating surface water elevation in lakes and reservoirs
+        # TODO: Improve the concept of RIV package, particularly while calculating surface water elevation in lakes and reservoirs
         
     def set_recharge_package(self, \
                              gwRecharge, gwAbstraction = 0.0, 
@@ -652,17 +758,22 @@ class GroundwaterModflow(object):
         net_RCH = pcr.cover(net_recharge * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         net_RCH = pcr.cover(pcr.ifthenelse(pcr.abs(net_RCH) < 1e-20, 0.0, net_RCH), 0.0)
         
-        # put the recharge to the top grid later
+        # put the recharge to the top grid/layer
         self.pcr_modflow.setRecharge(net_RCH, 1)
-        #~ self.pcr_modflow.setIndicatedRecharge(net_RCH, pcr.spatial(pcr.nominal(2)))
 
     def set_well_package(self, gwAbstraction):
         
         logger.info("Set the well package.")
 
+        # reducing the size of table by ignoring cells with zero abstraction
+        gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction)
+
         # abstraction volume (negative value, unit: m3/day)
-        abstraction = pcr.cover(gwAbstraction * self.cellAreaMap, 0.0) * pcr.scalar(-1.0)
-        self.pcr_modflow.setWell(abstraction, 1)
+        abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
+        
+        # set the well based on number of layers
+        if self.number_of_layers == 1: self.pcr_modflow.setWell(abstraction, 1)
+        if self.number_of_layers == 2: self.pcr_modflow.setWell(abstraction, 1)                # at the bottom layer
 
 
     def set_drain_package(self):
@@ -671,15 +782,20 @@ class GroundwaterModflow(object):
 
         # specify the drain package the drain package is used to simulate the drainage of bank storage 
 
-        # - for lakes the drain elevation is above the surface water elevation
-        drain_elevation = pcr.ifthen(pcr.scalar(self.WaterBodies.waterBodyIds) > 0.0, self.surface_water_elevation + 1000.) 
         # - estimate bottom of bank stoarage for flood plain areas
-        drain_elevation = pcr.cover(drain_elevation, self.estimate_bottom_of_bank_storage())  # unit: m
-        # - drainage conductance is a linear reservoir 
-        drain_condutance = self.recessionCoeff * self.specificYield * self.cellAreaMap        # unit: m2/day
-        self.pcr_modflow.setDrain(drain_elevation, drain_condutance, 1)
+        drain_elevation = self.estimate_bottom_of_bank_storage()                               # unit: m
+        # - drainage conductance is a linear reservoir coefficient
+        drain_conductance = self.recessionCoeff * self.specificYield * self.cellAreaMap        # unit: m2/day
+        # - for lakes and/or reservoirs, ignore the drainage
+        drain_conductance = pcr.cover(drain_conductance, \
+                            pcr.ifthen(pcr.scalar(self.WaterBodies.waterBodyIds) > 0.0, 0.0))
+
+        # reducing the size of table by ignoring cells with zero conductance
+        drain_conductance = pcr.ifthen(drain_condutance > 0.0, drain_conductance)
+        drain_elevation   = pcr.ifthen(drain_elevation  > 0.0, drain_elevation)
         
-        # TODO: We can define this package in a much more efficient way. 
+        # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
+        self.pcr_modflow.setDrain(drain_elevation, drain_condutance, self.number_of_layers)
 
     def return_innundation_fraction(self,relative_water_height):
 
