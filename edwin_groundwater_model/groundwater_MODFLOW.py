@@ -771,7 +771,8 @@ class GroundwaterModflow(object):
         # abstraction volume (negative value, unit: m3/day)
         abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
         
-        abstraction = pcr.cover(gwAbstraction, 0.0)  # FIXME: Cover should not be necessary (Oliver should fix this). 
+        # FIXME: The following cover operations should not be necessary (Oliver should fix this).
+        abstraction = pcr.cover(gwAbstraction, 0.0) 
         
         # set the well based on number of layers
         if self.number_of_layers == 1: self.pcr_modflow.setWell(abstraction, 1)
@@ -795,6 +796,10 @@ class GroundwaterModflow(object):
         # reducing the size of table by ignoring cells with zero conductance
         drain_conductance = pcr.ifthen(drain_conductance > 0.0, drain_conductance)
         drain_elevation   = pcr.ifthen(drain_elevation   > 0.0, drain_elevation)
+
+        # FIXME: The following cover operations should not be necessary (Oliver should fix this).
+        drain_conductance = pcr.cover(drain_conductance, 0.0)
+        drain_elevation   = pcr.cover(drain_elevation  , 0.0)
         
         # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
         self.pcr_modflow.setDrain(drain_elevation, drain_conductance, self.number_of_layers)
