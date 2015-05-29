@@ -297,10 +297,11 @@ class GroundwaterModflow(object):
         vertical_conductivity_layer_2   = self.kSatAquifer * self.cellAreaMap/\
                                           (pcr.clone().cellSize()*pcr.clone().cellSize())
         if self.usePreDefinedConfiningLayer:
-            vertical_conductivity_layer_2 = pcr.min(self.kSatAquifer, self.minimumConfiningLayerVerticalConductivity) * self.cellAreaMap/\
-                                                   (pcr.clone().cellSize()*pcr.clone().cellSize())
-            vertical_conductivity_layer_2 = pcr.max(self.thickness_of_layer_2/self.maximumConfiningLayerResistance, \
-                                                    vertical_conductivity_layer_2)                                        
+            vertical_conductivity_layer_2  = pcr.min(self.kSatAquifer, self.minimumConfiningLayerVerticalConductivity)
+            vertical_conductivity_layer_2  = pcr.max(self.thickness_of_layer_2/self.maximumConfiningLayerResistance,\
+                                                     vertical_conductivity_layer_2)
+            vertical_conductivity_layer_2 *= self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize())
+                                                                                            
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
                                              vertical_conductivity_layer_2, 2)              
         
