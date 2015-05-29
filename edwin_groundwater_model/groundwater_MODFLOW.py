@@ -157,6 +157,7 @@ class GroundwaterModflow(object):
         # list of the convergence criteria for HCLOSE (unit: m)
         # - Deltares default's value is 0.001 m                         # check this value with Jarno
         self.criteria_HCLOSE = [0.001, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]  
+        self.criteria_HCLOSE = [0.001, 0.1, 1.0]  
         self.criteria_HCLOSE = sorted(self.criteria_HCLOSE)
         
         # list of the convergence criteria for RCLOSE (unit: m3)
@@ -257,7 +258,9 @@ class GroundwaterModflow(object):
         # layer 2 (upper layer)
         horizontal_conductivity_layer_2 = pcr.max(minimimumTransmissivity, \
                                           horizontal_conductivity * self.thickness_of_layer_2) / self.thickness_of_layer_2
-        vertical_conductivity_layer_2   = pcr.min(self.kSatAquifer, 0.0005) * self.cellAreaMap/\
+        #~ vertical_conductivity_layer_2   = pcr.min(self.kSatAquifer, 0.0005) * self.cellAreaMap/\
+                                          #~ (pcr.clone().cellSize()*pcr.clone().cellSize())
+        vertical_conductivity_layer_2   = self.kSatAquifer * self.cellAreaMap/\
                                           (pcr.clone().cellSize()*pcr.clone().cellSize())
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
                                              vertical_conductivity_layer_2, 2)              
