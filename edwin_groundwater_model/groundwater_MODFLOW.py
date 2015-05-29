@@ -613,9 +613,9 @@ class GroundwaterModflow(object):
                 var_depth_name = 'groundwaterDepthLayer'+str(i)
                 vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
             
-            #~ # for debuging only
-            #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
-            #~ pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
+            # for debuging only
+            pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
+            pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
 
     def check_modflow_convergence(self, file_name = "pcrmf.lst"):
         
