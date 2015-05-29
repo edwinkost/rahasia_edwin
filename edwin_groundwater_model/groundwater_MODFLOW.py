@@ -223,8 +223,8 @@ class GroundwaterModflow(object):
         self.pcr_modflow.addLayer(top_layer_2)
         
         # layer thickness (m)
-        self.thickness_layer_2 = thickness_of_layer_2
-        self.thickness_layer_1 = thickness_of_layer_1
+        self.thickness_of_layer_2 = thickness_of_layer_2
+        self.thickness_of_layer_1 = thickness_of_layer_1
 
         # TODO: Incorporating the confining layer.
 
