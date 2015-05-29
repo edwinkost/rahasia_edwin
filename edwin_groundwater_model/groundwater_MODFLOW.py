@@ -23,6 +23,7 @@ class GroundwaterModflow(object):
         # groundwater head (unit: m) for all layers
         for i in range(1, self.number_of_layers+1):
             var_name = 'groundwaterHeadLayer'+str(i)
+            print var_name
             result[var_name] = vars(self)[var_name]
         
         return result
