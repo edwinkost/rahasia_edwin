@@ -134,11 +134,28 @@ class GroundwaterModflow(object):
                            self.iniItems.modflowParameterOptions['minimumTotalGroundwaterThickness']))
         totalGroundwaterThickness = pcr.max(minimumThickness, totalGroundwaterThickness)
         #
-        # set maximum thickness: 250 m.   # TODO: Define this one as part of the ini file
-        maximumThickness = 250.
+        # set maximum thickness: 500 m.   # TODO: Define this one as part of the ini file
+        maximumThickness = 500.
         self.totalGroundwaterThickness = pcr.min(maximumThickness, totalGroundwaterThickness)
         # TODO: Define the maximum value as part of the configuration file
 
+        # confining layer thickness (for more than one layer)
+        self.usePreDefinedConfiningLayer = True
+        if self.number_of_layers > 1 and self.modflowParameterOptions['usePreDefinedConfiningLayer'] == "True":
+            self.usePreDefinedConfiningLayer = False
+            # confining layer thickness (unit: m)
+            self.confiningLayerThickness = pcr.cover(\
+                                           vos.readPCRmapClone(self.modflowParameterOptions['confiningLayerThickness'],\
+                                                               self.cloneMap, self.tmpDir, self.inputDir), 0.0)
+            # confining layer vertical conductivity (unit: m/day)
+            self.minimumConfiningLayerVerticalConductivity = pcr.cover(\
+                                           vos.readPCRmapClone(self.modflowParameterOptions['minimumConfiningLayerVerticalConductivity'],\
+                                                               self.cloneMap, self.tmpDir, self.inputDir), 0.0)
+            # confining layer resistance (unit: day)
+            self.maximumConfiningLayerResistance = pcr.cover(\
+                                                   vos.readPCRmapClone(self.modflowParameterOptions['maximumResistance'],\                                                   
+                                                                       self.cloneMap, self.tmpDir, self.inputDir), 0.0)
+        
         # surface water bed thickness  (unit: m)
         bed_thickness  = 0.1              # TODO: Define this as part of the configuration file
         # surface water bed resistance (unit: day)
@@ -157,7 +174,7 @@ class GroundwaterModflow(object):
         # list of the convergence criteria for HCLOSE (unit: m)
         # - Deltares default's value is 0.001 m                         # check this value with Jarno
         self.criteria_HCLOSE = [0.001, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]  
-        self.criteria_HCLOSE = [0.001, 0.1, 1.0]  
+        #~ self.criteria_HCLOSE = [0.001, 0.1, 1.0]  
         self.criteria_HCLOSE = sorted(self.criteria_HCLOSE)
         
         # list of the convergence criteria for RCLOSE (unit: m3)
@@ -209,10 +226,12 @@ class GroundwaterModflow(object):
     def set_grid_for_two_layer_model(self):
 
         # grid specification - two layer model
+        
+        # - top upper layer is elevation
         top_layer_2          = self.dem_average
-        # - thickness of layer 1 is at least 10% of totalGroundwaterThickness
+        # - thickness of layer 2 is at least 10% of totalGroundwaterThickness
         bottom_layer_2       = self.dem_average - 0.10 * self.totalGroundwaterThickness
-        # - thickness of layer 1 should be until 5 m below the river bed
+        # - thickness of layer 2 should be until 5 m below the river bed
         bottom_layer_2       = pcr.min(self.dem_riverbed - 5.0, bottom_layer_2)
         # - make sure that the minimum thickness of layer 2 is at least 0.1 m
         thickness_of_layer_2 = pcr.max(0.1, top_layer_2 - bottom_layer_2)
@@ -220,10 +239,27 @@ class GroundwaterModflow(object):
         # - thickness of layer 1 is at least 5.0 m
         thickness_of_layer_1 = pcr.max(5.0, self.totalGroundwaterThickness - thickness_of_layer_2)
         bottom_layer_1       = bottom_layer_2 - thickness_of_layer_1
+        
+        if self.usePreDefinedConfiningLayer:
+            # make sure that totalGroundwaterThickness is at least 50 m thicker than confiningLayerThickness
+            total_thickness = pcr.max(self.totalGroundwaterThickness, self.confiningLayerThickness + 50.0)
+            # - top upper layer is elevation
+            top_layer_2     = self.dem_average
+            # - thickness of layer 2 is based on the predefined confiningLayerThickness
+            bottom_layer_2       = self.dem_average - self.confiningLayerThickness
+            # - thickness of layer 2 should be until 5 m below the river bed
+            bottom_layer_2       = pcr.min(self.dem_riverbed - 5.0, bottom_layer_2)
+            # - make sure that the minimum thickness of layer 2 is at least 0.1 m
+            thickness_of_layer_2 = pcr.max(0.1, top_layer_2 - bottom_layer_2)
+            bottom_layer_2       = top_layer_2 - thickness_of_layer_2
+            # - thickness of layer 1 is at least 5.0 m
+            thickness_of_layer_1 = pcr.max(5.0, total_thickness - thickness_of_layer_2)
+            bottom_layer_1       = bottom_layer_2 - thickness_of_layer_1
+        
+        # set grid in modflow
         self.pcr_modflow.createBottomLayer(bottom_layer_1, bottom_layer_2)
         self.pcr_modflow.addLayer(top_layer_2)
         
-        # layer thickness (m)
         self.thickness_of_layer_2 = thickness_of_layer_2
         self.thickness_of_layer_1 = thickness_of_layer_1
 
@@ -258,10 +294,13 @@ class GroundwaterModflow(object):
         # layer 2 (upper layer)
         horizontal_conductivity_layer_2 = pcr.max(minimimumTransmissivity, \
                                           horizontal_conductivity * self.thickness_of_layer_2) / self.thickness_of_layer_2
-        #~ vertical_conductivity_layer_2   = pcr.min(self.kSatAquifer, 0.0005) * self.cellAreaMap/\
-                                          #~ (pcr.clone().cellSize()*pcr.clone().cellSize())
         vertical_conductivity_layer_2   = self.kSatAquifer * self.cellAreaMap/\
                                           (pcr.clone().cellSize()*pcr.clone().cellSize())
+        if self.usePreDefinedConfiningLayer:
+            vertical_conductivity_layer_2 = pcr.min(self.kSatAquifer, self.minimumConfiningLayerVerticalConductivity) * self.cellAreaMap/\
+                                                   (pcr.clone().cellSize()*pcr.clone().cellSize())
+            vertical_conductivity_layer_2 = pcr.max(self.thickness_of_layer_2/self.maximumConfiningLayerResistance, \
+                                                    vertical_conductivity_layer_2)                                        
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
                                              vertical_conductivity_layer_2, 2)              
         
