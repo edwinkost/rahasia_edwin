@@ -728,7 +728,7 @@ class GroundwaterModflow(object):
         # - make sure that HRIV >= RBOT ; no infiltration if HRIV = RBOT (and h < RBOT)  
         self.surface_water_elevation = pcr.max(surface_water_elevation, self.surface_water_bed_elevation)
         #
-        #~ # reducing the size of table by ignoring cells with zero conductance and outside the landmask regions
+        #~ # reducing the size of table by ignoring cells with zero conductance and outside the landmask regions           # FIXME: Oliver should fix this. 
         #~ self.bed_conductance = pcr.ifthen(self.landmask, self.bed_conductance)
         #~ self.bed_conductance = pcr.ifthen(self.bed_conductance > 0.0, self.bed_conductance)
         #~ self.surface_water_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_elevation)
@@ -770,6 +770,8 @@ class GroundwaterModflow(object):
 
         # abstraction volume (negative value, unit: m3/day)
         abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
+        
+        abstraction = pcr.cover(gwAbstraction, 0.0)  # FIXME: Cover should not be necessary (Oliver should fix this). 
         
         # set the well based on number of layers
         if self.number_of_layers == 1: self.pcr_modflow.setWell(abstraction, 1)
