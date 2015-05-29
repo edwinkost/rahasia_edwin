@@ -793,8 +793,8 @@ class GroundwaterModflow(object):
                             self.recessionCoeff * self.specificYield * self.cellAreaMap)       # unit: m2/day
 
         # reducing the size of table by ignoring cells with zero conductance
-        drain_conductance = pcr.ifthen(drain_condutance > 0.0, drain_conductance)
-        drain_elevation   = pcr.ifthen(drain_elevation  > 0.0, drain_elevation)
+        drain_conductance = pcr.ifthen(drain_conductance > 0.0, drain_conductance)
+        drain_elevation   = pcr.ifthen(drain_elevation   > 0.0, drain_elevation)
         
         # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
         self.pcr_modflow.setDrain(drain_elevation, drain_condutance, self.number_of_layers)
