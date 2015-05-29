@@ -194,6 +194,7 @@ class GroundwaterModflow(object):
         
         # setup the BCF package 
         if self.number_of_layers == 1: self.set_bcf_for_one_layer_model()
+        if self.number_of_layers == 2: self.set_bcf_for_two_layer_model()
 
         # TODO: defining/incorporating anisotrophy values
 
@@ -557,10 +558,10 @@ class GroundwaterModflow(object):
                                                "total_groundwater_abstraction",str(currTimeStep.fulldate),None,self.cloneMap)
 
         # set recharge, river, well and drain packages
-        #~ self.set_river_package(discharge, currTimeStep)
-        #~ self.set_recharge_package(gwRecharge)
-        #~ self.set_well_package(gwAbstraction)
-        #~ self.set_drain_package()
+        self.set_river_package(discharge, currTimeStep)
+        self.set_recharge_package(gwRecharge)
+        self.set_well_package(gwAbstraction)
+        self.set_drain_package()
         
         # execute MODFLOW 
         logger.info("Executing MODFLOW.")
