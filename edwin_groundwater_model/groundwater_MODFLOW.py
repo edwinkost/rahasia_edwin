@@ -728,11 +728,11 @@ class GroundwaterModflow(object):
         # - make sure that HRIV >= RBOT ; no infiltration if HRIV = RBOT (and h < RBOT)  
         self.surface_water_elevation = pcr.max(surface_water_elevation, self.surface_water_bed_elevation)
         #
-        # reducing the size of table by ignoring cells with zero conductance and outside the landmask regions
-        self.bed_conductance = pcr.ifthen(self.landmask, self.bed_conductance)
-        self.bed_conductance = pcr.ifthen(self.bed_conductance > 0.0, self.bed_conductance)
-        self.surface_water_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_elevation)
-        self.surface_water_bed_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_bed_elevation)
+        #~ # reducing the size of table by ignoring cells with zero conductance and outside the landmask regions
+        #~ self.bed_conductance = pcr.ifthen(self.landmask, self.bed_conductance)
+        #~ self.bed_conductance = pcr.ifthen(self.bed_conductance > 0.0, self.bed_conductance)
+        #~ self.surface_water_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_elevation)
+        #~ self.surface_water_bed_elevation = pcr.ifthen(self.bed_conductance > 0.0, self.surface_water_bed_elevation)
         #
         # set the RIV package only to the uppermost layer
         self.pcr_modflow.setRiver(self.surface_water_elevation, self.surface_water_bed_elevation, self.bed_conductance, self.number_of_layers)
