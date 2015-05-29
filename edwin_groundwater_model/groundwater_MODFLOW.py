@@ -203,7 +203,7 @@ class GroundwaterModflow(object):
         # grid specification - one layer model
         top    = self.dem_average
         bottom = top - self.totalGroundwaterThickness
-        self.pcr_modflow.createBottomLayer(bottom, top) 
+        self.pcr_modflow.createBottomLayer(bottom, top)
         
     def set_grid_for_two_layer_model(self):
 
@@ -222,6 +222,10 @@ class GroundwaterModflow(object):
         self.pcr_modflow.createBottomLayer(bottom_layer_1, bottom_layer_2)
         self.pcr_modflow.addLayer(top_layer_2)
         
+        # layer thickness (m)
+        self.thickness_layer_2 = thickness_of_layer_2
+        self.thickness_layer_1 = thickness_of_layer_1
+
         # TODO: Incorporating the confining layer.
 
     def set_bcf_for_one_layer_model(self):
@@ -252,7 +256,7 @@ class GroundwaterModflow(object):
 
         # layer 2 (upper layer)
         horizontal_conductivity_layer_2 = pcr.max(minimimumTransmissivity, \
-                                          horizontal_conductivity * thickness_of_layer_2) / thickness_of_layer_2
+                                          horizontal_conductivity * self.thickness_of_layer_2) / self.thickness_of_layer_2
         vertical_conductivity_layer_2   = self.kSatAquifer * self.cellAreaMap/\
                                           (pcr.clone().cellSize()*pcr.clone().cellSize())
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
@@ -262,7 +266,7 @@ class GroundwaterModflow(object):
 
         # layer 1 (lower layer)
         horizontal_conductivity_layer_1 = pcr.max(minimimumTransmissivity, \
-                                          horizontal_conductivity * thickness_of_layer_1) / thickness_of_layer_1
+                                          horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
         vertical_conductivity_layer_1   = vertical_conductivity_layer_2    # dummy values 
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
                                              vertical_conductivity_layer_1, 1)              
