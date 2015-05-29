@@ -141,19 +141,19 @@ class GroundwaterModflow(object):
 
         # confining layer thickness (for more than one layer)
         self.usePreDefinedConfiningLayer = True
-        if self.number_of_layers > 1 and self.modflowParameterOptions['usePreDefinedConfiningLayer'] == "True":
+        if self.number_of_layers > 1 and self.iniItems.modflowParameterOptions['usePreDefinedConfiningLayer'] == "True":
             self.usePreDefinedConfiningLayer = False
             # confining layer thickness (unit: m)
             self.confiningLayerThickness = pcr.cover(\
-                                           vos.readPCRmapClone(self.modflowParameterOptions['confiningLayerThickness'],\
+                                           vos.readPCRmapClone(self.iniItems.modflowParameterOptions['confiningLayerThickness'],\
                                                                self.cloneMap, self.tmpDir, self.inputDir), 0.0)
             # confining layer vertical conductivity (unit: m/day)
             self.minimumConfiningLayerVerticalConductivity = pcr.cover(\
-                                           vos.readPCRmapClone(self.modflowParameterOptions['minimumConfiningLayerVerticalConductivity'],\
+                                           vos.readPCRmapClone(self.iniItems.modflowParameterOptions['minimumConfiningLayerVerticalConductivity'],\
                                                                self.cloneMap, self.tmpDir, self.inputDir), 0.0)
             # confining layer resistance (unit: day)
             self.maximumConfiningLayerResistance = pcr.cover(\
-                                                   vos.readPCRmapClone(self.modflowParameterOptions['maximumResistance'],\
+                                                   vos.readPCRmapClone(self.iniItems.modflowParameterOptions['maximumResistance'],\
                                                                        self.cloneMap, self.tmpDir, self.inputDir), 0.0)
         
         # surface water bed thickness  (unit: m)
