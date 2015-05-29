@@ -504,10 +504,10 @@ class GroundwaterModflow(object):
                                                   ldd = self.lddMap)        
 
         # extract and set initial head for modflow simulation
-        groundwaterHead =initialGroundwaterHeadInADictionary
+        groundwaterHead = initialGroundwaterHeadInADictionary
         for i in range(1, self.number_of_layers+1):
             var_name = 'groundwaterHeadLayer'+str(i)
-            initial_head = groundwaterHead[var_name]
+            initial_head = pcr.scalar(groundwaterHead[var_name])
             self.pcr_modflow.setInitialHead(initial_head, i)
         
         # set parameter values for the DIS package and PCG solver
