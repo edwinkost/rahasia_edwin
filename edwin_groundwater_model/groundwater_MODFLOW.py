@@ -789,8 +789,8 @@ class GroundwaterModflow(object):
         # - drainage conductance is a linear reservoir coefficient
         drain_conductance = self.recessionCoeff * self.specificYield * self.cellAreaMap        # unit: m2/day
         # - for lakes and/or reservoirs, ignore the drainage
-        drain_conductance = pcr.cover(drain_conductance, \
-                            pcr.ifthen(pcr.scalar(self.WaterBodies.waterBodyIds) > 0.0, 0.0))
+        drain_conductance = pcr.cover(\
+                            pcr.ifthen(pcr.scalar(self.WaterBodies.waterBodyIds) > 0.0, 0.0), drain_conductance)
 
         # reducing the size of table by ignoring cells with zero conductance
         drain_conductance = pcr.ifthen(drain_condutance > 0.0, drain_conductance)
