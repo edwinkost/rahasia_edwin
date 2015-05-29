@@ -23,7 +23,6 @@ class GroundwaterModflow(object):
         # groundwater head (unit: m) for all layers
         for i in range(1, self.number_of_layers+1):
             var_name = 'groundwaterHeadLayer'+str(i)
-            print var_name
             result[var_name] = vars(self)[var_name]
         
         return result
@@ -558,10 +557,10 @@ class GroundwaterModflow(object):
                                                "total_groundwater_abstraction",str(currTimeStep.fulldate),None,self.cloneMap)
 
         # set recharge, river, well and drain packages
-        self.set_river_package(discharge, currTimeStep)
+        #~ self.set_river_package(discharge, currTimeStep)
         self.set_recharge_package(gwRecharge)
-        self.set_well_package(gwAbstraction)
-        self.set_drain_package()
+        #~ self.set_well_package(gwAbstraction)
+        #~ self.set_drain_package()
         
         # execute MODFLOW 
         logger.info("Executing MODFLOW.")
