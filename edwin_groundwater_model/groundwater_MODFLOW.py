@@ -787,7 +787,7 @@ class GroundwaterModflow(object):
         # - estimate bottom of bank stoarage for flood plain areas
         drain_elevation = self.estimate_bottom_of_bank_storage()                               # unit: m
         # - for lakes and/or reservoirs, ignore the drainage
-        drain_conductance = pcr.ifthen(pcr.defined(self.WaterBodies.waterBodyIds), 0.0)
+        drain_conductance = pcr.ifthen(pcr.scalar(self.WaterBodies.waterBodyIds) > 0.0, pcr.scalar(0.0))
         # - drainage conductance is a linear reservoir coefficient
         drain_conductance = pcr.cover(drain_conductance, \
                             self.recessionCoeff * self.specificYield * self.cellAreaMap)       # unit: m2/day
