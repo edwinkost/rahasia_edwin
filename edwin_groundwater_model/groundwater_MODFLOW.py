@@ -558,7 +558,7 @@ class GroundwaterModflow(object):
 
         # set recharge, river, well and drain packages
         #~ self.set_river_package(discharge, currTimeStep)
-        self.set_recharge_package(gwRecharge)
+        #~ self.set_recharge_package(gwRecharge)
         #~ self.set_well_package(gwAbstraction)
         #~ self.set_drain_package()
         
