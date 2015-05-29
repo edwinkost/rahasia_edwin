@@ -21,7 +21,7 @@ class GroundwaterModflow(object):
         result = {}
         
         # groundwater head (unit: m) for all layers
-        for i in range(1, self.number_of_layers):
+        for i in range(1, self.number_of_layers+1):
             var_name = 'groundwaterHeadLayer'+str(i)
             result[var_name] = vars(self)[var_name]
         
@@ -190,7 +190,7 @@ class GroundwaterModflow(object):
         # - constant head for outside the landmask
         ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
         ibound = pcr.cover(ibound, pcr.nominal(-1))
-        for i in range(1, self.number_of_layers): self.pcr_modflow.setBoundary(ibound, i)
+        for i in range(1, self.number_of_layers+1): self.pcr_modflow.setBoundary(ibound, i)
         
         # setup the BCF package 
         if self.number_of_layers == 1: self.set_bcf_for_one_layer_model()
@@ -283,7 +283,7 @@ class GroundwaterModflow(object):
                                                        self.cloneMap, self.tmpDir, self.inputDir)
 
             # groundwater head (unit: m) for all layers
-            for i in range(1, self.number_of_layers):
+            for i in range(1, self.number_of_layers+1):
                 var_name = 'groundwaterHeadLayer'+str(i)
                 vars(self)[var_name] = vos.readPCRmapClone(self.modflowTransientInputOptions[var_name+'Ini'],\
                                                            self.cloneMap, self.tmpDir, self.inputDir)
@@ -292,7 +292,7 @@ class GroundwaterModflow(object):
         else:    
 
             # using the digital elevation model as the initial head
-            for i in range(1, self.number_of_layers):
+            for i in range(1, self.number_of_layers+1):
                 var_name = 'groundwaterHeadLayer'+str(i)
                 vars(self)[var_name] = self.dem_average
 
@@ -307,7 +307,7 @@ class GroundwaterModflow(object):
             # extrapolating the calculated heads for areas/cells outside the landmask (to remove isolated cells) 
             # 
             # - the calculate groundwater head within the landmask region
-            for i in range(1, self.number_of_layers):
+            for i in range(1, self.number_of_layers+1):
                 var_name = 'groundwaterHeadLayer'+str(i)
                 vars(self)[var_name] = pcr.ifthen(self.landmask, vars(self)[var_name])
                 # keep the ocean values (dem <= 0.0) - this is in order to maintain the 'behaviors' of sub marine groundwater discharge
@@ -505,7 +505,7 @@ class GroundwaterModflow(object):
 
         # extract and set initial head for modflow simulation
         groundwaterHead =initialGroundwaterHeadInADictionary
-        for i in range(1, self.number_of_layers):
+        for i in range(1, self.number_of_layers+1):
             var_name = 'groundwaterHeadLayer'+str(i)
             initial_head = groundwaterHead[var_name]
             self.pcr_modflow.setInitialHead(initial_head, i)
@@ -586,7 +586,7 @@ class GroundwaterModflow(object):
             
             # for the steady state simulation, we still save the calculated head as the initial estimate for the next iteration
             if simulation_type == "steady-state": 
-                for i in range(1, self.number_of_layers):
+                for i in range(1, self.number_of_layers+1):
                     var_name = 'groundwaterHeadLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getHeads(i)
@@ -604,7 +604,7 @@ class GroundwaterModflow(object):
             self.modflow_has_been_called = True
             
             # obtaining the results from modflow simulation
-            for i in range(1, self.number_of_layers):
+            for i in range(1, self.number_of_layers+1):
                 # groundwater head (unit: m)
                 var_head_name = 'groundwaterHeadLayer'+str(i)
                 vars(self)[var_head_name] = None
