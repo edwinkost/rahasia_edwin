@@ -153,7 +153,7 @@ class GroundwaterModflow(object):
                                                                self.cloneMap, self.tmpDir, self.inputDir), 0.0)
             # confining layer resistance (unit: day)
             self.maximumConfiningLayerResistance = pcr.cover(\
-                                                   vos.readPCRmapClone(self.iniItems.modflowParameterOptions['maximumResistance'],\
+                                                   vos.readPCRmapClone(self.iniItems.modflowParameterOptions['maximumConfiningLayerResistance'],\
                                                                        self.cloneMap, self.tmpDir, self.inputDir), 0.0)
         
         # surface water bed thickness  (unit: m)
