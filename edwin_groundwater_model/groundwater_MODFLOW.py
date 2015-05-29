@@ -797,7 +797,7 @@ class GroundwaterModflow(object):
         drain_elevation   = pcr.ifthen(drain_elevation   > 0.0, drain_elevation)
         
         # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
-        self.pcr_modflow.setDrain(drain_elevation, drain_condutance, self.number_of_layers)
+        self.pcr_modflow.setDrain(drain_elevation, drain_conductance, self.number_of_layers)
 
     def return_innundation_fraction(self,relative_water_height):
 
