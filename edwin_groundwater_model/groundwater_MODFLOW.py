@@ -258,8 +258,7 @@ class GroundwaterModflow(object):
         
         # set grid in modflow
         self.pcr_modflow.createBottomLayer(bottom_layer_1, bottom_layer_2)
-        #~ self.pcr_modflow.addLayer(top_layer_2)
-        self.pcr_modflow.addConfinedLayer(top_layer_2)
+        self.pcr_modflow.addLayer(top_layer_2)
         
         self.thickness_of_layer_2 = thickness_of_layer_2
         self.thickness_of_layer_1 = thickness_of_layer_1
