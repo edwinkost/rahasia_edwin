@@ -203,13 +203,20 @@ class GroundwaterModflow(object):
         if self.number_of_layers == 1: self.set_grid_for_one_layer_model()
         if self.number_of_layers == 2: self.set_grid_for_two_layer_model()
          
+        #~ # specification for the boundary condition (ibound)
+        #~ # - active cells only in landmask
+        #~ # - constant head for outside the landmask
+        #~ ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
+        #~ ibound = pcr.cover(ibound, pcr.nominal(-1))
+        #~ for i in range(1, self.number_of_layers+1): self.pcr_modflow.setBoundary(ibound, i)
+        
         # specification for the boundary condition (ibound)
         # - active cells only in landmask
         # - constant head for outside the landmask
         ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
         ibound = pcr.cover(ibound, pcr.nominal(-1))
         for i in range(1, self.number_of_layers+1): self.pcr_modflow.setBoundary(ibound, i)
-        
+
         # setup the BCF package 
         if self.number_of_layers == 1: self.set_bcf_for_one_layer_model()
         if self.number_of_layers == 2: self.set_bcf_for_two_layer_model()
@@ -833,10 +840,10 @@ class GroundwaterModflow(object):
         logger.info("Set the well package.")
 
         # reducing the size of table by ignoring cells with zero abstraction
-        gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction) * 30.
+        gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction)
 
         # abstraction volume (negative value, unit: m3/day)
-        abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
+        abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0) * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize())
         
         # FIXME: The following cover operations should not be necessary (Oliver should fix this).
         abstraction = pcr.cover(gwAbstraction, 0.0) 
