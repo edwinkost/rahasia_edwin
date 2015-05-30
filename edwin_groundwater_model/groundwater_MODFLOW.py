@@ -329,7 +329,7 @@ class GroundwaterModflow(object):
         # - correction due to the usage of lat/lon coordinates
         primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         primary = pcr.max(1e-20, primary)
-        secondary = primary * 0.001                                     # dummy values as we used layer type 00
+        secondary = 0.0001                                     # dummy values as we used layer type 00
         self.pcr_modflow.setStorage(primary, secondary, 1)
         self.pcr_modflow.setStorage(primary, secondary, 2)
 
@@ -860,8 +860,12 @@ class GroundwaterModflow(object):
         drain_conductance = pcr.cover(drain_conductance, 0.0)
         drain_elevation   = pcr.cover(drain_elevation  , 0.0)
         
+        #~ # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
+        #~ self.pcr_modflow.setDrain(drain_elevation, drain_conductance, self.number_of_layers)
+
         # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
-        self.pcr_modflow.setDrain(drain_elevation, drain_conductance, self.number_of_layers)
+        self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 1)
+        self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 2)
 
     def return_innundation_fraction(self,relative_water_height):
 
