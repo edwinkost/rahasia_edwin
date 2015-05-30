@@ -103,7 +103,7 @@ class GroundwaterModflow(object):
         if 'minRecessionCoeff' in iniItems.modflowParameterOptions.keys():
             minRecessionCoeff = float(iniItems.modflowParameterOptions['minRecessionCoeff'])
         else:
-                                                   # This is the minimum value used in Van Beek et al. (2011). 
+            minRecessionCoeff = 1.0e-4 
         self.recessionCoeff = pcr.max(minRecessionCoeff,self.recessionCoeff)      
         
         # aquifer saturated conductivity (m/day)
