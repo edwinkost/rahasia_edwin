@@ -334,6 +334,8 @@ class GroundwaterModflow(object):
         secondary = pcr.max(0.001, primary * 0.001)         # dummy values as we used layer type 00
         self.pcr_modflow.setStorage(primary, secondary, 1)
         self.pcr_modflow.setStorage(primary, secondary, 2)
+        
+        # Oliver should understand this: http://inside.mines.edu/~epoeter/583/08/discussion/vcont/modflow_vcont.htm
 
     def get_initial_heads(self):
 		
@@ -820,7 +822,9 @@ class GroundwaterModflow(object):
         net_RCH = pcr.cover(pcr.ifthenelse(pcr.abs(net_RCH) < 1e-20, 0.0, net_RCH), 0.0)
         
         # put the recharge to the top grid/layer
-        self.pcr_modflow.setRecharge(net_RCH, 1)
+        #~ self.pcr_modflow.setRecharge(net_RCH, 1)
+
+        self.pcr_modflow.setIndicatedRecharge(net_RCH, 1)
 
     def set_well_package(self, gwAbstraction):
         
