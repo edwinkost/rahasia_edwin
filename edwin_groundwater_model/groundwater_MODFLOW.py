@@ -329,7 +329,7 @@ class GroundwaterModflow(object):
         # - correction due to the usage of lat/lon coordinates
         primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         primary = pcr.max(1e-20, primary)
-        secondary = 0.0001                                     # dummy values as we used layer type 00
+        secondary = pcr.spatial(pcr.scalar(0.0001))                     # dummy values as we used layer type 00
         self.pcr_modflow.setStorage(primary, secondary, 1)
         self.pcr_modflow.setStorage(primary, secondary, 2)
 
