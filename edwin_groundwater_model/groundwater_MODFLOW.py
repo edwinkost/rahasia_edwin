@@ -307,8 +307,6 @@ class GroundwaterModflow(object):
                                                      vertical_conductivity_layer_2)
             vertical_conductivity_layer_2 *= self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize())
                                                                                             
-        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
-                                             vertical_conductivity_layer_2, 2)              
         
         # TODO: Incorporating the confining layer (e.g. specifying minimum value for vertical conductivity)
 
@@ -316,8 +314,12 @@ class GroundwaterModflow(object):
         horizontal_conductivity_layer_1 = pcr.max(minimimumTransmissivity, \
                                           horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
         vertical_conductivity_layer_1   = vertical_conductivity_layer_2    # dummy values 
+        
+        # set conductivity values to MODFLOW
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
                                              vertical_conductivity_layer_1, 1)              
+        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
+                                             vertical_conductivity_layer_2, 2)              
         
         # specification for storage coefficient
         # - correction due to the usage of lat/lon coordinates
