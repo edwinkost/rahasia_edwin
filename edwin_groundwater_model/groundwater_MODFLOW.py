@@ -823,8 +823,8 @@ class GroundwaterModflow(object):
         # put the recharge to the top grid/layer
         self.pcr_modflow.setRecharge(net_RCH, 1)
 
-        # if we want to put RCH in the lower layer
-        self.pcr_modflow.setIndicatedRecharge(net_RCH, pcr.spatial(pcr.nominal(1)))
+        #~ # if we want to put RCH in the lower layer
+        #~ self.pcr_modflow.setIndicatedRecharge(net_RCH, pcr.spatial(pcr.nominal(1)))
 
     def set_well_package(self, gwAbstraction):
         
