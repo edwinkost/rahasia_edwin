@@ -833,7 +833,7 @@ class GroundwaterModflow(object):
         logger.info("Set the well package.")
 
         # reducing the size of table by ignoring cells with zero abstraction
-        gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction)
+        gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction) * 30.
 
         # abstraction volume (negative value, unit: m3/day)
         abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
