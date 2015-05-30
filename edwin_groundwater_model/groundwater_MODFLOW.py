@@ -317,7 +317,7 @@ class GroundwaterModflow(object):
         vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
                                              (pcr.clone().cellSize()*pcr.clone().cellSize())
 
-        vertical_conductivity_layer_2  *= 2.0 / ((self.thickness_of_layer_1 + self.thickness_of_layer_2)**2.0)
+        vertical_conductivity_layer_2  *= 2.0  * 0.01/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)**2.0)
         
         # set conductivity values to MODFLOW
         self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
@@ -815,7 +815,7 @@ class GroundwaterModflow(object):
         # - correcting values (considering MODFLOW lat/lon cell properties)
         #   and pass them to the RCH package   
         net_RCH = pcr.cover(net_recharge * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
-        net_RCH = pcr.cover(pcr.ifthenelse(pcr.abs(net_RCH) < 1e-20, 0.0, net_RCH), 0.0) *30.
+        net_RCH = pcr.cover(pcr.ifthenelse(pcr.abs(net_RCH) < 1e-20, 0.0, net_RCH), 0.0)
         
         # put the recharge to the top grid/layer
         self.pcr_modflow.setRecharge(net_RCH, 1)
@@ -831,7 +831,7 @@ class GroundwaterModflow(object):
         abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
         
         # FIXME: The following cover operations should not be necessary (Oliver should fix this).
-        abstraction = pcr.cover(gwAbstraction, 0.0) * 30.
+        abstraction = pcr.cover(gwAbstraction, 0.0) 
         
         # set the well based on number of layers
         if self.number_of_layers == 1: self.pcr_modflow.setWell(abstraction, 1)
