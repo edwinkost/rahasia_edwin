@@ -316,7 +316,7 @@ class GroundwaterModflow(object):
                                              (pcr.clone().cellSize()*pcr.clone().cellSize())
 
         vertical_conductivity_layer_2  *= 0.5
-        #~ vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
+        vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
         
         # set conductivity values to MODFLOW
         #~ self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
