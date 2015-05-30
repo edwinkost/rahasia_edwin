@@ -91,8 +91,10 @@ class GroundwaterModflow(object):
         self.onlyNaturalWaterBodies = False
         if self.iniItems.modflowParameterOptions['onlyNaturalWaterBodies'] == "True": self.onlyNaturalWaterBodies = True
 
-        # groundwater linear recession coefficient (day-1) ; the linear reservoir concept is still being used to represent fast response flow  
-        #                                                                                                                  particularly from karstic aquifer in mountainous regions                    
+        # groundwater linear recession coefficient (day-1) ; 
+        # - the linear reservoir concept is still being used to represent fast response flow, 
+        #   particularly from karstic aquifer in mountainous regions                    
+        #
         self.recessionCoeff = vos.netcdf2PCRobjCloneWithoutTime(self.iniItems.modflowParameterOptions['groundwaterPropertiesNC'],\
                                                                  'recessionCoeff', self.cloneMap)
         self.recessionCoeff = pcr.cover(self.recessionCoeff,0.00)       
@@ -101,30 +103,34 @@ class GroundwaterModflow(object):
         if 'minRecessionCoeff' in iniItems.modflowParameterOptions.keys():
             minRecessionCoeff = float(iniItems.modflowParameterOptions['minRecessionCoeff'])
         else:
-            minRecessionCoeff = 1.0e-4                                       # This is the minimum value used in Van Beek et al. (2011). 
+                                                   # This is the minimum value used in Van Beek et al. (2011). 
         self.recessionCoeff = pcr.max(minRecessionCoeff,self.recessionCoeff)      
         
         # aquifer saturated conductivity (m/day)
         self.kSatAquifer = vos.netcdf2PCRobjCloneWithoutTime(self.iniItems.modflowParameterOptions['groundwaterPropertiesNC'],\
                                                              'kSatAquifer', self.cloneMap)
         self.kSatAquifer = pcr.cover(self.kSatAquifer,pcr.mapmaximum(self.kSatAquifer))       
-        self.kSatAquifer = pcr.max(0.001,self.kSatAquifer)
+        self.kSatAquifer = pcr.max(1E-5,self.kSatAquifer)
+        # TODO: Add the minimum value in the ini/configuration file
         
         # aquifer specific yield (dimensionless)
         self.specificYield = vos.netcdf2PCRobjCloneWithoutTime(self.iniItems.modflowParameterOptions['groundwaterPropertiesNC'],\
                                                                'specificYield', self.cloneMap)
         self.specificYield = pcr.cover(self.specificYield,pcr.mapmaximum(self.specificYield))       
-        self.specificYield = pcr.max(0.001,self.specificYield)         # TODO: TO BE CHECKED: The resample process of specificYield     
         self.specificYield = pcr.min(1.000,self.specificYield)       
+        self.specificYield = pcr.max(0.001,self.specificYield)
+        # TODO: Add the minimum value in the ini/configuration file
 
-        # estimate of thickness (unit: m) of accesible groundwater 
+        # estimate of total aquifer/groundwater thickness (unit: m) 
         totalGroundwaterThickness = vos.netcdf2PCRobjCloneWithoutTime(self.iniItems.modflowParameterOptions['estimateOfTotalGroundwaterThicknessNC'],\
                                     'thickness', self.cloneMap)
         # extrapolation 
         totalGroundwaterThickness = pcr.cover(totalGroundwaterThickness,\
-                                    pcr.windowaverage(totalGroundwaterThickness, 1.0))
+                                    pcr.windowaverage(totalGroundwaterThickness, 0.75))
         totalGroundwaterThickness = pcr.cover(totalGroundwaterThickness,\
-                                    pcr.windowaverage(totalGroundwaterThickness, 1.5))
+                                    pcr.windowaverage(totalGroundwaterThickness, 1.00))
+        totalGroundwaterThickness = pcr.cover(totalGroundwaterThickness,\
+                                    pcr.windowaverage(totalGroundwaterThickness, 1.50))
         totalGroundwaterThickness = pcr.cover(totalGroundwaterThickness, 0.0)
         #
         # set minimum thickness
@@ -143,7 +149,7 @@ class GroundwaterModflow(object):
             self.confiningLayerThickness = pcr.cover(\
                                            vos.readPCRmapClone(self.iniItems.modflowParameterOptions['confiningLayerThickness'],\
                                                                self.cloneMap, self.tmpDir, self.inputDir), 0.0)
-            # confining layer vertical conductivity (unit: m/day)
+            # minimum confining layer vertical conductivity (unit: m/day)
             self.minimumConfiningLayerVerticalConductivity = pcr.cover(\
                                            vos.readPCRmapClone(self.iniItems.modflowParameterOptions['minimumConfiningLayerVerticalConductivity'],\
                                                                self.cloneMap, self.tmpDir, self.inputDir), 0.0)
@@ -156,7 +162,7 @@ class GroundwaterModflow(object):
         bed_thickness  = 0.1              # TODO: Define this as part of the configuration file
         # surface water bed resistance (unit: day)
         bed_resistance = bed_thickness / (self.kSatAquifer) 
-        minimum_bed_resistance = 1.0      # TODO: Define this as part of the configuration file
+        minimum_bed_resistance = float(self.iniItems.modflowParameterOptions['minimumBedResistance']
         self.bed_resistance = pcr.max(minimum_bed_resistance,\
                                               bed_resistance,)
         
@@ -259,8 +265,6 @@ class GroundwaterModflow(object):
         self.thickness_of_layer_2 = thickness_of_layer_2
         self.thickness_of_layer_1 = thickness_of_layer_1
 
-        # TODO: Incorporating the confining layer.
-
     def set_bcf_for_one_layer_model(self):
 
         # specification for conductivities (BCF package)
@@ -286,7 +290,7 @@ class GroundwaterModflow(object):
         # - correction due to the usage of lat/lon coordinates
         primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         primary = pcr.max(1e-20, primary)
-        secondary = pcr.max(0.001, primary * 0.001)         # dummy values as we used layer type 00
+        secondary = pcr.max(1e-5, primary * 0.001)         # dummy values as we used layer type 00
         self.pcr_modflow.setStorage(primary, secondary, 1)
         self.pcr_modflow.setStorage(primary, secondary, 2)
 
@@ -300,6 +304,7 @@ class GroundwaterModflow(object):
                                           horizontal_conductivity * self.thickness_of_layer_2) / self.thickness_of_layer_2
         vertical_conductivity_layer_2   = self.kSatAquifer * self.cellAreaMap/\
                                           (pcr.clone().cellSize()*pcr.clone().cellSize())
+        
         if self.usePreDefinedConfiningLayer:
             #~ # - reduce horizonal conductivity for the confining layer part        # NOT NECESSARY
             #~ horizontal_conductivity_layer_2 = pcr.max(minimimumTransmissivity, \
@@ -314,12 +319,12 @@ class GroundwaterModflow(object):
         # layer 1 (lower layer)
         horizontal_conductivity_layer_1 = pcr.max(minimimumTransmissivity, \
                                           horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
-        horizontal_conductivity_layer_1 = minimimumTransmissivity / self.thickness_of_layer_1
 
         vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
                                              (pcr.clone().cellSize()*pcr.clone().cellSize())
 
         # FIX THIS: Oliver made a bug here ...
+        
         vertical_conductivity_layer_2  *= 0.5
         #~ vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
         
