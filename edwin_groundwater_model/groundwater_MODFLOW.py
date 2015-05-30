@@ -315,7 +315,7 @@ class GroundwaterModflow(object):
                                           horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
         #~ horizontal_conductivity_layer_1 = minimimumTransmissivity / self.thickness_of_layer_1
 
-        vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e20)) * self.cellAreaMap/\
+        vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
                                              (pcr.clone().cellSize()*pcr.clone().cellSize())
         
         vertical_conductivity_layer_2  *= 2.0 * 0.0000000000000000000000000001
