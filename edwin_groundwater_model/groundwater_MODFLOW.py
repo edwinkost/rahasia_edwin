@@ -656,7 +656,7 @@ class GroundwaterModflow(object):
             
         else:
 
-            msg  = "\n"
+            msg  = "\n\n\n"
             msg += "HURRAY!!! MODFLOW CONVERGED with HCLOSE = "+str(HCLOSE)+" and RCLOSE = "+str(RCLOSE)
             msg += "\n\n"
             logger.info(msg)
