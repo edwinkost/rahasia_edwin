@@ -109,15 +109,13 @@ class GroundwaterModflow(object):
                                                              'kSatAquifer', self.cloneMap)
         self.kSatAquifer = pcr.cover(self.kSatAquifer,pcr.mapmaximum(self.kSatAquifer))       
         self.kSatAquifer = pcr.max(0.001,self.kSatAquifer)
-        # TODO: Define the minimum value as part of the configuration file
         
         # aquifer specific yield (dimensionless)
         self.specificYield = vos.netcdf2PCRobjCloneWithoutTime(self.iniItems.modflowParameterOptions['groundwaterPropertiesNC'],\
                                                                'specificYield', self.cloneMap)
         self.specificYield = pcr.cover(self.specificYield,pcr.mapmaximum(self.specificYield))       
-        self.specificYield = pcr.max(0.010,self.specificYield)         # TODO: TO BE CHECKED: The resample process of specificYield     
+        self.specificYield = pcr.max(0.001,self.specificYield)         # TODO: TO BE CHECKED: The resample process of specificYield     
         self.specificYield = pcr.min(1.000,self.specificYield)       
-        # TODO: Define the minimum value as part of the configuration file
 
         # estimate of thickness (unit: m) of accesible groundwater 
         totalGroundwaterThickness = vos.netcdf2PCRobjCloneWithoutTime(self.iniItems.modflowParameterOptions['estimateOfTotalGroundwaterThicknessNC'],\
@@ -130,19 +128,17 @@ class GroundwaterModflow(object):
         totalGroundwaterThickness = pcr.cover(totalGroundwaterThickness, 0.0)
         #
         # set minimum thickness
-        minimumThickness = pcr.scalar(float(\
-                           self.iniItems.modflowParameterOptions['minimumTotalGroundwaterThickness']))
+        minimumThickness = float(self.iniItems.modflowParameterOptions['minimumTotalGroundwaterThickness'])
         totalGroundwaterThickness = pcr.max(minimumThickness, totalGroundwaterThickness)
         #
-        # set maximum thickness: 250 m.   # TODO: Define this one as part of the ini file
-        maximumThickness = 250.
+        # set maximum thickness
+        maximumThickness = float(self.iniItems.modflowParameterOptions['maximumTotalGroundwaterThickness'])
         self.totalGroundwaterThickness = pcr.min(maximumThickness, totalGroundwaterThickness)
-        # TODO: Define the maximum value as part of the configuration file
 
         # confining layer thickness (for more than one layer)
-        self.usePreDefinedConfiningLayer = True
+        self.usePreDefinedConfiningLayer = False
         if self.number_of_layers > 1 and self.iniItems.modflowParameterOptions['usePreDefinedConfiningLayer'] == "True":
-            self.usePreDefinedConfiningLayer = False
+            self.usePreDefinedConfiningLayer = True
             # confining layer thickness (unit: m)
             self.confiningLayerThickness = pcr.cover(\
                                            vos.readPCRmapClone(self.iniItems.modflowParameterOptions['confiningLayerThickness'],\
@@ -325,7 +321,7 @@ class GroundwaterModflow(object):
 
         # FIX THIS: Oliver made a bug here ...
         vertical_conductivity_layer_2  *= 0.5
-        vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
+        #~ vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
         
         # set conductivity values to MODFLOW
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
