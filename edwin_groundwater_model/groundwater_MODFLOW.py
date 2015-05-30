@@ -320,7 +320,7 @@ class GroundwaterModflow(object):
         vertical_conductivity_layer_2  *= 2.0 / ((self.thickness_of_layer_1 + self.thickness_of_layer_2)**2.0)
         
         # set conductivity values to MODFLOW
-        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
+        self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
                                              vertical_conductivity_layer_1, 1)              
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
                                              vertical_conductivity_layer_2, 2)              
@@ -329,7 +329,7 @@ class GroundwaterModflow(object):
         # - correction due to the usage of lat/lon coordinates
         primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         primary = pcr.max(1e-20, primary)
-        secondary = primary                                           # dummy values as we used layer type 00
+        secondary = primary * 0.001                                     # dummy values as we used layer type 00
         self.pcr_modflow.setStorage(primary, secondary, 1)
         self.pcr_modflow.setStorage(primary, secondary, 2)
 
