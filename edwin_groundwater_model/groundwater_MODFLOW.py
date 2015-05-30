@@ -286,6 +286,14 @@ class GroundwaterModflow(object):
         
     def set_bcf_for_two_layer_model(self):
 
+        # specification for storage coefficient (BCF package)
+        # - correction due to the usage of lat/lon coordinates
+        primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
+        primary = pcr.max(1e-20, primary)
+        secondary = pcr.max(0.001, primary * 0.001)         # dummy values as we used layer type 00
+        self.pcr_modflow.setStorage(primary, secondary, 1)
+        self.pcr_modflow.setStorage(primary, secondary, 2)
+
         # specification for conductivities (BCF package)
         horizontal_conductivity = self.kSatAquifer # unit: m/day
         # set the minimum value for transmissivity; (Deltares's default value: 10 m2/day)
@@ -320,20 +328,12 @@ class GroundwaterModflow(object):
         vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
         
         # set conductivity values to MODFLOW
-        #~ self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
-                                             #~ vertical_conductivity_layer_1, 1)              
-        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
-                                             vertical_conductivity_layer_1, 1)              
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
                                              vertical_conductivity_layer_2, 2)              
-        
-        # specification for storage coefficient
-        # - correction due to the usage of lat/lon coordinates
-        primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
-        primary = pcr.max(1e-20, primary)
-        secondary = pcr.max(0.001, primary * 0.001)         # dummy values as we used layer type 00
-        self.pcr_modflow.setStorage(primary, secondary, 1)
-        self.pcr_modflow.setStorage(primary, secondary, 2)
+        self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
+                                             vertical_conductivity_layer_1, 1)              
+        #~ self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
+                                             #~ vertical_conductivity_layer_1, 1)              
         
         # Oliver should understand this: http://inside.mines.edu/~epoeter/583/08/discussion/vcont/modflow_vcont.htm
 
