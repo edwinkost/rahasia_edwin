@@ -820,8 +820,8 @@ class GroundwaterModflow(object):
         net_RCH = pcr.cover(net_recharge * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
         net_RCH = pcr.cover(pcr.ifthenelse(pcr.abs(net_RCH) < 1e-20, 0.0, net_RCH), 0.0)
         
-        #~ # put the recharge to the top grid/layer
-        #~ self.pcr_modflow.setRecharge(net_RCH, 1)
+        # put the recharge to the top grid/layer
+        self.pcr_modflow.setRecharge(net_RCH, 1)
 
         # if we want to put RCH in the lower layer
         self.pcr_modflow.setIndicatedRecharge(net_RCH, pcr.spatial(pcr.nominal(1)))
