@@ -203,20 +203,13 @@ class GroundwaterModflow(object):
         if self.number_of_layers == 1: self.set_grid_for_one_layer_model()
         if self.number_of_layers == 2: self.set_grid_for_two_layer_model()
          
-        #~ # specification for the boundary condition (ibound)
-        #~ # - active cells only in landmask
-        #~ # - constant head for outside the landmask
-        #~ ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
-        #~ ibound = pcr.cover(ibound, pcr.nominal(-1))
-        #~ for i in range(1, self.number_of_layers+1): self.pcr_modflow.setBoundary(ibound, i)
-        
         # specification for the boundary condition (ibound)
         # - active cells only in landmask
         # - constant head for outside the landmask
         ibound = pcr.ifthen(self.landmask, pcr.nominal(1))
-        ibound = pcr.cover(ibound, pcr.nominal(0))
+        ibound = pcr.cover(ibound, pcr.nominal(-1))
         for i in range(1, self.number_of_layers+1): self.pcr_modflow.setBoundary(ibound, i)
-
+        
         # setup the BCF package 
         if self.number_of_layers == 1: self.set_bcf_for_one_layer_model()
         if self.number_of_layers == 2: self.set_bcf_for_two_layer_model()
