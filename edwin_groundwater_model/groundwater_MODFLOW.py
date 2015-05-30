@@ -870,7 +870,7 @@ class GroundwaterModflow(object):
         #~ self.pcr_modflow.setDrain(drain_elevation, drain_conductance, self.number_of_layers)
 
         self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 1)
-        #~ self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 2)
+        self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 2)
 
     def return_innundation_fraction(self,relative_water_height):
 
