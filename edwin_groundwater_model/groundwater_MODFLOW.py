@@ -863,7 +863,6 @@ class GroundwaterModflow(object):
         #~ # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
         #~ self.pcr_modflow.setDrain(drain_elevation, drain_conductance, self.number_of_layers)
 
-        # set the DRN package only to the uppermost layer               # TODO: We may want to introduce this to all layers
         self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 1)
         self.pcr_modflow.setDrain(drain_elevation, drain_conductance, 2)
 
