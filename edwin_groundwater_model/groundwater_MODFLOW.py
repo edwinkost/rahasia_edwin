@@ -320,13 +320,12 @@ class GroundwaterModflow(object):
         horizontal_conductivity_layer_1 = pcr.max(minimimumTransmissivity, \
                                           horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
 
-        vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
-                                             (pcr.clone().cellSize()*pcr.clone().cellSize())
-
-        # FIX THIS: Oliver made a bug here ...
-        
-        vertical_conductivity_layer_2  *= 0.5
-        #~ vertical_conductivity_layer_2  *= 1.0/ ((self.thickness_of_layer_1 + self.thickness_of_layer_2)*1.0)
+        # ignoring the vertical conductivity in the lower layer 
+        # such that the resistance (1/vcont) depends only on vertical_conductivity_layer_2 
+        vertical_conductivity_layer_1  = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
+                                        (pcr.clone().cellSize()*pcr.clone().cellSize())
+        vertical_conductivity_layer_2 *= 0.5
+        # see: http://inside.mines.edu/~epoeter/583/08/discussion/vcont/modflow_vcont.htm
         
         # set conductivity values to MODFLOW
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_2, \
@@ -336,8 +335,6 @@ class GroundwaterModflow(object):
         #~ self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
                                              #~ vertical_conductivity_layer_1, 1)              
         
-        # Oliver should understand this: http://inside.mines.edu/~epoeter/583/08/discussion/vcont/modflow_vcont.htm
-
     def get_initial_heads(self):
 		
         if self.iniItems.modflowTransientInputOptions['usingPredefinedInitialHead'] == "True": 
@@ -630,7 +627,7 @@ class GroundwaterModflow(object):
         logger.info("Executing MODFLOW.")
         self.pcr_modflow.run()
         
-        logger.info("Check if the model whether a run has converged or not")
+        # check whether a run has converged or not
         self.modflow_converged = self.check_modflow_convergence()
         if self.modflow_converged == False:
 
@@ -648,17 +645,20 @@ class GroundwaterModflow(object):
             # we have to reset modflow as we want to change the PCG setup
             self.modflow_has_been_called = False
             
-            # for the steady state simulation, we still save the calculated head as the initial estimate for the next iteration
+            # for the steady state simulation, we still save the calculated head(s) 
+            # so that we can use them as the initial estimate for the next iteration
             if simulation_type == "steady-state": 
                 for i in range(1, self.number_of_layers+1):
                     var_name = 'groundwaterHeadLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getHeads(i)
-            # NOTE: We should not implement this principle for a transient simulation result that does not converge.
+            # NOTE: We must not extract the calculate heads of a transient simulation result that does not converge.
             
         else:
 
-            msg = "HURRAY!!! MODFLOW CONVERGED with HCLOSE = "+str(HCLOSE)+" and RCLOSE = "+str(RCLOSE)
+            msg  = "\n"
+            msg += "HURRAY!!! MODFLOW CONVERGED with HCLOSE = "+str(HCLOSE)+" and RCLOSE = "+str(RCLOSE)
+            msg += "\n\n"
             logger.info(msg)
 
             # reset the iteration because modflow has converged
@@ -677,9 +677,40 @@ class GroundwaterModflow(object):
                 var_depth_name = 'groundwaterDepthLayer'+str(i)
                 vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
             
+            test1 = self.pcr_modflow.getRiverLeakage(1)
+            test2 = self.pcr_modflow.getRiverLeakage(2)
+            
             # for debuging only
             pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
             pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
+
+    def get_all_modflow_results(self):
+        
+        logger.info("Set the river package.")
+        
+        if self.modflow_converged:
+
+            # obtaining the results from modflow simulation
+            for i in range(1, self.number_of_layers+1):
+                
+                # groundwater head (unit: m)
+                var_head_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_head_name] = None
+                vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
+                
+                
+                
+                # calculate groundwater depth (unit: m), only in the landmask region
+                var_depth_name = 'groundwaterDepthLayer'+str(i)
+                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
+            
+            # river leakage (m3/day) 
+            self.River
+
+            # for debuging only
+            pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
+            pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
+
 
     def check_modflow_convergence(self, file_name = "pcrmf.lst"):
         
