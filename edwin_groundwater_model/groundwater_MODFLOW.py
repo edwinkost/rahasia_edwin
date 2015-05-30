@@ -843,7 +843,7 @@ class GroundwaterModflow(object):
         gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction)
 
         # abstraction volume (negative value, unit: m3/day)
-        abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0) * 10000000000000000000000000000. * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize())
+        abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
         
         # FIXME: The following cover operations should not be necessary (Oliver should fix this).
         abstraction = pcr.cover(abstraction, 0.0) 
