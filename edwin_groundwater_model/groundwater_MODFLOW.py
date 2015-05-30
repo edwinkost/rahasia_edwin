@@ -318,7 +318,7 @@ class GroundwaterModflow(object):
         vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e20)) * self.cellAreaMap/\
                                              (pcr.clone().cellSize()*pcr.clone().cellSize())
         
-        vertical_conductivity_layer_2  *= 2.0 
+        vertical_conductivity_layer_2  *= 2.0 * 0.0000000000000000000000000001
         
         # set conductivity values to MODFLOW
         self.pcr_modflow.setConductivity(00, horizontal_conductivity_layer_1, \
