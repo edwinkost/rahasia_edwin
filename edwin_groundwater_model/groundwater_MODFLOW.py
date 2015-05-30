@@ -313,6 +313,7 @@ class GroundwaterModflow(object):
         horizontal_conductivity_layer_1 = pcr.max(minimimumTransmissivity, \
                                           horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
         #~ horizontal_conductivity_layer_1 = minimimumTransmissivity / self.thickness_of_layer_1
+        horizontal_conductivity_layer_1 *= 0.001
 
         vertical_conductivity_layer_1   = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
                                              (pcr.clone().cellSize()*pcr.clone().cellSize())
@@ -822,9 +823,10 @@ class GroundwaterModflow(object):
         net_RCH = pcr.cover(pcr.ifthenelse(pcr.abs(net_RCH) < 1e-20, 0.0, net_RCH), 0.0)
         
         # put the recharge to the top grid/layer
-        #~ self.pcr_modflow.setRecharge(net_RCH, 1)
+        self.pcr_modflow.setRecharge(net_RCH, 1)
 
-        self.pcr_modflow.setIndicatedRecharge(net_RCH, pcr.spatial(pcr.nominal(1)))
+        #~ # if we want to put RCH in the lower layer
+        #~ self.pcr_modflow.setIndicatedRecharge(net_RCH, pcr.spatial(pcr.nominal(1)))
 
     def set_well_package(self, gwAbstraction):
         
