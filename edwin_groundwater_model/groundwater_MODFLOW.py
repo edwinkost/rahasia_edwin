@@ -676,9 +676,8 @@ class GroundwaterModflow(object):
                 # calculate groundwater depth (unit: m), only in the landmask region
                 var_depth_name = 'groundwaterDepthLayer'+str(i)
                 vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
-            
-            test1 = self.pcr_modflow.getRiverLeakage(1)
-            test2 = self.pcr_modflow.getRiverLeakage(2)
+                
+            self.constantHead = self.pcr_modflow.getConstantHead(2)    
             
             # for debuging only
             pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
@@ -694,18 +693,39 @@ class GroundwaterModflow(object):
             for i in range(1, self.number_of_layers+1):
                 
                 # groundwater head (unit: m)
-                var_head_name = 'groundwaterHeadLayer'+str(i)
-                vars(self)[var_head_name] = None
-                vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
+                var_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getHeads(i)
                 
+                # river leakage (unit: m3/day)
+                var_name = 'riverLeakageLayer'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getRiverLeakage(i)
                 
+                # drain (unit: m3/day)
+                var_name = 'drainLayer'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getDrain(i)
                 
+                # bdgfrf - cell-by-cell flows right (m3/day)
+                var_name = 'flowRightFace'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getRightFace(i)
+
+                # bdgfff - cell-by-cell flows front (m3/day)
+                var_name = 'flowFrontFace'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getFrontFace(i)
+                
+                # bdgflf - cell-by-cell flows lower (m3/day)
+                var_name = 'flowLowerFace'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getLowerFace(i)
+
                 # calculate groundwater depth (unit: m), only in the landmask region
-                var_depth_name = 'groundwaterDepthLayer'+str(i)
-                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
+                var_name = 'groundwaterDepthLayer'+str(i)
+                vars(self)[var_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_name])
             
-            # river leakage (m3/day) 
-            self.River
 
             # for debuging only
             pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
