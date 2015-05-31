@@ -688,10 +688,15 @@ class GroundwaterModflow(object):
             for i in range(1, self.number_of_layers+1):
                 
                 # groundwater head (unit: m)
-                var_name = 'groundwaterHeadLayer'+str(i)
-                vars(self)[var_name] = None
-                vars(self)[var_name] = self.pcr_modflow.getHeads(i)
+                var_head_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_head_name] = None
+                vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
                 
+                # calculate groundwater depth (unit: m), only in the landmask region
+                var_name = 'groundwaterDepthLayer'+str(i)
+                vars(self)[var_depth_name] = None
+                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
+
                 # river leakage (unit: m3/day)
                 var_name = 'riverLeakageLayer'+str(i)
                 vars(self)[var_name] = None
@@ -730,11 +735,6 @@ class GroundwaterModflow(object):
                     var_name = 'storageLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getStorage(i)
-
-                # calculate groundwater depth (unit: m), only in the landmask region
-                var_name = 'groundwaterDepthLayer'+str(i)
-                vars(self)[var_name] = None
-                vars(self)[var_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_name])
 
             #~ # for debuging only
             #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
