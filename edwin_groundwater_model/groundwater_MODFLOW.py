@@ -694,15 +694,11 @@ class GroundwaterModflow(object):
                 var_name = 'riverLeakageLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getRiverLeakage(i)
-                # updating total baseflow
-                self.totalBaseflowVolumeRate += vars(self)[var_name]
                 
                 # drain (unit: m3/day)
                 var_name = 'drainLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getDrain(i)
-                # updating total baseflow
-                self.totalBaseflowVolumeRate += vars(self)[var_name]
                 
                 # bdgfrf - cell-by-cell flows right (m3/day)
                 var_name = 'flowRightFaceLayer'+str(i)
