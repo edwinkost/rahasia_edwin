@@ -671,9 +671,9 @@ class GroundwaterModflow(object):
             self.modflow_has_been_called = True
             
             # obtaining the results from modflow simulation
-            self.get_all_modflow_results()
+            self.get_all_modflow_results(simulation_type)
                 
-    def get_all_modflow_results(self):
+    def get_all_modflow_results(self, simulation_type):
         
         logger.info("Get all modflow results.")
         
@@ -726,9 +726,10 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = self.pcr_modflow.getConstantHead(i)
 
                 # sto - cell-by-cell storage term (unit: m3)
-                var_name = 'storageLayer'+str(i)
-                vars(self)[var_name] = None
-                vars(self)[var_name] = self.pcr_modflow.getStorage(i)
+                if simulation_type = "transient":
+                    var_name = 'storageLayer'+str(i)
+                    vars(self)[var_name] = None
+                    vars(self)[var_name] = self.pcr_modflow.getStorage(i)
 
                 # calculate groundwater depth (unit: m), only in the landmask region
                 var_name = 'groundwaterDepthLayer'+str(i)
