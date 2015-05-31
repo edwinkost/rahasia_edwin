@@ -15,17 +15,6 @@ description       = {}
 comment           = {}
 latex_symbol      = {}
 
-# groundwaterHead                      
-pcrglobwb_variable_name = 'groundwaterHead'
-netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_head_for_top_layer'
-netcdf_unit[pcrglobwb_variable_name]       = 'm.'
-netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
-netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
-netcdf_long_name[pcrglobwb_variable_name]  = None
-description[pcrglobwb_variable_name]       = None
-comment[pcrglobwb_variable_name]           = None
-latex_symbol[pcrglobwb_variable_name]      = None
-
 # groundwaterHeadLayer1                      
 pcrglobwb_variable_name = 'groundwaterHeadLayer1'
 netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_head_for_layer_1'
@@ -48,17 +37,6 @@ description[pcrglobwb_variable_name]       = None
 comment[pcrglobwb_variable_name]           = None
 latex_symbol[pcrglobwb_variable_name]      = None
 
-# groundwaterDepth                      
-pcrglobwb_variable_name = 'groundwaterDepth'
-netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_depth_for_top_layer'
-netcdf_unit[pcrglobwb_variable_name]       = 'm.'
-netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
-netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
-netcdf_long_name[pcrglobwb_variable_name]  = None
-description[pcrglobwb_variable_name]       = None
-comment[pcrglobwb_variable_name]           = None
-latex_symbol[pcrglobwb_variable_name]      = None
-
 # groundwaterDepthLayer1                      
 pcrglobwb_variable_name = 'groundwaterDepthLayer1'
 netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_depth_for_layer_1'
@@ -73,6 +51,28 @@ latex_symbol[pcrglobwb_variable_name]      = None
 # groundwaterDepthLayer2                      
 pcrglobwb_variable_name = 'groundwaterDepthLayer2'
 netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_depth_for_layer_2'
+netcdf_unit[pcrglobwb_variable_name]       = 'm.'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = None
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = None
+latex_symbol[pcrglobwb_variable_name]      = None
+
+# groundwaterHead                      
+pcrglobwb_variable_name = 'groundwaterHead'
+netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_head_for_top_layer'
+netcdf_unit[pcrglobwb_variable_name]       = 'm.'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = None
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = None
+latex_symbol[pcrglobwb_variable_name]      = None
+
+# groundwaterDepth                      
+pcrglobwb_variable_name = 'groundwaterDepth'
+netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_depth_for_top_layer'
 netcdf_unit[pcrglobwb_variable_name]       = 'm.'
 netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
 netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
