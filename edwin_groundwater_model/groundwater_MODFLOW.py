@@ -190,7 +190,7 @@ class GroundwaterModflow(object):
         self.iteration_RCLOSE = 0
         
         # initiate old style reporting (this is usually used for debugging process)
-        self.initiate_old_style_groundwater_reporting(iniItems)
+        self.initiate_old_style_reporting(iniItems)
 
     def initiate_modflow(self):
 
@@ -424,7 +424,7 @@ class GroundwaterModflow(object):
         
         return bottom_of_bank_storage
 
-    def initiate_old_style_groundwater_reporting(self,iniItems):
+    def initiate_old_style_reporting(self,iniItems):
 
         self.report = True
         try:
@@ -516,7 +516,7 @@ class GroundwaterModflow(object):
             while self.modflow_converged == False: self.modflow_simulation("transient",groundwaterHead,currTimeStep,currTimeStep.day,currTimeStep.day,self.criteria_HCLOSE[self.iteration_HCLOSE],\
                                                                                                                                                       self.criteria_RCLOSE[self.iteration_RCLOSE])
         # old-style reporting (this is usually used for debugging process)                            
-        self.old_style_routing_reporting(currTimeStep)
+        self.old_style_reporting(currTimeStep)
 
     def modflow_simulation(self,\
                            simulation_type,\
@@ -958,7 +958,7 @@ class GroundwaterModflow(object):
 
         # TODO: Improve this concept using Rens's latest scheme
 
-    def old_style_groundwater_reporting(self,currTimeStep):
+    def old_style_reporting(self,currTimeStep):
 
         if self.report == True:
             timeStamp = datetime.datetime(currTimeStep.year,\
