@@ -280,7 +280,7 @@ class Reporting(object):
 
         # relative groundwater head (at the top layer) above the minimum elevation within the grid cell
         if "relativeGroundwaterHead":
-            self.relativeGroundwaterHead = pcr.ifthen(self._model.landmask, self._model.modflow.dem_minimum - self.groundwaterHead)
+            self.relativeGroundwaterHead = pcr.ifthen(self._model.landmask, self.groundwaterHead - self._model.modflow.dem_minimum)
 
     def additional_post_processing(self):
 
