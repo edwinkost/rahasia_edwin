@@ -243,7 +243,7 @@ class Reporting(object):
                                               vars(self._model.modflow)[var_head_name])
             var_depth_name = 'groundwaterDepthLayer'+str(i)
             vars(self)[var_depth_name] = pcr.ifthen(self._model.landmask,
-                                                    self. _model.modflow.dem_average - vars(self)[var_head_name])
+                                                    self._model.modflow.dem_average - vars(self)[var_head_name])
             
             # groundwater head and groundwater depth at the top layer (unit: m)
             if i == self._model.modflow.number_of_layers:
@@ -269,14 +269,20 @@ class Reporting(object):
                 # report only in the landmask region
                 if i == self._model.modflow.number_of_layers: self.totalBaseflowVolumeRate = pcr.ifthen(self._model.landmask, \
                                                                                                         self.totalBaseflowVolumeRate)
+        
+        # estimate of total groundwwater storage (m) that is accesible (based on the assumption of a certain limit of pumping depth)
+        if "accesibleGroundwaterVolume" in self.variables_for_report:
+            
+            pass
+            # princple: 
+            # > (head - bottom_elevation) * specificYield
+            # > bottom_elevation must not below pumping depth 
+
+        # relative groundwater head (at the top layer) above the minimum elevation within the grid cell
+        if "relativeGroundwaterHead":
+            self.relativeGroundwaterHead = pcr.ifthen(self._model.landmask, self._model.modflow.dem_minimum - self.groundwaterHead)
 
     def additional_post_processing(self):
-
-        # initialize the following variable: 
-        # - total storage (unit: m3): total volume (until the bottom elevation?)
-        # - total baseflow (unit: m3/day): exchange between surface water bodies (river and drain cells) and grouwater bodies
-        self.totalStorage = pcr.scalar(0.0) 
-        self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
 
         pass
 

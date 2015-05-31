@@ -225,6 +225,10 @@ class GroundwaterModflow(object):
         bottom = top - self.totalGroundwaterThickness
         self.pcr_modflow.createBottomLayer(bottom, top)
         
+        # make the following value(s) available for the other modules/methods:
+        self.thickness_of_layer_1 = top - bottom
+        self.total_thickness = self.thickness_of_layer_1
+
     def set_grid_for_two_layer_model(self):
 
         # grid specification - two layer model
@@ -262,27 +266,32 @@ class GroundwaterModflow(object):
         self.pcr_modflow.createBottomLayer(bottom_layer_1, bottom_layer_2)
         self.pcr_modflow.addLayer(top_layer_2)
         
-        self.thickness_of_layer_2 = thickness_of_layer_2
+        # make the following value(s) available for the other modules/methods:
         self.thickness_of_layer_1 = thickness_of_layer_1
+        self.thickness_of_layer_2 = thickness_of_layer_2
+        self.total_thickness = self.thickness_of_layer_1 + self.thickness_of_layer_2
 
     def set_bcf_for_one_layer_model(self):
+
+        # specification for storage coefficient (BCF package)
+        # - correction due to the usage of lat/lon coordinates
+        primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
+        primary = pcr.max(1e-10, primary)
+        secondary = primary                                            # dummy values as we used the layer type 00
+        self.pcr_modflow.setStorage(primary, secondary, 1)
 
         # specification for conductivities (BCF package)
         horizontal_conductivity = self.kSatAquifer # unit: m/day
         # set the minimum value for transmissivity; (Deltares's default value: 10 m2/day)
         minimimumTransmissivity = 10.
         horizontal_conductivity = pcr.max(minimimumTransmissivity, \
-                                          horizontal_conductivity * self.totalGroundwaterThickness) / self.totalGroundwaterThickness
+                                          horizontal_conductivity * self.total_thickness) / self.total_thickness
         vertical_conductivity   = horizontal_conductivity               # dummy values, as one layer model is used
         self.pcr_modflow.setConductivity(00, horizontal_conductivity, \
                                              vertical_conductivity, 1)              
 
-        # specification for storage coefficient
-        # - correction due to the usage of lat/lon coordinates
-        primary = pcr.cover(self.specificYield * self.cellAreaMap/(pcr.clone().cellSize()*pcr.clone().cellSize()), 0.0)
-        primary = pcr.max(1e-10, primary)
-        secondary = primary                                            # dummy values as we used the layer type 00
-        self.pcr_modflow.setStorage(primary, secondary, 1)
+        # make the following value(s) available for the other modules/methods:
+        self.specific_yield_1 = self.specificYield
         
     def set_bcf_for_two_layer_model(self):
 
@@ -334,6 +343,11 @@ class GroundwaterModflow(object):
                                              vertical_conductivity_layer_1, 1)              
         #~ self.pcr_modflow.setConductivity(02, horizontal_conductivity_layer_1, \
                                              #~ vertical_conductivity_layer_1, 1)              
+
+        # make the following value(s) available for the other modules/methods:
+        self.specific_yield_1 = self.specificYield
+        self.specific_yield_2 = self.specificYield
+
         
     def get_initial_heads(self):
 		
@@ -722,13 +736,11 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getConstantHead(i)
 
-                # sto - cell-by-cell storage term (unit: m3)
+                # cell-by-cell storage flow term (unit: m3)
                 if simulation_type == "transient":
-                    var_name = 'storageLayer'+str(i)
+                    var_name = 'flowStorageLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getStorage(i)
-                    #~ # updating total storage
-                    #~ self.totalStorage += vars(self)[var_name]
 
             #~ # for debuging only
             #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_layer_1.map")
