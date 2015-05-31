@@ -713,10 +713,12 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getFrontFace(i)
                 
-                # bdgflf - cell-by-cell flows lower (m3/day)
-                var_name = 'flowLowerFaceLayer'+str(i)
-                vars(self)[var_name] = None
-                vars(self)[var_name] = self.pcr_modflow.getLowerFace(i)
+                # bdgflf - cell-by-cell flows lower (m3/day) 
+                # Note: No flow through the lower face of the bottom layer
+                if i > 1:
+                    var_name = 'flowLowerFaceLayer'+str(i)
+                    vars(self)[var_name] = None
+                    vars(self)[var_name] = self.pcr_modflow.getLowerFace(i)
 
                 # flow to/from constant head cells (unit: m3/day)
                 var_name = 'flowConstantHeadLayer'+str(i)
