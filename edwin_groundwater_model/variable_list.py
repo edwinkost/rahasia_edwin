@@ -103,6 +103,17 @@ description[pcrglobwb_variable_name]       = None
 comment[pcrglobwb_variable_name]           = "Note that this calculated groundwater volume is until a certain depth or aquifer bottom elevation. Please check the assumption."
 latex_symbol[pcrglobwb_variable_name]      = None
 
+# accesibleGroundwaterThickness
+pcrglobwb_variable_name = 'accesibleGroundwaterThickness'
+netcdf_short_name[pcrglobwb_variable_name] = 'accesible_groundwater_thickness'
+netcdf_unit[pcrglobwb_variable_name]       = 'm3'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = None
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = "Note that this calculated groundwater thickness is until a certain depth or aquifer bottom elevation. Please check the assumption."
+latex_symbol[pcrglobwb_variable_name]      = None
+
 # test variable
 pcrglobwb_variable_name = 'test'
 netcdf_short_name[pcrglobwb_variable_name] = 'test'
