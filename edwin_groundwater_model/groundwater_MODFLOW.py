@@ -694,8 +694,8 @@ class GroundwaterModflow(object):
                 
                 # calculate groundwater depth (unit: m), only in the landmask region
                 var_name = 'groundwaterDepthLayer'+str(i)
-                vars(self)[var_depth_name] = None
-                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
+                vars(self)[var_name] = None
+                vars(self)[var_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
 
                 # river leakage (unit: m3/day)
                 var_name = 'riverLeakageLayer'+str(i)
