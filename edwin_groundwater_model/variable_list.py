@@ -73,7 +73,7 @@ latex_symbol[pcrglobwb_variable_name]      = None
 # groundwaterDepth                      
 pcrglobwb_variable_name = 'groundwaterDepth'
 netcdf_short_name[pcrglobwb_variable_name] = 'groundwater_depth_for_top_layer'
-netcdf_unit[pcrglobwb_variable_name]       = 'm.'
+netcdf_unit[pcrglobwb_variable_name]       = 'm3.day-1'
 netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
 netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
 netcdf_long_name[pcrglobwb_variable_name]  = None
@@ -90,6 +90,17 @@ netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
 netcdf_long_name[pcrglobwb_variable_name]  = None
 description[pcrglobwb_variable_name]       = None
 comment[pcrglobwb_variable_name]           = None
+latex_symbol[pcrglobwb_variable_name]      = None
+
+# totalBaseflowVolume
+pcrglobwb_variable_name = 'totalBaseflowVolume'
+netcdf_short_name[pcrglobwb_variable_name] = 'total_baseflow_volume'
+netcdf_unit[pcrglobwb_variable_name]       = 'm3.day'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = "total_exchange_volume_between_surface_water_and_groundwater_bodies"
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = "Note positive values indicate water enter aquifer bodies."
 latex_symbol[pcrglobwb_variable_name]      = None
 
 # accesibleGroundwaterVolume
