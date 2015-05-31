@@ -283,17 +283,17 @@ class Reporting(object):
                self.accesibleGroundwaterVolume  = pcr.ifthen(self._model.landmask, \
                                                              self._model.modflow.specific_yield_1 * \
                                                              pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
-                                                                                                               self.bottom_layer_1)))
+                                                                                                               self._model.modflow.bottom_layer_1)))
                                                             
             if self._model.modflow.number_of_layers == 2:\
                self.accesibleGroundwaterVolume  = pcr.ifthen(self._model.landmask, \
                                                              self._model.modflow.specific_yield_1 * \
                                                              pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
-                                                                                                               self.bottom_layer_1))) + \
+                                                                                                               self._model.modflow.bottom_layer_1))) + \
                                                   pcr.ifthen(self._model.landmask, \
                                                              self._model.modflow.specific_yield_2 * \
                                                              pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
-                                                                                                               self.bottom_layer_2)))
+                                                                                                               self._model.modflow.bottom_layer_2)))
             self.accesibleGroundwaterVolume *= self._model.modflow.cellAreaMap 
             
             # TODO: Make the reporting of accesibleGroundwaterVolume more generic
