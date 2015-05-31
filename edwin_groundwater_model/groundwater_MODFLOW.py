@@ -726,7 +726,7 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = self.pcr_modflow.getConstantHead(i)
 
                 # sto - cell-by-cell storage term (unit: m3)
-                if simulation_type = "transient":
+                if simulation_type == "transient":
                     var_name = 'storageLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getStorage(i)
