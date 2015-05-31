@@ -170,6 +170,16 @@ class GroundwaterModflow(object):
         self.ignoreCapRise = True
         if self.iniItems.modflowParameterOptions['ignoreCapRise'] == "False": self.ignoreCapRise = False
         
+        # option to ignore abstraction in unproductive aquifer
+        minTransimissivityForProductiveAquifer = 0.0
+        self.productiveAquifer = pcr.boolean(1.0)
+        if 'minTransimissivityForProductiveAquifer' in self.iniItems.modflowParameterOptions.keys():
+            if self.iniItems.modflowParameterOptions['minTransimissivityForProductiveAquifer'] != "None":
+                minTransimissivityForProductiveAquifer = float(self.iniItems.modflowParameterOptions['minTransimissivityForProductiveAquifer'])
+        self.productiveAquifer = pcr.cover(pcr.ifthen(self.kSatAquifer * self.totalGroundwaterThickness > minTransimissivityForProductiveAquifer, \
+                                           pcr.boolean(1.0)), pcr.boolean(0.0))
+        # TODO: You may want to classify this productivity per layer. 
+        
         # a variable to indicate if the modflow has been called or not
         self.modflow_has_been_called = False
         
@@ -617,7 +627,9 @@ class GroundwaterModflow(object):
             # - recharge/capillary rise (unit: m/day) from PCR-GLOBWB 
             gwRecharge = vos.readPCRmapClone(self.iniItems.modflowSteadyStateInputOptions['avgGroundwaterRechargeInputMap'],\
                                                 self.cloneMap, self.tmpDir, self.inputDir)
-            if self.ignoreCapRise: gwRecharge = pcr.max(0.0, gwRecharge) 
+            #
+            # for steady state simulation, ignore any abstractions (to avoid unrealistic starting heads) 
+            gwRecharge    = pcr.max(0.0, gwRecharge) 
             gwAbstraction = pcr.spatial(pcr.scalar(0.0))
 
         # read input files (for the transient, input files are given in netcdf files):
@@ -901,6 +913,9 @@ class GroundwaterModflow(object):
         # reducing the size of table by ignoring cells with zero abstraction
         gwAbstraction = pcr.ifthen(gwAbstraction > 0.0, gwAbstraction)
 
+        # abstraction only in productive aquifer
+        gwAbstraction = pcr.ifthen(self.productiveAquifer, gwAbstraction)
+        
         # abstraction volume (negative value, unit: m3/day)
         abstraction = gwAbstraction * self.cellAreaMap * pcr.scalar(-1.0)
         

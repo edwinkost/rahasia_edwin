@@ -27,7 +27,7 @@ class Reporting(object):
 
         # initiate reporting tool/object and its configuration
         self.initiate_reporting(configuration)
-
+        
     def initiate_reporting(self, configuration):
         
         # output directory storing netcdf files:
@@ -270,21 +270,19 @@ class Reporting(object):
                 if i == self._model.modflow.number_of_layers: self.totalBaseflowVolumeRate = pcr.ifthen(self._model.landmask, \
                                                                                                         self.totalBaseflowVolumeRate)
         
-        # estimate of total groundwwater storage (m) that is accesible (based on the assumption of a certain limit of pumping depth)
+        # relative groundwater head (at the top layer) above the minimum elevation within the grid cell
+        # - this is needed for coupling with PCR-GLOBWB
+        self.relativeGroundwaterHead = pcr.ifthen(self._model.landmask, self.groundwaterHead - self._model.modflow.dem_minimum)
+
+    def additional_post_processing(self):
+
+        # estimate of total groundwwater storage (m3/day) that is accesible (based on the assumption of a certain limit of pumping depth)
         if "accesibleGroundwaterVolume" in self.variables_for_report:
             
             pass
             # princple: 
             # > (head - bottom_elevation) * specificYield
             # > bottom_elevation must not below pumping depth 
-
-        # relative groundwater head (at the top layer) above the minimum elevation within the grid cell
-        if "relativeGroundwaterHead":
-            self.relativeGroundwaterHead = pcr.ifthen(self._model.landmask, self.groundwaterHead - self._model.modflow.dem_minimum)
-
-    def additional_post_processing(self):
-
-        pass
 
     def report(self):
 
