@@ -261,10 +261,10 @@ class Reporting(object):
                 
                 # from the river leakage
                 var_name = 'riverLeakageLayer'+str(i)
-                self.totalBaseflowVolumeRate += vars(self._model.modflow)[var_name])
+                self.totalBaseflowVolumeRate += vars(self._model.modflow)[var_name]
                 # from the drain package
                 var_name = 'drainLayer'+str(i)
-                self.totalBaseflowVolumeRate += vars(self._model.modflow)[var_name])
+                self.totalBaseflowVolumeRate += vars(self._model.modflow)[var_name]
                 
                 # report only in the landmask region
                 if i == self._model.modflow.number_of_layers: self.totalBaseflowVolumeRate = pcr.ifthen(self._model.landmask, \
