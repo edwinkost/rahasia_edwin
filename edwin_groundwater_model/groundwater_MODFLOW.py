@@ -733,9 +733,6 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = None
                 vars(self)[var_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_name])
 
-            # obtaining the results from modflow simulation
-            for i in range(1, self.number_of_layers+1):
-
             #~ # for debuging only
             #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
             #~ pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
