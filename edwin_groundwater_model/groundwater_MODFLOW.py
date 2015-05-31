@@ -683,26 +683,13 @@ class GroundwaterModflow(object):
 
             # obtaining the results from modflow simulation
             
-            # initialize the following variable: 
-            # - total storage (unit: m3): total volume (until the bottom elevation?)
-            # - total baseflow (unit: m3/day): exchange between surface water bodies (river and drain cells) and grouwater bodies
-            # Note that positve values in flow/flux variables indicate water entering aquifer/groundwater bodies.
-            #
-            self.totalStorage = pcr.scalar(0.0) 
-            self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
-
             for i in range(1, self.number_of_layers+1):
                 
                 # groundwater head (unit: m)
-                var_head_name = 'groundwaterHeadLayer'+str(i)
-                vars(self)[var_head_name] = None
-                vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
+                var_name = 'groundwaterHeadLayer'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getHeads(i)
                 
-                # calculate groundwater depth (unit: m), only in the landmask region
-                var_depth_name = 'groundwaterDepthLayer'+str(i)
-                vars(self)[var_depth_name] = None
-                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
-
                 # river leakage (unit: m3/day)
                 var_name = 'riverLeakageLayer'+str(i)
                 vars(self)[var_name] = None
@@ -748,8 +735,8 @@ class GroundwaterModflow(object):
                     self.totalStorage += vars(self)[var_name]
 
             #~ # for debuging only
-            #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
-            #~ pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
+            #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_layer_1.map")
+            #~ pcr.report(self.groundwaterDepthLayer1, "gw_depth_layer_1.map")
 
 
     def check_modflow_convergence(self, file_name = "pcrmf.lst"):

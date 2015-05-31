@@ -234,22 +234,49 @@ class Reporting(object):
 
     def basic_post_processing(self):
 
-        # groundwater head and groundwater depth at top layer
-        self.groundwaterHead = pcr.ifthen(self._model.landmask, 
-                               vars(self._model.modflow)["groundwaterHeadLayer"+str(self._model.modflow.number_of_layers)])
+        # groundwater head and groundwater depth (unit: m)
+        for i in range(1, self._model.modflow.number_of_layers+1):
+            
+            # groundwater head and groundwater depth for each layer (unit: m)
+            var_head_name = 'groundwaterHeadLayer'+str(i)
+            vars(self)[var_head_name] = pcr.ifthen(self._model.landmask,
+                                              vars(self._model.modflow)[var_head_name])
+            var_depth_name = 'groundwaterDepthayer'+str(i)
+            vars(self)[var_depth_name] = pcr.ifthen(self._model.landmask,
+                                                    self. _model.modflow.dem_average - vars(self._model.modflow)[var_depth_name])
+            
+            # groundwater head and groundwater depth at the top layer (unit: m)
+            if i == self._model.modflow.number_of_layers:
+                self.groundwaterHead = pcr.ifthen(self._model.landmask, \
+                                                  vars(self._model.modflow)[var_head_name])                                        
 
-        self.groundwaterHeadLayer1  = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterHeadLayer1)
-        self.groundwaterDepthLayer1 = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterDepthLayer1)
-
-        if self._model.modflow.number_of_layers > 1:
-            self.groundwaterHeadLayer2  = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterHeadLayer2)
-            self.groundwaterDepthLayer2 = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterDepthLayer2)
-
-        if self._model.modflow.number_of_layers > 2:
-            self.groundwaterHeadLayer3  = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterHeadLayer3)
-            self.groundwaterDepthLayer3 = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterDepthLayer3)
+        # total baseflow (unit: m3/day)
+        if "totalBaseflowVolumeRate" in self.variables_for_report:
+            
+            # initiate the (accumulated) value (for accumulating the fluxes from all layers)
+            self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
+            
+            # Note that positive values in flow/flux variables indicate water entering aquifer/groundwater bodies.
+            for i in range(1, self._model.modflow.number_of_layers+1):
+                
+                # from the river leakage
+                var_name = 'riverLeakageLayer'+str(i)
+                self.totalBaseflowVolumeRate += vars(self._model.modflow)[var_name])
+                # from the drain package
+                var_name = 'drainLayer'+str(i)
+                self.totalBaseflowVolumeRate += vars(self._model.modflow)[var_name])
+                
+                # report only in the landmask region
+                if i == self._model.modflow.number_of_layers: self.totalBaseflowVolumeRate = pcr.ifthen(self._model.landmask, \
+                                                                                                        self.totalBaseflowVolumeRate)
 
     def additional_post_processing(self):
+
+        # initialize the following variable: 
+        # - total storage (unit: m3): total volume (until the bottom elevation?)
+        # - total baseflow (unit: m3/day): exchange between surface water bodies (river and drain cells) and grouwater bodies
+        self.totalStorage = pcr.scalar(0.0) 
+        self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
 
         pass
 
