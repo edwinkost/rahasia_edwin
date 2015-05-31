@@ -234,6 +234,10 @@ class Reporting(object):
 
     def basic_post_processing(self):
 
+        # groundwater head and groundwater depth at top layer
+        self.groundwaterHead = pcr.ifthen(self._model.landmask, 
+                               vars(self._model.modflow)["groundwaterHeadLayer"+str(self._model.modflow.number_of_layers)])
+
         self.groundwaterHeadLayer1  = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterHeadLayer1)
         self.groundwaterDepthLayer1 = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterDepthLayer1)
 

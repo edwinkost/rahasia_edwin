@@ -249,7 +249,7 @@ class GroundwaterModflow(object):
             top_layer_2     = self.dem_average
             # - thickness of layer 2 is based on the predefined confiningLayerThickness
             bottom_layer_2       = self.dem_average - self.confiningLayerThickness
-            # - thickness of layer 2 should be until 5 m below the river bed
+            # - thickness of layer 2 should be until 5 m below the river bed elevation
             bottom_layer_2       = pcr.min(self.dem_riverbed - 5.0, bottom_layer_2)
             # - make sure that the minimum thickness of layer 2 is at least 0.1 m
             thickness_of_layer_2 = pcr.max(0.1, top_layer_2 - bottom_layer_2)
@@ -321,7 +321,7 @@ class GroundwaterModflow(object):
                                           horizontal_conductivity * self.thickness_of_layer_1) / self.thickness_of_layer_1
 
         # ignoring the vertical conductivity in the lower layer 
-        # such that the resistance (1/vcont) depends only on vertical_conductivity_layer_2 
+        # such that the values of resistance (1/vcont) depend only on vertical_conductivity_layer_2 
         vertical_conductivity_layer_1  = pcr.spatial(pcr.scalar(1e99)) * self.cellAreaMap/\
                                         (pcr.clone().cellSize()*pcr.clone().cellSize())
         vertical_conductivity_layer_2 *= 0.5
@@ -655,7 +655,7 @@ class GroundwaterModflow(object):
                     var_name = 'groundwaterHeadLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getHeads(i)
-            # NOTE: We must not extract the calculate heads of a transient simulation result that does not converge.
+            # NOTE: We must NOT extract the calculated heads of a transient simulation result that does not converge.
             
         else:
 
@@ -668,6 +668,8 @@ class GroundwaterModflow(object):
             self.iteration_HCLOSE = 0
             self.iteration_RCLOSE = 0
             
+            # FIXME: The following line is useless. 
+            # - Originial idea: As modflow has converged, we don't need to re-initialize pcraster modflow (in order to save some calculation time).
             self.modflow_has_been_called = True
             
             # obtaining the results from modflow simulation
@@ -681,9 +683,13 @@ class GroundwaterModflow(object):
 
             # obtaining the results from modflow simulation
             
-            #~ # total baseflow (unit: m3/day): exchange between surface water bodies (river and drain cells) and grouwater bodies
-            #~ # - positve values indicate water entering aquifer/groundwater bodies
-            #~ self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
+            # initialize the following variable: 
+            # - total storage (unit: m3): total volume (until the bottom elevation?)
+            # - total baseflow (unit: m3/day): exchange between surface water bodies (river and drain cells) and grouwater bodies
+            # Note that positve values in flow/flux variables indicate water entering aquifer/groundwater bodies.
+            #
+            self.totalStorage = pcr.scalar(0.0) 
+            self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
 
             for i in range(1, self.number_of_layers+1):
                 
@@ -693,20 +699,23 @@ class GroundwaterModflow(object):
                 vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
                 
                 # calculate groundwater depth (unit: m), only in the landmask region
-                var_name = 'groundwaterDepthLayer'+str(i)
-                vars(self)[var_name] = None
-                vars(self)[var_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
+                var_depth_name = 'groundwaterDepthLayer'+str(i)
+                vars(self)[var_depth_name] = None
+                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
 
                 # river leakage (unit: m3/day)
                 var_name = 'riverLeakageLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getRiverLeakage(i)
-                #~ self.totalBaseflowVolumeRate += vars(self)[var_name]
+                # updating total baseflow
+                self.totalBaseflowVolumeRate += vars(self)[var_name]
                 
                 # drain (unit: m3/day)
                 var_name = 'drainLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getDrain(i)
+                # updating total baseflow
+                self.totalBaseflowVolumeRate += vars(self)[var_name]
                 
                 # bdgfrf - cell-by-cell flows right (m3/day)
                 var_name = 'flowRightFaceLayer'+str(i)
@@ -735,6 +744,8 @@ class GroundwaterModflow(object):
                     var_name = 'storageLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getStorage(i)
+                    # updating total storage
+                    self.totalStorage += vars(self)[var_name]
 
             #~ # for debuging only
             #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
@@ -903,7 +914,7 @@ class GroundwaterModflow(object):
         
         # set the well based on number of layers
         if self.number_of_layers == 1: self.pcr_modflow.setWell(abstraction, 1)
-        if self.number_of_layers == 2: self.pcr_modflow.setWell(abstraction, 1)                # at the bottom layer
+        if self.number_of_layers == 2: self.pcr_modflow.setWell(abstraction, 1) # at the bottom layer
 
 
     def set_drain_package(self):
