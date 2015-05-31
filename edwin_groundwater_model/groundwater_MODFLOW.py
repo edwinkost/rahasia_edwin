@@ -183,8 +183,9 @@ class GroundwaterModflow(object):
         # assumption for the thickness (m) of accessible groundwater (needed for coupling to PCR-GLOBWB)
         # - Note that this assumption value does not affect the modflow calculation. The values is needed merely for reporting "accesibleGroundwaterVolume".
         accesibleDepth = 1000.0
-        if 'accessibleThickness' in 
-        
+        if 'accesibleDepth' in self.iniItems.modflowParameterOptions.keys():
+            if self.iniItems.modflowParameterOptions['accesibleDepth'] != "None":
+                accesibleDepth = float(self.iniItems.modflowParameterOptions['accesibleDepth'])
         self.max_accesible_elevation = self.dem_average - accesibleDepth
         
         # a variable to indicate if the modflow has been called or not
