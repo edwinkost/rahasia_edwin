@@ -237,8 +237,6 @@ class Reporting(object):
         self.groundwaterHeadLayer1  = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterHeadLayer1)
         self.groundwaterDepthLayer1 = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterDepthLayer1)
 
-        self.constantHead = self._model.modflow.constantHead
-        
         if self._model.modflow.number_of_layers > 1:
             self.groundwaterHeadLayer2  = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterHeadLayer2)
             self.groundwaterDepthLayer2 = pcr.ifthen(self._model.landmask, self._model.modflow.groundwaterDepthLayer2)

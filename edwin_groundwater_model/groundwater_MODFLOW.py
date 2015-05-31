@@ -189,7 +189,7 @@ class GroundwaterModflow(object):
         self.iteration_HCLOSE = 0
         self.iteration_RCLOSE = 0
         
-        # initiate old style reporting                                  # TODO: remove this!
+        # initiate old style reporting (this is usually used for debugging process)
         self.initiate_old_style_groundwater_reporting(iniItems)
 
     def initiate_modflow(self):
@@ -515,6 +515,8 @@ class GroundwaterModflow(object):
             groundwaterHead = self.getState()
             while self.modflow_converged == False: self.modflow_simulation("transient",groundwaterHead,currTimeStep,currTimeStep.day,currTimeStep.day,self.criteria_HCLOSE[self.iteration_HCLOSE],\
                                                                                                                                                       self.criteria_RCLOSE[self.iteration_RCLOSE])
+        # old-style reporting (this is usually used for debugging process)                            
+        self.old_style_routing_reporting(currTimeStep)
 
     def modflow_simulation(self,\
                            simulation_type,\
@@ -624,7 +626,8 @@ class GroundwaterModflow(object):
         self.set_drain_package()
         
         # execute MODFLOW 
-        logger.info("Executing MODFLOW.")
+        msg = "Executing MODFLOW with HCLOSE = "+str(HCLOSE)+" and RCLOSE = "+str(RCLOSE)
+        logger.info(msg)
         self.pcr_modflow.run()
         
         # check whether a run has converged or not
@@ -668,28 +671,20 @@ class GroundwaterModflow(object):
             self.modflow_has_been_called = True
             
             # obtaining the results from modflow simulation
-            for i in range(1, self.number_of_layers+1):
-                # groundwater head (unit: m)
-                var_head_name = 'groundwaterHeadLayer'+str(i)
-                vars(self)[var_head_name] = None
-                vars(self)[var_head_name] = self.pcr_modflow.getHeads(i)
-                # calculate groundwater depth (unit: m), only in the landmask region
-                var_depth_name = 'groundwaterDepthLayer'+str(i)
-                vars(self)[var_depth_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_head_name])
+            self.get_all_modflow_results()
                 
-            self.constantHead = self.pcr_modflow.getConstantHead(2)    
-            
-            # for debuging only
-            pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
-            pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
-
     def get_all_modflow_results(self):
         
-        logger.info("Set the river package.")
+        logger.info("Get all modflow results.")
         
         if self.modflow_converged:
 
             # obtaining the results from modflow simulation
+            
+            #~ # total baseflow (unit: m3/day): exchange between surface water bodies (river and drain cells) and grouwater bodies
+            #~ # - positve values indicate water entering aquifer/groundwater bodies
+            #~ self.totalBaseflowVolumeRate = pcr.scalar(0.0) 
+
             for i in range(1, self.number_of_layers+1):
                 
                 # groundwater head (unit: m)
@@ -697,10 +692,11 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getHeads(i)
                 
-                # river leakage (unit: m3/day)
-                var_name = 'riverLeakageLayer'+str(i)
-                vars(self)[var_name] = None
-                vars(self)[var_name] = self.pcr_modflow.getRiverLeakage(i)
+                #~ # river leakage (unit: m3/day)
+                #~ var_name = 'riverLeakageLayer'+str(i)
+                #~ vars(self)[var_name] = None
+                #~ vars(self)[var_name] = self.pcr_modflow.getRiverLeakage(i)
+                #~ self.totalBaseflowVolumeRate += vars(self)[var_name]
                 
                 # drain (unit: m3/day)
                 var_name = 'drainLayer'+str(i)
@@ -708,28 +704,41 @@ class GroundwaterModflow(object):
                 vars(self)[var_name] = self.pcr_modflow.getDrain(i)
                 
                 # bdgfrf - cell-by-cell flows right (m3/day)
-                var_name = 'flowRightFace'+str(i)
+                var_name = 'flowRightFaceLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getRightFace(i)
 
                 # bdgfff - cell-by-cell flows front (m3/day)
-                var_name = 'flowFrontFace'+str(i)
+                var_name = 'flowFrontFaceLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getFrontFace(i)
                 
                 # bdgflf - cell-by-cell flows lower (m3/day)
-                var_name = 'flowLowerFace'+str(i)
+                var_name = 'flowLowerFaceLayer'+str(i)
                 vars(self)[var_name] = None
                 vars(self)[var_name] = self.pcr_modflow.getLowerFace(i)
 
+                # flow to/from constant head cells (unit: m3/day)
+                var_name = 'flowConstantHeadLayer'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getConstantHead(i)
+
+                # sto - cell-by-cell storage term (unit: m3)
+                var_name = 'storageLayer'+str(i)
+                vars(self)[var_name] = None
+                vars(self)[var_name] = self.pcr_modflow.getStorage(i)
+
                 # calculate groundwater depth (unit: m), only in the landmask region
                 var_name = 'groundwaterDepthLayer'+str(i)
+                vars(self)[var_name] = None
                 vars(self)[var_name] = pcr.ifthen(self.landmask, self.dem_average - vars(self)[var_name])
-            
 
-            # for debuging only
-            pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
-            pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
+            # obtaining the results from modflow simulation
+            for i in range(1, self.number_of_layers+1):
+
+            #~ # for debuging only
+            #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_bottom.map")
+            #~ pcr.report(self.groundwaterDepthLayer1, "gw_depth_bottom.map")
 
 
     def check_modflow_convergence(self, file_name = "pcrmf.lst"):
