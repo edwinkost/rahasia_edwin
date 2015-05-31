@@ -289,8 +289,8 @@ class Reporting(object):
                self.accesibleGroundwaterVolume  = pcr.ifthen(self._model.landmask, \
                                                              self._model.modflow.specific_yield_1 * \
                                                              pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
-                                                                                                               self.bottom_layer_1)))
-               self.accesibleGroundwaterVolume += pcr.ifthen(self._model.landmask, \
+                                                                                                               self.bottom_layer_1))) + \
+                                                  pcr.ifthen(self._model.landmask, \
                                                              self._model.modflow.specific_yield_2 * \
                                                              pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
                                                                                                                self.bottom_layer_2)))
