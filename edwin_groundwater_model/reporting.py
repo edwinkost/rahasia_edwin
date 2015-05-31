@@ -247,8 +247,8 @@ class Reporting(object):
             
             # groundwater head and groundwater depth at the top layer (unit: m)
             if i == self._model.modflow.number_of_layers:
-                self.groundwaterHead = pcr.ifthen(self._model.landmask, vars(self._model.modflow)[var_head_name])                                        
-                self.groundwaterDepth = pcr.ifthen(self._model.landmask, vars(self._model.modflow)[var_depth_name])                                        
+                self.groundwaterHead = pcr.ifthen(self._model.landmask, vars(self)[var_head_name])                                        
+                self.groundwaterDepth = pcr.ifthen(self._model.landmask, vars(self)[var_depth_name])                                        
 
         # total baseflow (unit: m3/day)
         if "totalBaseflowVolumeRate" in self.variables_for_report:
