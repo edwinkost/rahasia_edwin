@@ -276,14 +276,28 @@ class Reporting(object):
 
     def additional_post_processing(self):
 
-        # estimate of total groundwwater storage (m3/day) that is accesible (based on the assumption of a certain limit of pumping depth)
+        # estimate of total groundwwater storage that is accesible (based on the assumption of a certain limit of pumping depth)
         if "accesibleGroundwaterVolume" in self.variables_for_report:
             
-            pass
-            # princple: 
-            # > (head - bottom_elevation) * specificYield
-            # > bottom_elevation must not below pumping depth 
-
+            if self._model.modflow.number_of_layers == 1:\
+               self.accesibleGroundwaterVolume  = pcr.ifthen(self._model.landmask, \
+                                                             self._model.modflow.specific_yield_1 * \
+                                                             pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
+                                                                                                               self.bottom_layer_1)))
+                                                            
+            if self._model.modflow.number_of_layers == 2:\
+               self.accesibleGroundwaterVolume  = pcr.ifthen(self._model.landmask, \
+                                                             self._model.modflow.specific_yield_1 * \
+                                                             pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
+                                                                                                               self.bottom_layer_1)))
+               self.accesibleGroundwaterVolume += pcr.ifthen(self._model.landmask, \
+                                                             self._model.modflow.specific_yield_2 * \
+                                                             pcr.max(0.0, self.groundwaterHeadLayer1 - pcr.max(self._model.modflow.max_accesible_elevation, \
+                                                                                                               self.bottom_layer_2)))
+            self.accesibleGroundwaterVolume *= self._model.modflow.cellAreaMap 
+            
+            # TODO: Make the reporting of accesibleGroundwaterVolume more generic
+            
     def report(self):
 
         self.post_processing()

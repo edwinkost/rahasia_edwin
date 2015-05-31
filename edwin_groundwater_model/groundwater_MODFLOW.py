@@ -180,6 +180,13 @@ class GroundwaterModflow(object):
                                            pcr.boolean(1.0)), pcr.boolean(0.0))
         # TODO: You may want to classify this productivity per layer. 
         
+        # assumption for the thickness (m) of accessible groundwater (needed for coupling to PCR-GLOBWB)
+        # - Note that this assumption value does not affect the modflow calculation. The values is needed merely for reporting "accesibleGroundwaterVolume".
+        accesibleDepth = 1000.0
+        if 'accessibleThickness' in 
+        
+        self.max_accesible_elevation = self.dem_average - accesibleDepth
+        
         # a variable to indicate if the modflow has been called or not
         self.modflow_has_been_called = False
         
@@ -238,6 +245,7 @@ class GroundwaterModflow(object):
         # make the following value(s) available for the other modules/methods:
         self.thickness_of_layer_1 = top - bottom
         self.total_thickness = self.thickness_of_layer_1
+        self.bottom_layer_1 = bottom
 
     def set_grid_for_two_layer_model(self):
 
@@ -280,6 +288,8 @@ class GroundwaterModflow(object):
         self.thickness_of_layer_1 = thickness_of_layer_1
         self.thickness_of_layer_2 = thickness_of_layer_2
         self.total_thickness = self.thickness_of_layer_1 + self.thickness_of_layer_2
+        self.bottom_layer_1 = bottom_layer_1
+        self.bottom_layer_2 = bottom_layer_2
 
     def set_bcf_for_one_layer_model(self):
 
