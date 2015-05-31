@@ -727,8 +727,8 @@ class GroundwaterModflow(object):
                     var_name = 'storageLayer'+str(i)
                     vars(self)[var_name] = None
                     vars(self)[var_name] = self.pcr_modflow.getStorage(i)
-                    # updating total storage
-                    self.totalStorage += vars(self)[var_name]
+                    #~ # updating total storage
+                    #~ self.totalStorage += vars(self)[var_name]
 
             #~ # for debuging only
             #~ pcr.report(self.groundwaterHeadLayer1 , "gw_head_layer_1.map")
