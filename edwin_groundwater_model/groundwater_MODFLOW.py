@@ -661,7 +661,7 @@ class GroundwaterModflow(object):
             if self.ignoreCapRise: gwRecharge = pcr.max(0.0, gwRecharge) 
             # - groundwater abstraction (unit: m/day) from PCR-GLOBWB 
             gwAbstraction = pcr.spatial(pcr.scalar(0.0))
-            if self.iniItems.modflowTransientInputOptions['groundwaterAbstractionInputNC'][-4] != "None": 
+            if self.iniItems.modflowTransientInputOptions['groundwaterAbstractionInputNC'][-4:] != "None": 
                 gwAbstraction = vos.netcdf2PCRobjClone(self.iniItems.modflowTransientInputOptions['groundwaterAbstractionInputNC'],\
                                                        "total_groundwater_abstraction",str(currTimeStep.fulldate),None,self.cloneMap)
 
