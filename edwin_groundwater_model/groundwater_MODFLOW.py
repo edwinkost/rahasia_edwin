@@ -207,6 +207,12 @@ class GroundwaterModflow(object):
         self.iteration_HCLOSE = 0
         self.iteration_RCLOSE = 0
         
+        # the following condition is needed if we have to 
+        self.valuesRechargeAndAbstractionInMonthlyTotal = False
+        if 'valuesRechargeAndAbstractionInMonthlyTotal' in self.iniItems.modflowTransientInputOptions.keys():
+            if self.iniItems.modflowTransientInputOptions['valuesRechargeAndAbstractionInMonthlyTotal'] == "True":\
+               self.valuesRechargeAndAbstractionInMonthlyTotal = True
+        
         # initiate old style reporting (this is usually used for debugging process)
         self.initiate_old_style_reporting(iniItems)
 
@@ -645,6 +651,7 @@ class GroundwaterModflow(object):
 
         # read input files (for the transient, input files are given in netcdf files):
         if simulation_type == "transient":
+            
             # - discharge (m3/s) from PCR-GLOBWB
             discharge = vos.netcdf2PCRobjClone(self.iniItems.modflowTransientInputOptions['dischargeInputNC'],
                                                "discharge",str(currTimeStep.fulldate),None,self.cloneMap)
@@ -653,8 +660,15 @@ class GroundwaterModflow(object):
                                                "groundwater_recharge",str(currTimeStep.fulldate),None,self.cloneMap)
             if self.ignoreCapRise: gwRecharge = pcr.max(0.0, gwRecharge) 
             # - groundwater abstraction (unit: m/day) from PCR-GLOBWB 
-            gwAbstraction = vos.netcdf2PCRobjClone(self.iniItems.modflowTransientInputOptions['groundwaterAbstractionInputNC'],\
-                                               "total_groundwater_abstraction",str(currTimeStep.fulldate),None,self.cloneMap)
+            gwAbstraction = pcr.spatial(pcr.scalar(0.0))
+            if self.iniItems.modflowTransientInputOptions['groundwaterAbstractionInputNC'][-4] != "None": 
+                gwAbstraction = vos.netcdf2PCRobjClone(self.iniItems.modflowTransientInputOptions['groundwaterAbstractionInputNC'],\
+                                                       "total_groundwater_abstraction",str(currTimeStep.fulldate),None,self.cloneMap)
+
+            # convert the values of abstraction and recharge to daily average
+            if self.valuesRechargeAndAbstractionInMonthlyTotal: 
+                gwAbstraction = gwAbstraction/currTimeStep.day
+                gwRecharge    = gwRecharge/currTimeStep.day
 
         # set recharge, river, well and drain packages
         self.set_river_package(discharge, currTimeStep)
