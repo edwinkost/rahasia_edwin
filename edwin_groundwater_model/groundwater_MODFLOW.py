@@ -297,6 +297,11 @@ class GroundwaterModflow(object):
         self.total_thickness = self.thickness_of_layer_1 + self.thickness_of_layer_2
         self.bottom_layer_1 = bottom_layer_1
         self.bottom_layer_2 = bottom_layer_2
+        
+        # report elevation in pcraster map
+        pcr.report(top_layer_2, "top_uppermost_layer.map")
+        pcr.report(bottom_layer_2, "bottom_uppermost_layer.map")
+        pcr.report(bottom_layer_1, "bottom_lowermost_layer.map")
 
     def set_bcf_for_one_layer_model(self):
 
