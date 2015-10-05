@@ -299,6 +299,11 @@ class Reporting(object):
             
             # TODO: Make the reporting of accesibleGroundwaterThickness more generic.
             
+        # report elevation in pcraster map
+        self.top_uppermost_layer    = pcr.ifthen(self._model.landmask, self._model.modflow.top_layer_2   )
+        self.bottom_uppermost_layer = pcr.ifthen(self._model.landmask, self._model.modflow.bottom_layer_2)
+        self.bottom_lowermost_layer = pcr.ifthen(self._model.landmask, self._model.modflow.bottom_layer_1)
+
     def report(self):
 
         self.post_processing()

@@ -125,6 +125,39 @@ description[pcrglobwb_variable_name]       = None
 comment[pcrglobwb_variable_name]           = "Note that this calculated groundwater thickness is until a certain depth or aquifer bottom elevation. Please check the assumption."
 latex_symbol[pcrglobwb_variable_name]      = None
 
+# top_uppermost_layer (for two layer model)  
+pcrglobwb_variable_name = 'top_uppermost_layer'
+netcdf_short_name[pcrglobwb_variable_name] = 'top_elevation_of_uppermost_layer'
+netcdf_unit[pcrglobwb_variable_name]       = 'm'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = None
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = "Zero elevation values indicate mean sea level."
+latex_symbol[pcrglobwb_variable_name]      = None
+
+# bottom_uppermost_layer (for two layer model)
+pcrglobwb_variable_name = 'bottom_uppermost_layer'
+netcdf_short_name[pcrglobwb_variable_name] = 'bottom_elevation_of_uppermost_layer'
+netcdf_unit[pcrglobwb_variable_name]       = 'm'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = None
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = "Zero elevation values indicate mean sea level. This elevation is also the top_elevation_of_lowermost_layer."
+latex_symbol[pcrglobwb_variable_name]      = None
+
+# bottom_lowermost_layer (for two layer model)
+pcrglobwb_variable_name = 'bottom_lowermost_layer'
+netcdf_short_name[pcrglobwb_variable_name] = 'top_elevation_of_uppermost_layer'
+netcdf_unit[pcrglobwb_variable_name]       = 'm'
+netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
+netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
+netcdf_long_name[pcrglobwb_variable_name]  = None
+description[pcrglobwb_variable_name]       = None
+comment[pcrglobwb_variable_name]           = "Zero elevation values indicate mean sea level."
+latex_symbol[pcrglobwb_variable_name]      = None
+
 # test variable
 pcrglobwb_variable_name = 'test'
 netcdf_short_name[pcrglobwb_variable_name] = 'test'
