@@ -149,7 +149,7 @@ latex_symbol[pcrglobwb_variable_name]      = None
 
 # bottom_lowermost_layer (for two layer model)
 pcrglobwb_variable_name = 'bottom_lowermost_layer'
-netcdf_short_name[pcrglobwb_variable_name] = 'top_elevation_of_uppermost_layer'
+netcdf_short_name[pcrglobwb_variable_name] = 'bottom_elevation_of_lowermost_layer'
 netcdf_unit[pcrglobwb_variable_name]       = 'm'
 netcdf_monthly_total_unit[pcrglobwb_variable_name] = None 
 netcdf_yearly_total_unit[pcrglobwb_variable_name]  = None
