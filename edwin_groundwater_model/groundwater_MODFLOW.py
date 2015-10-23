@@ -582,7 +582,7 @@ class GroundwaterModflow(object):
                            ITMUNI = 4, LENUNI = 2, TSMULT = 1.0):
         
         # initiate pcraster modflow object if modflow is not called yet:
-        if self.modflow_has_been_called == False or self.modflow_converged == False:
+        if self.modflow_has_been_called == False: # or self.modflow_converged == False:
             self.initiate_modflow()
             self.modflow_has_been_called = True
 
