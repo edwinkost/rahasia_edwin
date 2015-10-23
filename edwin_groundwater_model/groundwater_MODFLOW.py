@@ -582,8 +582,9 @@ class GroundwaterModflow(object):
                            ITMUNI = 4, LENUNI = 2, TSMULT = 1.0):
         
         # initiate pcraster modflow object if modflow is not called yet:
-        if self.modflow_has_been_called == False: # or self.modflow_converged == False:
+        if self.modflow_has_been_called == False or self.modflow_converged == False:
             self.initiate_modflow()
+            self.modflow_has_been_called = True
 
         if simulation_type == "transient":
             logger.info("Preparing MODFLOW input for a transient simulation.")
@@ -620,11 +621,8 @@ class GroundwaterModflow(object):
             self.pcr_modflow.setInitialHead(initial_head, i)
         
         # set parameter values for the DIS package and PCG solver
+        self.pcr_modflow.setDISParameter(ITMUNI, LENUNI, PERLEN, NSTP, TSMULT, SSTR)
         self.pcr_modflow.setPCG(MXITER, ITERI, NPCOND, HCLOSE, RCLOSE, RELAX, NBPOL, DAMP)
-
-        if self.modflow_has_been_called == False:
-            self.pcr_modflow.setDISParameter(ITMUNI, LENUNI, PERLEN, NSTP, TSMULT, SSTR)
-            self.modflow_has_been_called = True
         #
         # Some notes about the values  
         #
@@ -705,7 +703,7 @@ class GroundwaterModflow(object):
             if self.iteration_RCLOSE == 0: self.iteration_HCLOSE += 1 
             
             # we have to reset modflow as we want to change the PCG setup
-            # self.modflow_has_been_called = False
+            self.modflow_has_been_called = False
             
             # for the steady state simulation, we still save the calculated head(s) 
             # so that we can use them as the initial estimate for the next iteration
