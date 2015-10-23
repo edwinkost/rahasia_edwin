@@ -703,7 +703,7 @@ class GroundwaterModflow(object):
             if self.iteration_RCLOSE == 0: self.iteration_HCLOSE += 1 
             
             # we have to reset modflow as we want to change the PCG setup
-            self.modflow_has_been_called = False
+            # self.modflow_has_been_called = False
             
             # for the steady state simulation, we still save the calculated head(s) 
             # so that we can use them as the initial estimate for the next iteration
