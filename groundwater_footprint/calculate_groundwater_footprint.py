@@ -18,7 +18,7 @@ landmask = pcr.defined(pcr.readmap(clone_map))
 class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map")
 #~ class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map")
 class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map)) 
-class_map    = pcr.uniqueid(landmask)
+class_map    = pcr.nomninal(pcr.uniqueid(landmask))
  
 # cell_area (unit: m2)
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
