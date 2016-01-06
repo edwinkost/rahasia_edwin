@@ -57,6 +57,8 @@ fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.1)
 # - set minimum value to 0.1
 fraction_reserved_recharge = pcr.max(0.1, fraction_reserved_recharge)
+# - set maximum value to 0.9
+fraction_reserved_recharge = pcr.min(0.9, fraction_reserved_recharge)
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map"), 0.0)
