@@ -5,12 +5,14 @@ import os
 import sys
 import pcraster as pcr
 
+import virtualOS as vos
+
 # set clone
 clone_map = "/data/hydroworld/PCRGLOBWB20/input5min/routing/lddsound_05min.map"
 pcr.setclone(clone_map)
 
 # class map used:
-class_map =  pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map")
+class_map =  vos.readPCRmapClone("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map", clone_map, "", None, False, None, True, False)
  
 # cell_area (unit: m2)
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
