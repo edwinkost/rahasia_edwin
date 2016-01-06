@@ -31,8 +31,8 @@ landmask = pcr.defined(pcr.readmap(clone_map))
 
 # class map used:
 #~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
-#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
-class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.extended.map"
+class_map_file_name    = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
+#~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.extended.map"
 #~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.map"
 class_map    = vos.readPCRmapClone(class_map_file_name, clone_map, tmp_directory, None, False, None, True, False)
 class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map)) 
@@ -45,9 +45,9 @@ segment_cell_area = pcr.areatotal(cell_area, class_map)
 # extent of aquifer/sedimentary basins:
 sedimentary_basin = pcr.cover(pcr.scalar(pcr.readmap("/home/sutan101/data/sed_extent/sed_extent.map")), 0.0)
 cell_area = sedimentary_basin * cell_area
-cell_area = pcr.ifthenelse(pcr.areatotal(cell_area, class_map) > 0.50 * segment_cell_area, cell_area, 0.0)
+#~ cell_area = pcr.ifthenelse(pcr.areatotal(cell_area, class_map) > 0.50 * segment_cell_area, cell_area, 0.0)
 
-class_map    = pcr.ifthen(sedimentary_basin > 0, class_map)
+#~ class_map    = pcr.ifthen(sedimentary_basin > 0, class_map)
 
 # fraction for groundwater recharge to be reserved to meet the environmental flow
 fraction_reserved_recharge = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/minimum_fraction_reserved_recharge10.5min.map")
@@ -69,8 +69,8 @@ fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.0)
 # - set minimum value to 0.00
 fraction_reserved_recharge = pcr.max(0.00, fraction_reserved_recharge)
-# - set maximum value to 0.75
-fraction_reserved_recharge = pcr.min(0.50, fraction_reserved_recharge)
+# - set maximum value to 0.90
+fraction_reserved_recharge = pcr.min(0.90, fraction_reserved_recharge)
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map"), 0.0)
