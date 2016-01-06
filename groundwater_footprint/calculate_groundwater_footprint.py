@@ -36,6 +36,6 @@ groundwater_contribution_to_environmental_flow       = fraction_reserved_recharg
 areal_groundwater_contribution_to_environmental_flow = pcr.areatotal(groundwater_contribution_to_environmental_flow * cell_area, class_map)/pcr.areatotal(cell_area, class_map) 
 
 # groundwater_foot_print_map
-groundwater_foot_print_map = areal_groundwater_abstraction/(areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)
+groundwater_foot_print_map = areal_groundwater_abstraction/(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow))
 pcr.aguila(groundwater_foot_print_map)
 pcr.report(groundwater_foot_print_map, "groundwater_foot_print_map.test.map")
