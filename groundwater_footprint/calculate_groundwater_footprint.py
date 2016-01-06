@@ -41,6 +41,10 @@ class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map))
 # cell_area (unit: m2)
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
 
+# extent of aquifer/sedimentary basins:
+sedimentary_basin = pcr.cover(pcr.scalar(pcr.readmap("/home/sutan101/data/sed_extent/sed_extent.map")), 0.0)
+cell_area = sedimentary_basin * cell_area
+
 # fraction for groundwater recharge to be reserved to meet the environmental flow
 fraction_reserved_recharge = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.5min.map")
 # - extrapolation
