@@ -12,8 +12,8 @@ clone_map = "/data/hydroworld/PCRGLOBWB20/input5min/routing/lddsound_05min.map"
 pcr.setclone(clone_map)
 
 # class map used:
-#~ class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map")
-class_map    = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map")
+class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map")
+#~ class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map")
 class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map)) 
  
 # cell_area (unit: m2)
