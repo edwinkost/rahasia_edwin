@@ -45,7 +45,7 @@ segment_cell_area = pcr.areatotal(cell_area, class_map)
 # extent of aquifer/sedimentary basins:
 sedimentary_basin = pcr.cover(pcr.scalar(pcr.readmap("/home/sutan101/data/sed_extent/sed_extent.map")), 0.0)
 cell_area = sedimentary_basin * cell_area
-cell_area = pcr.ifthenelse(pcr.areatotal(cell_area, class_map) > 0.10 * segment_cell_area, cell_area, 0.0)
+cell_area = pcr.ifthenelse(pcr.areatotal(cell_area, class_map) > 0.25 * segment_cell_area, cell_area, 0.0)
 
 class_map    = pcr.ifthen(sedimentary_basin > 0, class_map)
 
@@ -66,9 +66,9 @@ fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
                                        pcr.windowaverage(fraction_reserved_recharge, 0.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
                                        pcr.windowaverage(fraction_reserved_recharge, 0.5))
-fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.0)
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.1)
 # - set minimum value to 0.00
-fraction_reserved_recharge = pcr.max(0.00, fraction_reserved_recharge)
+fraction_reserved_recharge = pcr.max(0.10, fraction_reserved_recharge)
 # - set maximum value to 0.90
 fraction_reserved_recharge = pcr.min(0.90, fraction_reserved_recharge)
 
