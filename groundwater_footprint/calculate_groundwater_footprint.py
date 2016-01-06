@@ -18,7 +18,7 @@ class_map =  pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_f
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
 
 # fraction for groundwater recharge to be reserved to meet the environmental flow
-fraction_reserved_recharge = vos.readPCRmapClone("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map", clone_map, "tmp")
+fraction_reserved_recharge = vos.readPCRmapClone("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map", clone_map, "/scratch/edwin/tmp/tmp/")
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map")
