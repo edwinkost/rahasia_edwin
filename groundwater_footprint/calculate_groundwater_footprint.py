@@ -22,18 +22,18 @@ fraction_reserved_recharge = vos.readPCRmapClone("/nfsarchive/edwin-emergency-ba
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map")
-areal_groundwater_abstraction = pcr.areaaverage(groundwater_abstraction * cell_area, class_map)/pcr.areaaverage(cell_area, class_map)
+areal_groundwater_abstraction = pcr.areatotal(groundwater_abstraction * cell_area, class_map)/pcr.areatotal(cell_area, class_map)
 
 # areal groundwater recharge (unit: m/year)
 # cdo command: cdo setunit,m.year-1 -timavg -yearsum -selyear,1990/2010 ../../netcdf/gwRecharge_monthTot_output.nc gwRecharge_annuaTot_output_1990to2010.nc
 groundwater_recharge = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/gwRecharge_annuaTot_output_1990to2010.map") 
 # - ignore negative groundwater recharge (due to capillary rise)
 areal_groundwater_recharge = pcr.max(0.0, groundwater_recharge)
-areal_groundwater_recharge = pcr.areaaverage(groundwater_recharge * cell_area, class_map)/pcr.areaaverage(cell_area, class_map)
+areal_groundwater_recharge = pcr.areatotal(groundwater_recharge * cell_area, class_map)/pcr.areatotal(cell_area, class_map)
 
 # areal groundwater contribution to meet enviromental flow (unit: m/year)
 groundwater_contribution_to_environmental_flow       = fraction_reserved_recharge * groundwater_recharge
-areal_groundwater_contribution_to_environmental_flow = pcr.areaaverage(groundwater_contribution_to_environmental_flow * cell_area, class_map)/pcr.areaaverage(cell_area, class_map) 
+areal_groundwater_contribution_to_environmental_flow = pcr.areatotal(groundwater_contribution_to_environmental_flow * cell_area, class_map)/pcr.areatotal(cell_area, class_map) 
 
 # groundwater_foot_print_map
 groundwater_foot_print_map = cell_area * areal_groundwater_abstraction/(areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)
