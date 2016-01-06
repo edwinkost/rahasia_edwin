@@ -30,8 +30,8 @@ pcr.setclone(clone_map)
 landmask = pcr.defined(pcr.readmap(clone_map))
 
 # class map used:
-#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
-class_map_file_name    = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
+class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
+#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
 #~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.extended.map"
 #~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.map"
 class_map    = vos.readPCRmapClone(class_map_file_name, clone_map, tmp_directory, None, False, None, True, False)
