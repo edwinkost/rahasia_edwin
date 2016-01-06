@@ -82,6 +82,6 @@ areal_groundwater_contribution_to_environmental_flow = pcr.min(0.9 * areal_groun
 
 # groundwater_foot_print_map
 groundwater_foot_print_map = pcr.ifthen(landmask, \
-                             areal_groundwater_abstraction/(pcr.cover(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)), 0.0)
+                             areal_groundwater_abstraction/(pcr.cover(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)), 0.0))
 pcr.aguila(groundwater_foot_print_map)
 pcr.report(groundwater_foot_print_map, "groundwater_foot_print_map.test.map")
