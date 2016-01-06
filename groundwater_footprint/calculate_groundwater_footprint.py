@@ -20,7 +20,7 @@ class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map))
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
 
 # fraction for groundwater recharge to be reserved to meet the environmental flow
-fraction_reserved_recharge = vos.readPCRmapClone("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map", clone_map, "/scratch/edwin/tmp/tmp/")
+fraction_reserved_recharge = pcr.cover(vos.readPCRmapClone("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map", clone_map, "/scratch/edwin/tmp/tmp/"), 0.0)
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map"), 0.0)
