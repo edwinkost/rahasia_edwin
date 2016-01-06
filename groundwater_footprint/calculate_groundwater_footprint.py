@@ -35,5 +35,4 @@ areal_groundwater_contribution_to_environmental_flow = pcr.areaaverage(groundwat
 
 # groundwater_foot_print_map
 groundwater_foot_print_map = cell_area * (areal_groundwater_abstraction/(areal_recharge_rate - areal_environmental_flow)
-pcr.aguila(groundwater_foot_print_map)
 pcr.report(groundwater_foot_print_map, "groundwater_foot_print_map.test.map")
