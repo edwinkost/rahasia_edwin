@@ -7,6 +7,21 @@ import pcraster as pcr
 
 import virtualOS as vos
 
+# output directory and file_name
+output directory = "/scratch/edwin/tmp_test/"
+file_name        = "test.map"
+try:
+	os.makedirs(output directory)
+except:
+	pass
+
+# making temporary directory:
+tmp_directory = output directory + "/" + tmp
+try:
+	os.makedirs(tmp directory)
+except:
+	pass
+
 # set clone
 clone_map = "/data/hydroworld/PCRGLOBWB20/input5min/routing/lddsound_05min.map"
 pcr.setclone(clone_map)
@@ -15,16 +30,32 @@ pcr.setclone(clone_map)
 landmask = pcr.defined(pcr.readmap(clone_map))
 
 # class map used:
-class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map")
-#~ class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map")
+#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
+#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
+class_map_file_name    = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.extended.map"
+class_map    = vos.readPCRmapClone(class_map_file_name, clone_map, tmp directory, None, False, None, True, False)
 class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map)) 
-class_map    = pcr.nominal(pcr.uniqueid(landmask))
+#~ class_map    = pcr.nominal(pcr.uniqueid(landmask))
  
 # cell_area (unit: m2)
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
 
 # fraction for groundwater recharge to be reserved to meet the environmental flow
-fraction_reserved_recharge = pcr.cover(vos.readPCRmapClone("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map", clone_map, "/scratch/edwin/tmp/tmp/"), 0.0)
+fraction_reserved_recharge = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map")
+# - extrapolation
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.1))
+# - set minimum value to 0.1
+fraction_reserved_recharge = pcr.max(0.1, fraction_reserved_recharge)
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map"), 0.0)
