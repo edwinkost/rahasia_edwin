@@ -13,7 +13,7 @@ pcr.setclone(clone_map)
 class_map_file = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
  
 # cell_area (unit: m2)
-cell_area = pcr.readmap("") 
+cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
 
 # fraction for groundwater recharge to be reserved to meet the environmental flow
 fraction_reserved_recharge = pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/reservedrecharge/fraction_reserved_recharge10.map")
