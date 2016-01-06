@@ -55,9 +55,9 @@ fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
                                        pcr.windowaverage(fraction_reserved_recharge, 0.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
-                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+                                       pcr.windowaverage(fraction_reserved_recharge, 1.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
-                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+                                       pcr.windowaverage(fraction_reserved_recharge, 2.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.1)
 # - set minimum value to 0.1
 fraction_reserved_recharge = pcr.max(0.1, fraction_reserved_recharge)
@@ -78,6 +78,7 @@ areal_groundwater_recharge = pcr.areatotal(groundwater_recharge * cell_area, cla
 # areal groundwater contribution to meet enviromental flow (unit: m/year)
 groundwater_contribution_to_environmental_flow       = fraction_reserved_recharge * groundwater_recharge
 areal_groundwater_contribution_to_environmental_flow = pcr.areatotal(groundwater_contribution_to_environmental_flow * cell_area, class_map)/pcr.areatotal(cell_area, class_map) 
+areal_groundwater_contribution_to_environmental_flow = pcr.min(0.9 * areal_groundwater_recharge, areal_groundwater_contribution_to_environmental_flow)
 
 # groundwater_foot_print_map
 groundwater_foot_print_map = pcr.ifthen(landmask, \
