@@ -71,12 +71,12 @@ areal_groundwater_abstraction = pcr.areatotal(groundwater_abstraction * cell_are
 # areal groundwater recharge (unit: m/year)
 # cdo command: cdo setunit,m.year-1 -timavg -yearsum -selyear,1990/2010 ../../netcdf/gwRecharge_monthTot_output.nc gwRecharge_annuaTot_output_1990to2010.nc
 groundwater_recharge = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/gwRecharge_annuaTot_output_1990to2010.map"), 0.0) 
-# - ignore negative groundwater recharge (due to capillary rise)
-#~ groundwater_recharge = pcr.max(0.0, groundwater_recharge)
 areal_groundwater_recharge = pcr.areatotal(groundwater_recharge * cell_area, class_map)/pcr.areatotal(cell_area, class_map)
+# - ignore negative groundwater recharge (due to capillary rise)
+areal_groundwater_recharge = pcr.max(0.0, areal_groundwater_recharge)
 
 # areal groundwater contribution to meet enviromental flow (unit: m/year)
-groundwater_contribution_to_environmental_flow       = fraction_reserved_recharge * groundwater_recharge
+groundwater_contribution_to_environmental_flow       = pcr.max(0.0, fraction_reserved_recharge * groundwater_recharge)
 areal_groundwater_contribution_to_environmental_flow = pcr.areatotal(groundwater_contribution_to_environmental_flow * cell_area, class_map)/pcr.areatotal(cell_area, class_map) 
 areal_groundwater_contribution_to_environmental_flow = pcr.min(0.9 * areal_groundwater_recharge, areal_groundwater_contribution_to_environmental_flow)
 
