@@ -8,15 +8,15 @@ import pcraster as pcr
 import virtualOS as vos
 
 # output directory and file_name
-output directory = "/scratch/edwin/tmp_test/"
+output_directory = "/scratch/edwin/tmp_test/"
 file_name        = "test.map"
 try:
-	os.makedirs(output directory)
+	os.makedirs(output_directory)
 except:
 	pass
 
 # making temporary directory:
-tmp_directory = output directory + "/" + tmp
+tmp_directory = output_directory + "/" + tmp
 try:
 	os.makedirs(tmp directory)
 except:
