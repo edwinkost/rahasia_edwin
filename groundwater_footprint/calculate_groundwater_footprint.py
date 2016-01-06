@@ -59,12 +59,12 @@ fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.1)
 fraction_reserved_recharge = pcr.max(0.1, fraction_reserved_recharge)
 
 # areal_groundwater_abstraction (unit: m/year)
-groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map"), 0.0)
+groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_2000_to_2010/totalGroundwaterAbstraction_annuaTot_output_2000to2010.map"), 0.0)
 areal_groundwater_abstraction = pcr.areatotal(groundwater_abstraction * cell_area, class_map)/pcr.areatotal(cell_area, class_map)
 
 # areal groundwater recharge (unit: m/year)
 # cdo command: cdo setunit,m.year-1 -timavg -yearsum -selyear,1990/2010 ../../netcdf/gwRecharge_monthTot_output.nc gwRecharge_annuaTot_output_1990to2010.nc
-groundwater_recharge = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/gwRecharge_annuaTot_output_1990to2010.map"), 0.0) 
+groundwater_recharge = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_2000_to_2010/gwRecharge_annuaTot_output_2000to2010.map"), 0.0) 
 # - ignore negative groundwater recharge (due to capillary rise)
 groundwater_recharge = pcr.max(0.0, groundwater_recharge)
 areal_groundwater_recharge = pcr.areatotal(groundwater_recharge * cell_area, class_map)/pcr.areatotal(cell_area, class_map)
