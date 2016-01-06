@@ -55,9 +55,13 @@ fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
                                        pcr.windowaverage(fraction_reserved_recharge, 0.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
-                                       pcr.windowaverage(fraction_reserved_recharge, 1.5))
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
-                                       pcr.windowaverage(fraction_reserved_recharge, 2.5))
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
+fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, \
+                                       pcr.windowaverage(fraction_reserved_recharge, 0.5))
 fraction_reserved_recharge = pcr.cover(fraction_reserved_recharge, 0.1)
 # - set minimum value to 0.1
 fraction_reserved_recharge = pcr.max(0.1, fraction_reserved_recharge)
@@ -82,6 +86,6 @@ areal_groundwater_contribution_to_environmental_flow = pcr.min(0.9 * areal_groun
 
 # groundwater_foot_print_map
 groundwater_foot_print_map = pcr.ifthen(landmask, \
-                             areal_groundwater_abstraction/(pcr.cover(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow), 0.0)))
+                             areal_groundwater_abstraction/(pcr.cover(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow), 0.001)))
 pcr.aguila(groundwater_foot_print_map)
 pcr.report(groundwater_foot_print_map, "groundwater_foot_print_map.test.map")
