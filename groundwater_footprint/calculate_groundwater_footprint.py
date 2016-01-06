@@ -66,7 +66,7 @@ fraction_reserved_recharge = pcr.min(0.9, fraction_reserved_recharge)
 
 # areal_groundwater_abstraction (unit: m/year)
 groundwater_abstraction = pcr.cover(pcr.readmap("/nfsarchive/edwin-emergency-backup-DO-NOT-DELETE/rapid/edwin/05min_runs_results/2015_04_27/non_natural_2015_04_27/global/analysis/avg_values_1990_to_2010/totalGroundwaterAbstraction_annuaTot_output_1990to2010.map"), 0.0)
-areal_groundwater_abstraction = pcr.areatotal(groundwater_abstraction * cell_area, class_map)/pcr.areatotal(cell_area, class_map)
+areal_groundwater_abstraction = pcr.cover(pcr.areatotal(groundwater_abstraction * cell_area, class_map)/pcr.areatotal(cell_area, class_map), 0.0)
 
 # areal groundwater recharge (unit: m/year)
 # cdo command: cdo setunit,m.year-1 -timavg -yearsum -selyear,1990/2010 ../../netcdf/gwRecharge_monthTot_output.nc gwRecharge_annuaTot_output_1990to2010.nc
@@ -82,6 +82,6 @@ areal_groundwater_contribution_to_environmental_flow = pcr.min(0.9 * areal_groun
 
 # groundwater_foot_print_map
 groundwater_foot_print_map = pcr.ifthen(landmask, \
-                             areal_groundwater_abstraction/(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)))
+                             areal_groundwater_abstraction/(pcr.cover(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)), 0.0)
 pcr.aguila(groundwater_foot_print_map)
 pcr.report(groundwater_foot_print_map, "groundwater_foot_print_map.test.map")
