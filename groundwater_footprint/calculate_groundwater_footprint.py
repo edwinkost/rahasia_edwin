@@ -11,10 +11,14 @@ import virtualOS as vos
 clone_map = "/data/hydroworld/PCRGLOBWB20/input5min/routing/lddsound_05min.map"
 pcr.setclone(clone_map)
 
+# landmask map
+landmask = pcr.defined(pcr.readmap(clone_map))
+
 # class map used:
 class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map")
 #~ class_map = pcr.readmap("/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map")
 class_map    = pcr.ifthen(pcr.scalar(class_map) > 0.0, pcr.nominal(class_map)) 
+class_map    = pcr.uniqueid(landmask)
  
 # cell_area (unit: m2)
 cell_area = pcr.readmap("/data/hydroworld/PCRGLOBWB20/input5min/routing/cellsize05min.correct.map") 
@@ -38,6 +42,7 @@ groundwater_contribution_to_environmental_flow       = fraction_reserved_recharg
 areal_groundwater_contribution_to_environmental_flow = pcr.areatotal(groundwater_contribution_to_environmental_flow * cell_area, class_map)/pcr.areatotal(cell_area, class_map) 
 
 # groundwater_foot_print_map
-groundwater_foot_print_map = areal_groundwater_abstraction/(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow))
+groundwater_foot_print_map = pcr.ifthen(landmask, \
+                             areal_groundwater_abstraction/(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow)))
 pcr.aguila(groundwater_foot_print_map)
 pcr.report(groundwater_foot_print_map, "groundwater_foot_print_map.test.map")
