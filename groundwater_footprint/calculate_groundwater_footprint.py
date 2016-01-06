@@ -45,7 +45,7 @@ segment_cell_area = pcr.areatotal(cell_area, class_map)
 # extent of aquifer/sedimentary basins:
 sedimentary_basin = pcr.cover(pcr.scalar(pcr.readmap("/home/sutan101/data/sed_extent/sed_extent.map")), 0.0)
 cell_area = sedimentary_basin * cell_area
-#~ cell_area = pcr.ifthenelse(pcr.areatotal(cell_area, class_map) > 0.50 * segment_cell_area, cell_area, 0.0)
+cell_area = pcr.ifthenelse(pcr.areatotal(cell_area, class_map) > 0.50 * segment_cell_area, cell_area, 0.0)
 
 #~ class_map    = pcr.ifthen(sedimentary_basin > 0, class_map)
 
