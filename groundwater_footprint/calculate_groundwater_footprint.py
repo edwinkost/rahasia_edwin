@@ -18,7 +18,7 @@ except:
 # making temporary directory:
 tmp_directory = output_directory + "/" + tmp
 try:
-	os.makedirs(tmp directory)
+	os.makedirs(tmp_directory)
 except:
 	pass
 
