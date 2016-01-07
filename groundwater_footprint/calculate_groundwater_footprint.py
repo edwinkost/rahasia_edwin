@@ -99,12 +99,12 @@ areal_groundwater_contribution_to_environmental_flow = pcr.min(0.1 * areal_groun
 # groundwater stress map (dimensionless)
 groundwater_stress_map = pcr.ifthen(landmask, \
                              areal_groundwater_abstraction/(pcr.cover(pcr.max(0.001, areal_groundwater_recharge - areal_groundwater_contribution_to_environmental_flow), 0.001)))
-groundwater_stress_map_filename = output_file_name + str(sys.argv[2]) + ".groundwater_stress.map"
+groundwater_stress_map_filename = output_directory + "/" + str(sys.argv[2]) + ".groundwater_stress.map"
 pcr.report(groundwater_stress_map, groundwater_stress_map_filename)
 pcr.aguila(groundwater_stress_map)
 
 # groundwater footprint map (km2)
 groundwater_footprint_map = groundwater_stress_map * pcr.cover(pcr.areatotal(cell_area, class_map), 0.0) / (1000. * 1000.)
-groundwater_footprint_map_filename = output_file_name + str(sys.argv[2]) + ".groundwater_footprint.km2.map"
+groundwater_footprint_map_filename = output_directory + "/" + str(sys.argv[2]) + ".groundwater_footprint.km2.map"
 pcr.report(groundwater_footprint_map, groundwater_footprint_map_filename)
 pcr.aguila(groundwater_footprint_map)
