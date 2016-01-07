@@ -7,17 +7,6 @@ import pcraster as pcr
 
 import virtualOS as vos
 
-# class map file name:
-#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
-#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
-#~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.extended.map"
-#~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.map"
-class_map_file_name = str(sys.argv[1])
-class_map_default_folder = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/" 
-if class_map_file_name == "state": class_map_file_name = class_map_default_folder + "/Aqueduct_States.map"
-if class_map_file_name == "drainage_unit": class_map_file_name = class_map_default_folder + "/Aqueduct_GDBD.map"
-if class_map_file_name == "aquifer": class_map_file_name = class_map_default_folder + "/why_wgs1984_BUENO.map"
-
 # output file name
 output_file_name = str(sys.argv[1])
 output_directory = os.path.dirname(output_file_name)
@@ -39,6 +28,17 @@ pcr.setclone(clone_map)
 
 # landmask map
 landmask = pcr.defined(pcr.readmap(clone_map))
+
+# class map file name:
+#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_States.map"
+#~ class_map_file_name = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/Aqueduct_GDBD.map"
+#~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.extended.map"
+#~ class_map_file_name = "/home/sutan101/data/processing_whymap/version_19september2014/major_aquifer_30min.map"
+class_map_file_name = str(sys.argv[2])
+class_map_default_folder = "/home/sutan101/data/aqueduct_gis_layers/aqueduct_shp_from_marta/" 
+if class_map_file_name == "state": class_map_file_name = class_map_default_folder + "/Aqueduct_States.map"
+if class_map_file_name == "drainage_unit": class_map_file_name = class_map_default_folder + "/Aqueduct_GDBD.map"
+if class_map_file_name == "aquifer": class_map_file_name = class_map_default_folder + "/why_wgs1984_BUENO.map"
 
 # reading the class map
 class_map    = pcr.nominal(pcr.uniqueid(landmask))
