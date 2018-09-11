@@ -1,0 +1,2738 @@
+ * PROCESSING WATER DEMAND
+ * obtaining consumption per capita for industry under SSP1
+ * all data on water demand processed
+   industry water demand for the year 2010 amounts to 946.0 km3 gross and 285.6 km3 net per year
+
+   * netCDF file /storagetemp/rens/SSP1/WaterDemand/water_demand_industry_GrossDemand_SSP1_2010-2099_5min.nc initialized *
+   * netCDF file /storagetemp/rens/SSP1/WaterDemand/water_demand_industry_NettoDemand_SSP1_2010-2099_5min.nc initialized *
+ - 2012    total population in billions for current year 2012 and reference: 7.004 6.873
+   and minimum and maximum between them: -18142, 177871
+   industry water demand for the year 2012 amounts to 953.3 km3 gross and 287.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2020    total population in billions for current year 2020 and reference: 7.528 6.873
+   and minimum and maximum between them: -297712, 1337912
+   industry water demand for the year 2020 amounts to 1015.4 km3 gross and 323.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2021    total population in billions for current year 2021 and reference: 7.577 6.873
+   and minimum and maximum between them: -280301, 1363699
+   industry water demand for the year 2021 amounts to 1021.9 km3 gross and 327.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2022    total population in billions for current year 2022 and reference: 7.625 6.873
+   and minimum and maximum between them: -262891, 1389487
+   industry water demand for the year 2022 amounts to 1028.4 km3 gross and 331.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2023    total population in billions for current year 2023 and reference: 7.674 6.873
+   and minimum and maximum between them: -259437, 1415274
+   industry water demand for the year 2023 amounts to 1034.9 km3 gross and 335.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2024    total population in billions for current year 2024 and reference: 7.723 6.873
+   and minimum and maximum between them: -257002, 1441062
+   industry water demand for the year 2024 amounts to 1041.3 km3 gross and 338.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2025    total population in billions for current year 2025 and reference: 7.772 6.873
+   and minimum and maximum between them: -254567, 1466849
+   industry water demand for the year 2025 amounts to 1047.7 km3 gross and 342.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2026    total population in billions for current year 2026 and reference: 7.820 6.873
+   and minimum and maximum between them: -252133, 1492637
+   industry water demand for the year 2026 amounts to 1054.0 km3 gross and 346.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2027    total population in billions for current year 2027 and reference: 7.869 6.873
+   and minimum and maximum between them: -249698, 1518424
+   industry water demand for the year 2027 amounts to 1060.2 km3 gross and 350.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2028    total population in billions for current year 2028 and reference: 7.917 6.873
+   and minimum and maximum between them: -247264, 1544212
+   industry water demand for the year 2028 amounts to 1066.5 km3 gross and 353.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2029    total population in billions for current year 2029 and reference: 7.966 6.873
+   and minimum and maximum between them: -244829, 1590090
+   industry water demand for the year 2029 amounts to 1072.7 km3 gross and 357.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2050    total population in billions for current year 2050 and reference: 8.498 6.873
+   and minimum and maximum between them: -238167, 2984108
+   industry water demand for the year 2050 amounts to 1171.4 km3 gross and 417.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2051    total population in billions for current year 2051 and reference: 8.496 6.873
+   and minimum and maximum between them: -255074, 3026010
+   industry water demand for the year 2051 amounts to 1173.9 km3 gross and 419.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2052    total population in billions for current year 2052 and reference: 8.493 6.873
+   and minimum and maximum between them: -275201, 3067913
+   industry water demand for the year 2052 amounts to 1176.4 km3 gross and 421.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2053    total population in billions for current year 2053 and reference: 8.491 6.873
+   and minimum and maximum between them: -298527, 3109815
+   industry water demand for the year 2053 amounts to 1178.9 km3 gross and 422.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2054    total population in billions for current year 2054 and reference: 8.488 6.873
+   and minimum and maximum between them: -321853, 3151717
+   industry water demand for the year 2054 amounts to 1181.4 km3 gross and 424.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2055    total population in billions for current year 2055 and reference: 8.486 6.873
+   and minimum and maximum between them: -345179, 3193620
+   industry water demand for the year 2055 amounts to 1183.8 km3 gross and 426.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2056    total population in billions for current year 2056 and reference: 8.483 6.873
+   and minimum and maximum between them: -368505, 3235522
+   industry water demand for the year 2056 amounts to 1186.2 km3 gross and 427.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2057    total population in billions for current year 2057 and reference: 8.480 6.873
+   and minimum and maximum between them: -391831, 3277425
+   industry water demand for the year 2057 amounts to 1188.6 km3 gross and 429.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2058    total population in billions for current year 2058 and reference: 8.478 6.873
+   and minimum and maximum between them: -415157, 3319327
+   industry water demand for the year 2058 amounts to 1191.0 km3 gross and 431.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2059    total population in billions for current year 2059 and reference: 8.475 6.873
+   and minimum and maximum between them: -438483, 3361229
+   industry water demand for the year 2059 amounts to 1193.4 km3 gross and 432.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2015    total population in billions for current year 2015 and reference: 7.201 6.873
+   and minimum and maximum between them: -358658, 1127921
+   industry water demand for the year 2015 amounts to 976.6 km3 gross and 301.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2040    total population in billions for current year 2040 and reference: 8.348 6.873
+   and minimum and maximum between them: -221370, 2403853
+   industry water demand for the year 2040 amounts to 1132.5 km3 gross and 393.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2041    total population in billions for current year 2041 and reference: 8.363 6.873
+   and minimum and maximum between them: -219612, 2461879
+   industry water demand for the year 2041 amounts to 1136.5 km3 gross and 395.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2042    total population in billions for current year 2042 and reference: 8.378 6.873
+   and minimum and maximum between them: -217854, 2519904
+   industry water demand for the year 2042 amounts to 1140.4 km3 gross and 398.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2043    total population in billions for current year 2043 and reference: 8.393 6.873
+   and minimum and maximum between them: -216096, 2577930
+   industry water demand for the year 2043 amounts to 1144.3 km3 gross and 400.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2044    total population in billions for current year 2044 and reference: 8.408 6.873
+   and minimum and maximum between them: -214338, 2635955
+   industry water demand for the year 2044 amounts to 1148.2 km3 gross and 403.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2045    total population in billions for current year 2045 and reference: 8.423 6.873
+   and minimum and maximum between them: -212580, 2693980
+   industry water demand for the year 2045 amounts to 1152.1 km3 gross and 405.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2046    total population in billions for current year 2046 and reference: 8.438 6.873
+   and minimum and maximum between them: -210822, 2752006
+   industry water demand for the year 2046 amounts to 1156.0 km3 gross and 408.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2047    total population in billions for current year 2047 and reference: 8.453 6.873
+   and minimum and maximum between them: -209064, 2810031
+   industry water demand for the year 2047 amounts to 1159.9 km3 gross and 410.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2048    total population in billions for current year 2048 and reference: 8.468 6.873
+   and minimum and maximum between them: -211548, 2868057
+   industry water demand for the year 2048 amounts to 1163.7 km3 gross and 412.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2049    total population in billions for current year 2049 and reference: 8.483 6.873
+   and minimum and maximum between them: -224858, 2926082
+   industry water demand for the year 2049 amounts to 1167.6 km3 gross and 415.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2019    total population in billions for current year 2019 and reference: 7.463 6.873
+   and minimum and maximum between them: -316476, 1295913
+   industry water demand for the year 2019 amounts to 1007.6 km3 gross and 319.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2017    total population in billions for current year 2017 and reference: 7.331 6.873
+   and minimum and maximum between them: -338985, 1211917
+   industry water demand for the year 2017 amounts to 992.2 km3 gross and 310.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2013    total population in billions for current year 2013 and reference: 7.070 6.873
+   and minimum and maximum between them: -378331, 1043925
+   industry water demand for the year 2013 amounts to 961.1 km3 gross and 292.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2030    total population in billions for current year 2030 and reference: 8.015 6.873
+   and minimum and maximum between them: -242394, 1672572
+   industry water demand for the year 2030 amounts to 1078.9 km3 gross and 361.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2031    total population in billions for current year 2031 and reference: 8.048 6.873
+   and minimum and maximum between them: -240292, 1745700
+   industry water demand for the year 2031 amounts to 1084.3 km3 gross and 364.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2032    total population in billions for current year 2032 and reference: 8.081 6.873
+   and minimum and maximum between them: -238190, 1818828
+   industry water demand for the year 2032 amounts to 1089.8 km3 gross and 367.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2033    total population in billions for current year 2033 and reference: 8.115 6.873
+   and minimum and maximum between them: -236087, 1891956
+   industry water demand for the year 2033 amounts to 1095.1 km3 gross and 371.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2034    total population in billions for current year 2034 and reference: 8.148 6.873
+   and minimum and maximum between them: -233985, 1965084
+   industry water demand for the year 2034 amounts to 1100.5 km3 gross and 374.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2035    total population in billions for current year 2035 and reference: 8.181 6.873
+   and minimum and maximum between them: -231882, 2038212
+   industry water demand for the year 2035 amounts to 1105.9 km3 gross and 377.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2036    total population in billions for current year 2036 and reference: 8.214 6.873
+   and minimum and maximum between them: -229780, 2111341
+   industry water demand for the year 2036 amounts to 1111.2 km3 gross and 380.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2037    total population in billions for current year 2037 and reference: 8.248 6.873
+   and minimum and maximum between them: -227677, 2184469
+   industry water demand for the year 2037 amounts to 1116.6 km3 gross and 383.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2038    total population in billions for current year 2038 and reference: 8.281 6.873
+   and minimum and maximum between them: -225575, 2257597
+   industry water demand for the year 2038 amounts to 1121.9 km3 gross and 387.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2039    total population in billions for current year 2039 and reference: 8.314 6.873
+   and minimum and maximum between them: -223473, 2330725
+   industry water demand for the year 2039 amounts to 1127.2 km3 gross and 390.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2080    total population in billions for current year 2080 and reference: 7.985 6.873
+   and minimum and maximum between them: -977054, 3782368
+   industry water demand for the year 2080 amounts to 1196.6 km3 gross and 443.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2081    total population in billions for current year 2081 and reference: 7.941 6.873
+   and minimum and maximum between them: -1002863, 3779160
+   industry water demand for the year 2081 amounts to 1193.8 km3 gross and 442.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2082    total population in billions for current year 2082 and reference: 7.897 6.873
+   and minimum and maximum between them: -1028671, 3775952
+   industry water demand for the year 2082 amounts to 1190.8 km3 gross and 441.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2083    total population in billions for current year 2083 and reference: 7.853 6.873
+   and minimum and maximum between them: -1054480, 3772744
+   industry water demand for the year 2083 amounts to 1187.9 km3 gross and 441.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2084    total population in billions for current year 2084 and reference: 7.809 6.873
+   and minimum and maximum between them: -1080288, 3769537
+   industry water demand for the year 2084 amounts to 1184.9 km3 gross and 440.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2085    total population in billions for current year 2085 and reference: 7.765 6.873
+   and minimum and maximum between them: -1106097, 3766329
+   industry water demand for the year 2085 amounts to 1181.9 km3 gross and 439.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2086    total population in billions for current year 2086 and reference: 7.721 6.873
+   and minimum and maximum between them: -1131905, 3763121
+   industry water demand for the year 2086 amounts to 1178.9 km3 gross and 438.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2087    total population in billions for current year 2087 and reference: 7.677 6.873
+   and minimum and maximum between them: -1157714, 3759913
+   industry water demand for the year 2087 amounts to 1175.8 km3 gross and 437.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2088    total population in billions for current year 2088 and reference: 7.633 6.873
+   and minimum and maximum between them: -1183522, 3756705
+   industry water demand for the year 2088 amounts to 1172.8 km3 gross and 436.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2089    total population in billions for current year 2089 and reference: 7.589 6.873
+   and minimum and maximum between them: -1209331, 3753498
+   industry water demand for the year 2089 amounts to 1169.7 km3 gross and 435.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2060    total population in billions for current year 2060 and reference: 8.472 6.873
+   and minimum and maximum between them: -461809, 3403132
+   industry water demand for the year 2060 amounts to 1195.7 km3 gross and 434.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2061    total population in billions for current year 2061 and reference: 8.455 6.873
+   and minimum and maximum between them: -487484, 3429866
+   industry water demand for the year 2061 amounts to 1196.7 km3 gross and 435.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2062    total population in billions for current year 2062 and reference: 8.437 6.873
+   and minimum and maximum between them: -513160, 3456600
+   industry water demand for the year 2062 amounts to 1197.7 km3 gross and 436.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2063    total population in billions for current year 2063 and reference: 8.420 6.873
+   and minimum and maximum between them: -538835, 3483334
+   industry water demand for the year 2063 amounts to 1198.7 km3 gross and 437.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2064    total population in billions for current year 2064 and reference: 8.402 6.873
+   and minimum and maximum between them: -564510, 3510068
+   industry water demand for the year 2064 amounts to 1199.7 km3 gross and 438.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2065    total population in billions for current year 2065 and reference: 8.385 6.873
+   and minimum and maximum between them: -590185, 3536802
+   industry water demand for the year 2065 amounts to 1200.6 km3 gross and 439.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2066    total population in billions for current year 2066 and reference: 8.367 6.873
+   and minimum and maximum between them: -615860, 3563536
+   industry water demand for the year 2066 amounts to 1201.5 km3 gross and 439.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2067    total population in billions for current year 2067 and reference: 8.350 6.873
+   and minimum and maximum between them: -641536, 3590270
+   industry water demand for the year 2067 amounts to 1202.4 km3 gross and 440.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2068    total population in billions for current year 2068 and reference: 8.332 6.873
+   and minimum and maximum between them: -667211, 3617004
+   industry water demand for the year 2068 amounts to 1203.2 km3 gross and 441.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2069    total population in billions for current year 2069 and reference: 8.315 6.873
+   and minimum and maximum between them: -692886, 3643738
+   industry water demand for the year 2069 amounts to 1204.1 km3 gross and 442.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2016    total population in billions for current year 2016 and reference: 7.266 6.873
+   and minimum and maximum between them: -348821, 1169919
+   industry water demand for the year 2016 amounts to 984.4 km3 gross and 305.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2010    total population in billions for current year 2010 and reference: 6.873 6.873
+   and minimum and maximum between them: 0, 0
+   industry water demand for the year 2010 amounts to 940.9 km3 gross and 279.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2011    total population in billions for current year 2011 and reference: 6.939 6.873
+   and minimum and maximum between them: -9034, 88780
+   industry water demand for the year 2011 amounts to 947.1 km3 gross and 283.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2090    total population in billions for current year 2090 and reference: 7.545 6.873
+   and minimum and maximum between them: -1235139, 3750290
+   industry water demand for the year 2090 amounts to 1166.6 km3 gross and 434.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2091    total population in billions for current year 2091 and reference: 7.491 6.873
+   and minimum and maximum between them: -1260766, 3734188
+   industry water demand for the year 2091 amounts to 1161.9 km3 gross and 433.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2092    total population in billions for current year 2092 and reference: 7.437 6.873
+   and minimum and maximum between them: -1286393, 3718086
+   industry water demand for the year 2092 amounts to 1157.1 km3 gross and 431.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2093    total population in billions for current year 2093 and reference: 7.383 6.873
+   and minimum and maximum between them: -1312020, 3701985
+   industry water demand for the year 2093 amounts to 1152.4 km3 gross and 429.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2094    total population in billions for current year 2094 and reference: 7.329 6.873
+   and minimum and maximum between them: -1337647, 3685883
+   industry water demand for the year 2094 amounts to 1147.6 km3 gross and 428.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2095    total population in billions for current year 2095 and reference: 7.275 6.873
+   and minimum and maximum between them: -1363274, 3669781
+   industry water demand for the year 2095 amounts to 1142.7 km3 gross and 426.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2096    total population in billions for current year 2096 and reference: 7.222 6.873
+   and minimum and maximum between them: -1388900, 3653680
+   industry water demand for the year 2096 amounts to 1137.9 km3 gross and 424.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2097    total population in billions for current year 2097 and reference: 7.168 6.873
+   and minimum and maximum between them: -1414527, 3637578
+   industry water demand for the year 2097 amounts to 1133.1 km3 gross and 423.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2098    total population in billions for current year 2098 and reference: 7.114 6.873
+   and minimum and maximum between them: -1440154, 3621476
+   industry water demand for the year 2098 amounts to 1128.2 km3 gross and 421.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2099    total population in billions for current year 2099 and reference: 7.060 6.873
+   and minimum and maximum between them: -1465781, 3605374
+   industry water demand for the year 2099 amounts to 1123.3 km3 gross and 419.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2018    total population in billions for current year 2018 and reference: 7.397 6.873
+   and minimum and maximum between them: -329148, 1253915
+   industry water demand for the year 2018 amounts to 999.9 km3 gross and 314.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2070    total population in billions for current year 2070 and reference: 8.297 6.873
+   and minimum and maximum between them: -718561, 3670472
+   industry water demand for the year 2070 amounts to 1204.9 km3 gross and 443.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2071    total population in billions for current year 2071 and reference: 8.266 6.873
+   and minimum and maximum between them: -744411, 3681662
+   industry water demand for the year 2071 amounts to 1204.2 km3 gross and 443.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2072    total population in billions for current year 2072 and reference: 8.235 6.873
+   and minimum and maximum between them: -770260, 3692851
+   industry water demand for the year 2072 amounts to 1203.5 km3 gross and 443.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2073    total population in billions for current year 2073 and reference: 8.203 6.873
+   and minimum and maximum between them: -796109, 3704041
+   industry water demand for the year 2073 amounts to 1202.7 km3 gross and 443.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2074    total population in billions for current year 2074 and reference: 8.172 6.873
+   and minimum and maximum between them: -821959, 3715230
+   industry water demand for the year 2074 amounts to 1201.9 km3 gross and 443.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2075    total population in billions for current year 2075 and reference: 8.141 6.873
+   and minimum and maximum between them: -847808, 3726420
+   industry water demand for the year 2075 amounts to 1201.1 km3 gross and 443.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2076    total population in billions for current year 2076 and reference: 8.110 6.873
+   and minimum and maximum between them: -873657, 3737610
+   industry water demand for the year 2076 amounts to 1200.3 km3 gross and 443.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2077    total population in billions for current year 2077 and reference: 8.079 6.873
+   and minimum and maximum between them: -899507, 3748799
+   industry water demand for the year 2077 amounts to 1199.4 km3 gross and 443.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2078    total population in billions for current year 2078 and reference: 8.048 6.873
+   and minimum and maximum between them: -925356, 3759989
+   industry water demand for the year 2078 amounts to 1198.5 km3 gross and 443.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2079    total population in billions for current year 2079 and reference: 8.016 6.873
+   and minimum and maximum between them: -951205, 3771178
+   industry water demand for the year 2079 amounts to 1197.6 km3 gross and 443.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2014    total population in billions for current year 2014 and reference: 7.135 6.873
+   and minimum and maximum between them: -368494, 1085923
+   industry water demand for the year 2014 amounts to 968.9 km3 gross and 296.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ * obtaining consumption per capita for domestic under SSP1
+ * all data on water demand processed
+   domestic water demand for the year 2010 amounts to 458.1 km3 gross and 266.4 km3 net per year
+
+   * netCDF file /storagetemp/rens/SSP1/WaterDemand/water_demand_domestic_GrossDemand_SSP1_2010-2099_5min.nc initialized *
+   * netCDF file /storagetemp/rens/SSP1/WaterDemand/water_demand_domestic_NettoDemand_SSP1_2010-2099_5min.nc initialized *
+ - 2012    total population in billions for current year 2012 and reference: 7.004 6.873
+   and minimum and maximum between them: -18142, 177871
+   domestic water demand for the year 2012 amounts to 472.2 km3 gross and 281.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2020    total population in billions for current year 2020 and reference: 7.528 6.873
+   and minimum and maximum between them: -297712, 1337912
+   domestic water demand for the year 2020 amounts to 545.7 km3 gross and 344.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2021    total population in billions for current year 2021 and reference: 7.577 6.873
+   and minimum and maximum between them: -280301, 1363699
+   domestic water demand for the year 2021 amounts to 553.5 km3 gross and 351.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2022    total population in billions for current year 2022 and reference: 7.625 6.873
+   and minimum and maximum between them: -262891, 1389487
+   domestic water demand for the year 2022 amounts to 561.2 km3 gross and 358.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2023    total population in billions for current year 2023 and reference: 7.674 6.873
+   and minimum and maximum between them: -259437, 1415274
+   domestic water demand for the year 2023 amounts to 568.7 km3 gross and 365.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2024    total population in billions for current year 2024 and reference: 7.723 6.873
+   and minimum and maximum between them: -257002, 1441062
+   domestic water demand for the year 2024 amounts to 576.3 km3 gross and 371.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2025    total population in billions for current year 2025 and reference: 7.772 6.873
+   and minimum and maximum between them: -254567, 1466849
+   domestic water demand for the year 2025 amounts to 583.7 km3 gross and 378.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2026    total population in billions for current year 2026 and reference: 7.820 6.873
+   and minimum and maximum between them: -252133, 1492637
+   domestic water demand for the year 2026 amounts to 591.1 km3 gross and 384.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2027    total population in billions for current year 2027 and reference: 7.869 6.873
+   and minimum and maximum between them: -249698, 1518424
+   domestic water demand for the year 2027 amounts to 598.5 km3 gross and 391.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2028    total population in billions for current year 2028 and reference: 7.917 6.873
+   and minimum and maximum between them: -247264, 1544212
+   domestic water demand for the year 2028 amounts to 605.7 km3 gross and 397.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2029    total population in billions for current year 2029 and reference: 7.966 6.873
+   and minimum and maximum between them: -244829, 1590090
+   domestic water demand for the year 2029 amounts to 613.0 km3 gross and 403.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2050    total population in billions for current year 2050 and reference: 8.498 6.873
+   and minimum and maximum between them: -238167, 2984108
+   domestic water demand for the year 2050 amounts to 724.7 km3 gross and 503.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2051    total population in billions for current year 2051 and reference: 8.496 6.873
+   and minimum and maximum between them: -255074, 3026010
+   domestic water demand for the year 2051 amounts to 727.5 km3 gross and 506.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2052    total population in billions for current year 2052 and reference: 8.493 6.873
+   and minimum and maximum between them: -275201, 3067913
+   domestic water demand for the year 2052 amounts to 730.3 km3 gross and 509.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2053    total population in billions for current year 2053 and reference: 8.491 6.873
+   and minimum and maximum between them: -298527, 3109815
+   domestic water demand for the year 2053 amounts to 733.0 km3 gross and 511.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2054    total population in billions for current year 2054 and reference: 8.488 6.873
+   and minimum and maximum between them: -321853, 3151717
+   domestic water demand for the year 2054 amounts to 735.6 km3 gross and 514.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2055    total population in billions for current year 2055 and reference: 8.486 6.873
+   and minimum and maximum between them: -345179, 3193620
+   domestic water demand for the year 2055 amounts to 738.2 km3 gross and 517.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2056    total population in billions for current year 2056 and reference: 8.483 6.873
+   and minimum and maximum between them: -368505, 3235522
+   domestic water demand for the year 2056 amounts to 740.8 km3 gross and 519.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2057    total population in billions for current year 2057 and reference: 8.480 6.873
+   and minimum and maximum between them: -391831, 3277425
+   domestic water demand for the year 2057 amounts to 743.3 km3 gross and 521.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2058    total population in billions for current year 2058 and reference: 8.478 6.873
+   and minimum and maximum between them: -415157, 3319327
+   domestic water demand for the year 2058 amounts to 745.8 km3 gross and 524.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2059    total population in billions for current year 2059 and reference: 8.475 6.873
+   and minimum and maximum between them: -438483, 3361229
+   domestic water demand for the year 2059 amounts to 748.3 km3 gross and 526.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2015    total population in billions for current year 2015 and reference: 7.201 6.873
+   and minimum and maximum between them: -358658, 1127921
+   domestic water demand for the year 2015 amounts to 499.7 km3 gross and 304.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2040    total population in billions for current year 2040 and reference: 8.348 6.873
+   and minimum and maximum between them: -221370, 2403853
+   domestic water demand for the year 2040 amounts to 680.9 km3 gross and 464.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2041    total population in billions for current year 2041 and reference: 8.363 6.873
+   and minimum and maximum between them: -219612, 2461879
+   domestic water demand for the year 2041 amounts to 685.5 km3 gross and 468.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2042    total population in billions for current year 2042 and reference: 8.378 6.873
+   and minimum and maximum between them: -217854, 2519904
+   domestic water demand for the year 2042 amounts to 690.0 km3 gross and 472.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2043    total population in billions for current year 2043 and reference: 8.393 6.873
+   and minimum and maximum between them: -216096, 2577930
+   domestic water demand for the year 2043 amounts to 694.5 km3 gross and 476.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2044    total population in billions for current year 2044 and reference: 8.408 6.873
+   and minimum and maximum between them: -214338, 2635955
+   domestic water demand for the year 2044 amounts to 698.9 km3 gross and 480.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2045    total population in billions for current year 2045 and reference: 8.423 6.873
+   and minimum and maximum between them: -212580, 2693980
+   domestic water demand for the year 2045 amounts to 703.3 km3 gross and 484.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2046    total population in billions for current year 2046 and reference: 8.438 6.873
+   and minimum and maximum between them: -210822, 2752006
+   domestic water demand for the year 2046 amounts to 707.7 km3 gross and 488.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2047    total population in billions for current year 2047 and reference: 8.453 6.873
+   and minimum and maximum between them: -209064, 2810031
+   domestic water demand for the year 2047 amounts to 712.0 km3 gross and 492.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2048    total population in billions for current year 2048 and reference: 8.468 6.873
+   and minimum and maximum between them: -211548, 2868057
+   domestic water demand for the year 2048 amounts to 716.3 km3 gross and 496.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2049    total population in billions for current year 2049 and reference: 8.483 6.873
+   and minimum and maximum between them: -224858, 2926082
+   domestic water demand for the year 2049 amounts to 720.5 km3 gross and 500.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2019    total population in billions for current year 2019 and reference: 7.463 6.873
+   and minimum and maximum between them: -316476, 1295913
+   domestic water demand for the year 2019 amounts to 536.6 km3 gross and 336.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2017    total population in billions for current year 2017 and reference: 7.331 6.873
+   and minimum and maximum between them: -338985, 1211917
+   domestic water demand for the year 2017 amounts to 518.3 km3 gross and 320.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2013    total population in billions for current year 2013 and reference: 7.070 6.873
+   and minimum and maximum between them: -378331, 1043925
+   domestic water demand for the year 2013 amounts to 481.1 km3 gross and 289.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2030    total population in billions for current year 2030 and reference: 8.015 6.873
+   and minimum and maximum between them: -242394, 1672572
+   domestic water demand for the year 2030 amounts to 620.2 km3 gross and 410.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2031    total population in billions for current year 2031 and reference: 8.048 6.873
+   and minimum and maximum between them: -240292, 1745700
+   domestic water demand for the year 2031 amounts to 626.4 km3 gross and 415.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2032    total population in billions for current year 2032 and reference: 8.081 6.873
+   and minimum and maximum between them: -238190, 1818828
+   domestic water demand for the year 2032 amounts to 632.6 km3 gross and 421.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2033    total population in billions for current year 2033 and reference: 8.115 6.873
+   and minimum and maximum between them: -236087, 1891956
+   domestic water demand for the year 2033 amounts to 638.8 km3 gross and 426.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2034    total population in billions for current year 2034 and reference: 8.148 6.873
+   and minimum and maximum between them: -233985, 1965084
+   domestic water demand for the year 2034 amounts to 644.9 km3 gross and 432.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2035    total population in billions for current year 2035 and reference: 8.181 6.873
+   and minimum and maximum between them: -231882, 2038212
+   domestic water demand for the year 2035 amounts to 651.1 km3 gross and 437.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2036    total population in billions for current year 2036 and reference: 8.214 6.873
+   and minimum and maximum between them: -229780, 2111341
+   domestic water demand for the year 2036 amounts to 657.2 km3 gross and 443.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2037    total population in billions for current year 2037 and reference: 8.248 6.873
+   and minimum and maximum between them: -227677, 2184469
+   domestic water demand for the year 2037 amounts to 663.1 km3 gross and 448.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2038    total population in billions for current year 2038 and reference: 8.281 6.873
+   and minimum and maximum between them: -225575, 2257597
+   domestic water demand for the year 2038 amounts to 669.1 km3 gross and 453.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2039    total population in billions for current year 2039 and reference: 8.314 6.873
+   and minimum and maximum between them: -223473, 2330725
+   domestic water demand for the year 2039 amounts to 675.0 km3 gross and 458.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2080    total population in billions for current year 2080 and reference: 7.985 6.873
+   and minimum and maximum between them: -977054, 3782368
+   domestic water demand for the year 2080 amounts to 756.9 km3 gross and 541.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2081    total population in billions for current year 2081 and reference: 7.941 6.873
+   and minimum and maximum between them: -1002863, 3779160
+   domestic water demand for the year 2081 amounts to 755.0 km3 gross and 540.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2082    total population in billions for current year 2082 and reference: 7.897 6.873
+   and minimum and maximum between them: -1028671, 3775952
+   domestic water demand for the year 2082 amounts to 753.1 km3 gross and 539.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2083    total population in billions for current year 2083 and reference: 7.853 6.873
+   and minimum and maximum between them: -1054480, 3772744
+   domestic water demand for the year 2083 amounts to 751.2 km3 gross and 538.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2084    total population in billions for current year 2084 and reference: 7.809 6.873
+   and minimum and maximum between them: -1080288, 3769537
+   domestic water demand for the year 2084 amounts to 749.3 km3 gross and 537.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2085    total population in billions for current year 2085 and reference: 7.765 6.873
+   and minimum and maximum between them: -1106097, 3766329
+   domestic water demand for the year 2085 amounts to 747.3 km3 gross and 536.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2086    total population in billions for current year 2086 and reference: 7.721 6.873
+   and minimum and maximum between them: -1131905, 3763121
+   domestic water demand for the year 2086 amounts to 745.3 km3 gross and 534.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2087    total population in billions for current year 2087 and reference: 7.677 6.873
+   and minimum and maximum between them: -1157714, 3759913
+   domestic water demand for the year 2087 amounts to 743.3 km3 gross and 533.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2088    total population in billions for current year 2088 and reference: 7.633 6.873
+   and minimum and maximum between them: -1183522, 3756705
+   domestic water demand for the year 2088 amounts to 741.2 km3 gross and 532.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2089    total population in billions for current year 2089 and reference: 7.589 6.873
+   and minimum and maximum between them: -1209331, 3753498
+   domestic water demand for the year 2089 amounts to 739.2 km3 gross and 531.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2060    total population in billions for current year 2060 and reference: 8.472 6.873
+   and minimum and maximum between them: -461809, 3403132
+   domestic water demand for the year 2060 amounts to 750.7 km3 gross and 528.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2061    total population in billions for current year 2061 and reference: 8.455 6.873
+   and minimum and maximum between them: -487484, 3429866
+   domestic water demand for the year 2061 amounts to 751.9 km3 gross and 530.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2062    total population in billions for current year 2062 and reference: 8.437 6.873
+   and minimum and maximum between them: -513160, 3456600
+   domestic water demand for the year 2062 amounts to 753.1 km3 gross and 531.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2063    total population in billions for current year 2063 and reference: 8.420 6.873
+   and minimum and maximum between them: -538835, 3483334
+   domestic water demand for the year 2063 amounts to 754.2 km3 gross and 532.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2064    total population in billions for current year 2064 and reference: 8.402 6.873
+   and minimum and maximum between them: -564510, 3510068
+   domestic water demand for the year 2064 amounts to 755.3 km3 gross and 534.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2065    total population in billions for current year 2065 and reference: 8.385 6.873
+   and minimum and maximum between them: -590185, 3536802
+   domestic water demand for the year 2065 amounts to 756.3 km3 gross and 535.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2066    total population in billions for current year 2066 and reference: 8.367 6.873
+   and minimum and maximum between them: -615860, 3563536
+   domestic water demand for the year 2066 amounts to 757.4 km3 gross and 536.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2067    total population in billions for current year 2067 and reference: 8.350 6.873
+   and minimum and maximum between them: -641536, 3590270
+   domestic water demand for the year 2067 amounts to 758.4 km3 gross and 537.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2068    total population in billions for current year 2068 and reference: 8.332 6.873
+   and minimum and maximum between them: -667211, 3617004
+   domestic water demand for the year 2068 amounts to 759.3 km3 gross and 538.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2069    total population in billions for current year 2069 and reference: 8.315 6.873
+   and minimum and maximum between them: -692886, 3643738
+   domestic water demand for the year 2069 amounts to 760.3 km3 gross and 539.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2016    total population in billions for current year 2016 and reference: 7.266 6.873
+   and minimum and maximum between them: -348821, 1169919
+   domestic water demand for the year 2016 amounts to 509.0 km3 gross and 312.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2010    total population in billions for current year 2010 and reference: 6.873 6.873
+   and minimum and maximum between them: 0, 0
+   domestic water demand for the year 2010 amounts to 454.5 km3 gross and 266.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2011    total population in billions for current year 2011 and reference: 6.939 6.873
+   and minimum and maximum between them: -9034, 88780
+   domestic water demand for the year 2011 amounts to 463.3 km3 gross and 274.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2090    total population in billions for current year 2090 and reference: 7.545 6.873
+   and minimum and maximum between them: -1235139, 3750290
+   domestic water demand for the year 2090 amounts to 737.1 km3 gross and 530.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2091    total population in billions for current year 2091 and reference: 7.491 6.873
+   and minimum and maximum between them: -1260766, 3734188
+   domestic water demand for the year 2091 amounts to 733.9 km3 gross and 528.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2092    total population in billions for current year 2092 and reference: 7.437 6.873
+   and minimum and maximum between them: -1286393, 3718086
+   domestic water demand for the year 2092 amounts to 730.7 km3 gross and 526.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2093    total population in billions for current year 2093 and reference: 7.383 6.873
+   and minimum and maximum between them: -1312020, 3701985
+   domestic water demand for the year 2093 amounts to 727.4 km3 gross and 524.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2094    total population in billions for current year 2094 and reference: 7.329 6.873
+   and minimum and maximum between them: -1337647, 3685883
+   domestic water demand for the year 2094 amounts to 724.1 km3 gross and 521.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2095    total population in billions for current year 2095 and reference: 7.275 6.873
+   and minimum and maximum between them: -1363274, 3669781
+   domestic water demand for the year 2095 amounts to 720.9 km3 gross and 519.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2096    total population in billions for current year 2096 and reference: 7.222 6.873
+   and minimum and maximum between them: -1388900, 3653680
+   domestic water demand for the year 2096 amounts to 717.5 km3 gross and 517.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2097    total population in billions for current year 2097 and reference: 7.168 6.873
+   and minimum and maximum between them: -1414527, 3637578
+   domestic water demand for the year 2097 amounts to 714.2 km3 gross and 515.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2098    total population in billions for current year 2098 and reference: 7.114 6.873
+   and minimum and maximum between them: -1440154, 3621476
+   domestic water demand for the year 2098 amounts to 710.8 km3 gross and 513.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2099    total population in billions for current year 2099 and reference: 7.060 6.873
+   and minimum and maximum between them: -1465781, 3605374
+   domestic water demand for the year 2099 amounts to 707.4 km3 gross and 510.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2018    total population in billions for current year 2018 and reference: 7.397 6.873
+   and minimum and maximum between them: -329148, 1253915
+   domestic water demand for the year 2018 amounts to 527.5 km3 gross and 328.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2070    total population in billions for current year 2070 and reference: 8.297 6.873
+   and minimum and maximum between them: -718561, 3670472
+   domestic water demand for the year 2070 amounts to 761.2 km3 gross and 541.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2071    total population in billions for current year 2071 and reference: 8.266 6.873
+   and minimum and maximum between them: -744411, 3681662
+   domestic water demand for the year 2071 amounts to 760.9 km3 gross and 541.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2072    total population in billions for current year 2072 and reference: 8.235 6.873
+   and minimum and maximum between them: -770260, 3692851
+   domestic water demand for the year 2072 amounts to 760.5 km3 gross and 541.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2073    total population in billions for current year 2073 and reference: 8.203 6.873
+   and minimum and maximum between them: -796109, 3704041
+   domestic water demand for the year 2073 amounts to 760.2 km3 gross and 541.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2074    total population in billions for current year 2074 and reference: 8.172 6.873
+   and minimum and maximum between them: -821959, 3715230
+   domestic water demand for the year 2074 amounts to 759.8 km3 gross and 541.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2075    total population in billions for current year 2075 and reference: 8.141 6.873
+   and minimum and maximum between them: -847808, 3726420
+   domestic water demand for the year 2075 amounts to 759.4 km3 gross and 541.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2076    total population in billions for current year 2076 and reference: 8.110 6.873
+   and minimum and maximum between them: -873657, 3737610
+   domestic water demand for the year 2076 amounts to 758.9 km3 gross and 541.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2077    total population in billions for current year 2077 and reference: 8.079 6.873
+   and minimum and maximum between them: -899507, 3748799
+   domestic water demand for the year 2077 amounts to 758.4 km3 gross and 541.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2078    total population in billions for current year 2078 and reference: 8.048 6.873
+   and minimum and maximum between them: -925356, 3759989
+   domestic water demand for the year 2078 amounts to 757.9 km3 gross and 541.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2079    total population in billions for current year 2079 and reference: 8.016 6.873
+   and minimum and maximum between them: -951205, 3771178
+   domestic water demand for the year 2079 amounts to 757.4 km3 gross and 541.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2014    total population in billions for current year 2014 and reference: 7.135 6.873
+   and minimum and maximum between them: -368494, 1085923
+   domestic water demand for the year 2014 amounts to 490.4 km3 gross and 296.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ * obtaining consumption per capita for industry under SSP2
+ * all data on water demand processed
+   industry water demand for the year 2010 amounts to 946.0 km3 gross and 285.6 km3 net per year
+
+   * netCDF file /storagetemp/rens/SSP2/WaterDemand/water_demand_industry_GrossDemand_SSP2_2010-2099_5min.nc initialized *
+   * netCDF file /storagetemp/rens/SSP2/WaterDemand/water_demand_industry_NettoDemand_SSP2_2010-2099_5min.nc initialized *
+ - 2012    total population in billions for current year 2012 and reference: 7.022 6.873
+   and minimum and maximum between them: -18199, 197564
+   industry water demand for the year 2012 amounts to 955.0 km3 gross and 289.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2020    total population in billions for current year 2020 and reference: 7.619 6.873
+   and minimum and maximum between them: -274656, 1349443
+   industry water demand for the year 2020 amounts to 1024.3 km3 gross and 332.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2021    total population in billions for current year 2021 and reference: 7.683 6.873
+   and minimum and maximum between them: -264306, 1377740
+   industry water demand for the year 2021 amounts to 1032.0 km3 gross and 337.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2022    total population in billions for current year 2022 and reference: 7.748 6.873
+   and minimum and maximum between them: -261871, 1406037
+   industry water demand for the year 2022 amounts to 1039.6 km3 gross and 341.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2023    total population in billions for current year 2023 and reference: 7.813 6.873
+   and minimum and maximum between them: -259437, 1434335
+   industry water demand for the year 2023 amounts to 1047.1 km3 gross and 346.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2024    total population in billions for current year 2024 and reference: 7.878 6.873
+   and minimum and maximum between them: -257002, 1462632
+   industry water demand for the year 2024 amounts to 1054.7 km3 gross and 351.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2025    total population in billions for current year 2025 and reference: 7.943 6.873
+   and minimum and maximum between them: -254567, 1490930
+   industry water demand for the year 2025 amounts to 1062.1 km3 gross and 356.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2026    total population in billions for current year 2026 and reference: 8.008 6.873
+   and minimum and maximum between them: -252133, 1534420
+   industry water demand for the year 2026 amounts to 1069.6 km3 gross and 361.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2027    total population in billions for current year 2027 and reference: 8.073 6.873
+   and minimum and maximum between them: -249698, 1634295
+   industry water demand for the year 2027 amounts to 1077.0 km3 gross and 366.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2028    total population in billions for current year 2028 and reference: 8.137 6.873
+   and minimum and maximum between them: -247264, 1734171
+   industry water demand for the year 2028 amounts to 1084.4 km3 gross and 371.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2029    total population in billions for current year 2029 and reference: 8.202 6.873
+   and minimum and maximum between them: -244829, 1834046
+   industry water demand for the year 2029 amounts to 1091.9 km3 gross and 376.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2050    total population in billions for current year 2050 and reference: 9.167 6.873
+   and minimum and maximum between them: -203790, 3709760
+   industry water demand for the year 2050 amounts to 1217.4 km3 gross and 463.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2051    total population in billions for current year 2051 and reference: 9.188 6.873
+   and minimum and maximum between them: -202944, 3780157
+   industry water demand for the year 2051 amounts to 1221.5 km3 gross and 466.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2052    total population in billions for current year 2052 and reference: 9.210 6.873
+   and minimum and maximum between them: -208612, 3850554
+   industry water demand for the year 2052 amounts to 1225.6 km3 gross and 469.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2053    total population in billions for current year 2053 and reference: 9.231 6.873
+   and minimum and maximum between them: -224276, 3920951
+   industry water demand for the year 2053 amounts to 1229.7 km3 gross and 472.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2054    total population in billions for current year 2054 and reference: 9.252 6.873
+   and minimum and maximum between them: -239939, 3991348
+   industry water demand for the year 2054 amounts to 1233.8 km3 gross and 475.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2055    total population in billions for current year 2055 and reference: 9.274 6.873
+   and minimum and maximum between them: -255603, 4061745
+   industry water demand for the year 2055 amounts to 1237.8 km3 gross and 478.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2056    total population in billions for current year 2056 and reference: 9.295 6.873
+   and minimum and maximum between them: -274215, 4170320
+   industry water demand for the year 2056 amounts to 1241.8 km3 gross and 481.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2057    total population in billions for current year 2057 and reference: 9.316 6.873
+   and minimum and maximum between them: -295825, 4279635
+   industry water demand for the year 2057 amounts to 1245.9 km3 gross and 484.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2058    total population in billions for current year 2058 and reference: 9.338 6.873
+   and minimum and maximum between them: -317436, 4388949
+   industry water demand for the year 2058 amounts to 1249.9 km3 gross and 487.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2059    total population in billions for current year 2059 and reference: 9.359 6.873
+   and minimum and maximum between them: -339046, 4498264
+   industry water demand for the year 2059 amounts to 1253.9 km3 gross and 490.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2015    total population in billions for current year 2015 and reference: 7.246 6.873
+   and minimum and maximum between them: -352615, 1133687
+   industry water demand for the year 2015 amounts to 980.9 km3 gross and 305.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2040    total population in billions for current year 2040 and reference: 8.789 6.873
+   and minimum and maximum between them: -221370, 2863159
+   industry water demand for the year 2040 amounts to 1164.6 km3 gross and 425.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2041    total population in billions for current year 2041 and reference: 8.827 6.873
+   and minimum and maximum between them: -219612, 2947819
+   industry water demand for the year 2041 amounts to 1169.9 km3 gross and 428.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2042    total population in billions for current year 2042 and reference: 8.865 6.873
+   and minimum and maximum between them: -217854, 3032479
+   industry water demand for the year 2042 amounts to 1175.2 km3 gross and 432.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2043    total population in billions for current year 2043 and reference: 8.903 6.873
+   and minimum and maximum between them: -216096, 3117139
+   industry water demand for the year 2043 amounts to 1180.5 km3 gross and 436.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2044    total population in billions for current year 2044 and reference: 8.941 6.873
+   and minimum and maximum between them: -214338, 3201799
+   industry water demand for the year 2044 amounts to 1185.8 km3 gross and 440.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2045    total population in billions for current year 2045 and reference: 8.978 6.873
+   and minimum and maximum between them: -212580, 3286459
+   industry water demand for the year 2045 amounts to 1191.1 km3 gross and 444.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2046    total population in billions for current year 2046 and reference: 9.016 6.873
+   and minimum and maximum between them: -210822, 3371120
+   industry water demand for the year 2046 amounts to 1196.4 km3 gross and 447.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2047    total population in billions for current year 2047 and reference: 9.054 6.873
+   and minimum and maximum between them: -209064, 3455780
+   industry water demand for the year 2047 amounts to 1201.6 km3 gross and 451.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2048    total population in billions for current year 2048 and reference: 9.092 6.873
+   and minimum and maximum between them: -207306, 3540440
+   industry water demand for the year 2048 amounts to 1206.9 km3 gross and 455.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2049    total population in billions for current year 2049 and reference: 9.129 6.873
+   and minimum and maximum between them: -205548, 3625100
+   industry water demand for the year 2049 amounts to 1212.1 km3 gross and 459.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2019    total population in billions for current year 2019 and reference: 7.544 6.873
+   and minimum and maximum between them: -295726, 1306291
+   industry water demand for the year 2019 amounts to 1015.6 km3 gross and 326.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2017    total population in billions for current year 2017 and reference: 7.395 6.873
+   and minimum and maximum between them: -330524, 1219989
+   industry water demand for the year 2017 amounts to 998.3 km3 gross and 316.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2013    total population in billions for current year 2013 and reference: 7.097 6.873
+   and minimum and maximum between them: -374705, 1047384
+   industry water demand for the year 2013 amounts to 963.7 km3 gross and 294.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2030    total population in billions for current year 2030 and reference: 8.267 6.873
+   and minimum and maximum between them: -242394, 1933921
+   industry water demand for the year 2030 amounts to 1099.4 km3 gross and 381.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2031    total population in billions for current year 2031 and reference: 8.319 6.873
+   and minimum and maximum between them: -240292, 2026845
+   industry water demand for the year 2031 amounts to 1105.9 km3 gross and 385.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2032    total population in billions for current year 2032 and reference: 8.372 6.873
+   and minimum and maximum between them: -238190, 2119769
+   industry water demand for the year 2032 amounts to 1112.5 km3 gross and 389.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2033    total population in billions for current year 2033 and reference: 8.424 6.873
+   and minimum and maximum between them: -236087, 2212693
+   industry water demand for the year 2033 amounts to 1119.0 km3 gross and 394.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2034    total population in billions for current year 2034 and reference: 8.477 6.873
+   and minimum and maximum between them: -233985, 2305616
+   industry water demand for the year 2034 amounts to 1125.6 km3 gross and 398.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2035    total population in billions for current year 2035 and reference: 8.529 6.873
+   and minimum and maximum between them: -231882, 2398540
+   industry water demand for the year 2035 amounts to 1132.1 km3 gross and 403.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2036    total population in billions for current year 2036 and reference: 8.582 6.873
+   and minimum and maximum between them: -229780, 2491464
+   industry water demand for the year 2036 amounts to 1138.6 km3 gross and 407.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2037    total population in billions for current year 2037 and reference: 8.633 6.873
+   and minimum and maximum between them: -227677, 2584388
+   industry water demand for the year 2037 amounts to 1145.1 km3 gross and 412.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2038    total population in billions for current year 2038 and reference: 8.685 6.873
+   and minimum and maximum between them: -225575, 2677312
+   industry water demand for the year 2038 amounts to 1151.6 km3 gross and 416.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2039    total population in billions for current year 2039 and reference: 8.737 6.873
+   and minimum and maximum between them: -223473, 2770235
+   industry water demand for the year 2039 amounts to 1158.1 km3 gross and 420.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2080    total population in billions for current year 2080 and reference: 9.405 6.873
+   and minimum and maximum between them: -821754, 6643755
+   industry water demand for the year 2080 amounts to 1299.7 km3 gross and 533.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2081    total population in billions for current year 2081 and reference: 9.390 6.873
+   and minimum and maximum between them: -843400, 6663146
+   industry water demand for the year 2081 amounts to 1299.8 km3 gross and 534.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2082    total population in billions for current year 2082 and reference: 9.374 6.873
+   and minimum and maximum between them: -865047, 6682537
+   industry water demand for the year 2082 amounts to 1299.9 km3 gross and 535.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2083    total population in billions for current year 2083 and reference: 9.358 6.873
+   and minimum and maximum between them: -886693, 6701928
+   industry water demand for the year 2083 amounts to 1300.0 km3 gross and 536.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2084    total population in billions for current year 2084 and reference: 9.343 6.873
+   and minimum and maximum between them: -908340, 6721320
+   industry water demand for the year 2084 amounts to 1300.0 km3 gross and 537.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2085    total population in billions for current year 2085 and reference: 9.327 6.873
+   and minimum and maximum between them: -929986, 6740711
+   industry water demand for the year 2085 amounts to 1300.0 km3 gross and 538.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2086    total population in billions for current year 2086 and reference: 9.312 6.873
+   and minimum and maximum between them: -951633, 6760102
+   industry water demand for the year 2086 amounts to 1300.0 km3 gross and 538.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2087    total population in billions for current year 2087 and reference: 9.296 6.873
+   and minimum and maximum between them: -973279, 6779493
+   industry water demand for the year 2087 amounts to 1300.0 km3 gross and 539.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2088    total population in billions for current year 2088 and reference: 9.281 6.873
+   and minimum and maximum between them: -994926, 6798885
+   industry water demand for the year 2088 amounts to 1299.9 km3 gross and 540.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2089    total population in billions for current year 2089 and reference: 9.265 6.873
+   and minimum and maximum between them: -1016572, 6818276
+   industry water demand for the year 2089 amounts to 1299.8 km3 gross and 541.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2060    total population in billions for current year 2060 and reference: 9.381 6.873
+   and minimum and maximum between them: -360657, 4607578
+   industry water demand for the year 2060 amounts to 1257.9 km3 gross and 493.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2061    total population in billions for current year 2061 and reference: 9.388 6.873
+   and minimum and maximum between them: -383856, 4713724
+   industry water demand for the year 2061 amounts to 1260.8 km3 gross and 496.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2062    total population in billions for current year 2062 and reference: 9.395 6.873
+   and minimum and maximum between them: -407056, 4819870
+   industry water demand for the year 2062 amounts to 1263.6 km3 gross and 498.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2063    total population in billions for current year 2063 and reference: 9.402 6.873
+   and minimum and maximum between them: -430255, 4926015
+   industry water demand for the year 2063 amounts to 1266.4 km3 gross and 501.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2064    total population in billions for current year 2064 and reference: 9.410 6.873
+   and minimum and maximum between them: -453455, 5032161
+   industry water demand for the year 2064 amounts to 1269.3 km3 gross and 503.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2065    total population in billions for current year 2065 and reference: 9.417 6.873
+   and minimum and maximum between them: -476654, 5138306
+   industry water demand for the year 2065 amounts to 1272.0 km3 gross and 505.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2066    total population in billions for current year 2066 and reference: 9.424 6.873
+   and minimum and maximum between them: -499854, 5244452
+   industry water demand for the year 2066 amounts to 1274.8 km3 gross and 508.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2067    total population in billions for current year 2067 and reference: 9.432 6.873
+   and minimum and maximum between them: -523053, 5350598
+   industry water demand for the year 2067 amounts to 1277.5 km3 gross and 510.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2068    total population in billions for current year 2068 and reference: 9.439 6.873
+   and minimum and maximum between them: -546253, 5456743
+   industry water demand for the year 2068 amounts to 1280.2 km3 gross and 512.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2069    total population in billions for current year 2069 and reference: 9.446 6.873
+   and minimum and maximum between them: -569452, 5562889
+   industry water demand for the year 2069 amounts to 1282.9 km3 gross and 515.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2016    total population in billions for current year 2016 and reference: 7.320 6.873
+   and minimum and maximum between them: -341569, 1176838
+   industry water demand for the year 2016 amounts to 989.6 km3 gross and 310.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2010    total population in billions for current year 2010 and reference: 6.873 6.873
+   and minimum and maximum between them: 0, 0
+   industry water demand for the year 2010 amounts to 940.9 km3 gross and 279.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2011    total population in billions for current year 2011 and reference: 6.948 6.873
+   and minimum and maximum between them: -9062, 98058
+   industry water demand for the year 2011 amounts to 947.9 km3 gross and 284.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2090    total population in billions for current year 2090 and reference: 9.250 6.873
+   and minimum and maximum between them: -1038219, 6837667
+   industry water demand for the year 2090 amounts to 1299.7 km3 gross and 542.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2091    total population in billions for current year 2091 and reference: 9.227 6.873
+   and minimum and maximum between them: -1056718, 6837667
+   industry water demand for the year 2091 amounts to 1298.7 km3 gross and 542.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2092    total population in billions for current year 2092 and reference: 9.205 6.873
+   and minimum and maximum between them: -1075218, 6837667
+   industry water demand for the year 2092 amounts to 1297.7 km3 gross and 542.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2093    total population in billions for current year 2093 and reference: 9.182 6.873
+   and minimum and maximum between them: -1093718, 6837667
+   industry water demand for the year 2093 amounts to 1296.6 km3 gross and 543.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2094    total population in billions for current year 2094 and reference: 9.159 6.873
+   and minimum and maximum between them: -1112218, 6837667
+   industry water demand for the year 2094 amounts to 1295.6 km3 gross and 543.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2095    total population in billions for current year 2095 and reference: 9.137 6.873
+   and minimum and maximum between them: -1130718, 6837667
+   industry water demand for the year 2095 amounts to 1294.5 km3 gross and 544.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2096    total population in billions for current year 2096 and reference: 9.114 6.873
+   and minimum and maximum between them: -1149217, 6837667
+   industry water demand for the year 2096 amounts to 1293.4 km3 gross and 544.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2097    total population in billions for current year 2097 and reference: 9.091 6.873
+   and minimum and maximum between them: -1167717, 6837667
+   industry water demand for the year 2097 amounts to 1292.2 km3 gross and 544.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2098    total population in billions for current year 2098 and reference: 9.069 6.873
+   and minimum and maximum between them: -1186217, 6837667
+   industry water demand for the year 2098 amounts to 1291.1 km3 gross and 544.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2099    total population in billions for current year 2099 and reference: 9.046 6.873
+   and minimum and maximum between them: -1204717, 6837667
+   industry water demand for the year 2099 amounts to 1289.9 km3 gross and 545.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2018    total population in billions for current year 2018 and reference: 7.470 6.873
+   and minimum and maximum between them: -316796, 1263140
+   industry water demand for the year 2018 amounts to 1007.0 km3 gross and 321.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2070    total population in billions for current year 2070 and reference: 9.453 6.873
+   and minimum and maximum between them: -592652, 5669035
+   industry water demand for the year 2070 amounts to 1285.6 km3 gross and 517.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2071    total population in billions for current year 2071 and reference: 9.449 6.873
+   and minimum and maximum between them: -615562, 5766507
+   industry water demand for the year 2071 amounts to 1287.1 km3 gross and 518.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2072    total population in billions for current year 2072 and reference: 9.444 6.873
+   and minimum and maximum between them: -638472, 5863979
+   industry water demand for the year 2072 amounts to 1288.6 km3 gross and 520.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2073    total population in billions for current year 2073 and reference: 9.439 6.873
+   and minimum and maximum between them: -661382, 5961451
+   industry water demand for the year 2073 amounts to 1290.1 km3 gross and 522.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2074    total population in billions for current year 2074 and reference: 9.434 6.873
+   and minimum and maximum between them: -684293, 6058923
+   industry water demand for the year 2074 amounts to 1291.5 km3 gross and 523.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2075    total population in billions for current year 2075 and reference: 9.429 6.873
+   and minimum and maximum between them: -707203, 6156395
+   industry water demand for the year 2075 amounts to 1292.9 km3 gross and 525.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2076    total population in billions for current year 2076 and reference: 9.424 6.873
+   and minimum and maximum between them: -730113, 6253867
+   industry water demand for the year 2076 amounts to 1294.3 km3 gross and 527.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2077    total population in billions for current year 2077 and reference: 9.420 6.873
+   and minimum and maximum between them: -753023, 6351339
+   industry water demand for the year 2077 amounts to 1295.7 km3 gross and 528.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2078    total population in billions for current year 2078 and reference: 9.415 6.873
+   and minimum and maximum between them: -775933, 6448811
+   industry water demand for the year 2078 amounts to 1297.0 km3 gross and 530.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2079    total population in billions for current year 2079 and reference: 9.410 6.873
+   and minimum and maximum between them: -798844, 6546283
+   industry water demand for the year 2079 amounts to 1298.3 km3 gross and 531.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2014    total population in billions for current year 2014 and reference: 7.171 6.873
+   and minimum and maximum between them: -363660, 1090536
+   industry water demand for the year 2014 amounts to 972.3 km3 gross and 300.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ * obtaining consumption per capita for domestic under SSP2
+ * all data on water demand processed
+   domestic water demand for the year 2010 amounts to 458.1 km3 gross and 266.4 km3 net per year
+
+   * netCDF file /storagetemp/rens/SSP2/WaterDemand/water_demand_domestic_GrossDemand_SSP2_2010-2099_5min.nc initialized *
+   * netCDF file /storagetemp/rens/SSP2/WaterDemand/water_demand_domestic_NettoDemand_SSP2_2010-2099_5min.nc initialized *
+ - 2012    total population in billions for current year 2012 and reference: 7.022 6.873
+   and minimum and maximum between them: -18199, 197564
+   domestic water demand for the year 2012 amounts to 473.0 km3 gross and 282.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2020    total population in billions for current year 2020 and reference: 7.619 6.873
+   and minimum and maximum between them: -274656, 1349443
+   domestic water demand for the year 2020 amounts to 549.9 km3 gross and 348.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2021    total population in billions for current year 2021 and reference: 7.683 6.873
+   and minimum and maximum between them: -264306, 1377740
+   domestic water demand for the year 2021 amounts to 558.5 km3 gross and 355.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2022    total population in billions for current year 2022 and reference: 7.748 6.873
+   and minimum and maximum between them: -261871, 1406037
+   domestic water demand for the year 2022 amounts to 567.0 km3 gross and 363.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2023    total population in billions for current year 2023 and reference: 7.813 6.873
+   and minimum and maximum between them: -259437, 1434335
+   domestic water demand for the year 2023 amounts to 575.4 km3 gross and 370.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2024    total population in billions for current year 2024 and reference: 7.878 6.873
+   and minimum and maximum between them: -257002, 1462632
+   domestic water demand for the year 2024 amounts to 583.9 km3 gross and 378.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2025    total population in billions for current year 2025 and reference: 7.943 6.873
+   and minimum and maximum between them: -254567, 1490930
+   domestic water demand for the year 2025 amounts to 592.2 km3 gross and 385.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2026    total population in billions for current year 2026 and reference: 8.008 6.873
+   and minimum and maximum between them: -252133, 1534420
+   domestic water demand for the year 2026 amounts to 600.6 km3 gross and 392.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2027    total population in billions for current year 2027 and reference: 8.073 6.873
+   and minimum and maximum between them: -249698, 1634295
+   domestic water demand for the year 2027 amounts to 608.9 km3 gross and 400.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2028    total population in billions for current year 2028 and reference: 8.137 6.873
+   and minimum and maximum between them: -247264, 1734171
+   domestic water demand for the year 2028 amounts to 617.2 km3 gross and 407.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2029    total population in billions for current year 2029 and reference: 8.202 6.873
+   and minimum and maximum between them: -244829, 1834046
+   domestic water demand for the year 2029 amounts to 625.4 km3 gross and 414.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2050    total population in billions for current year 2050 and reference: 9.167 6.873
+   and minimum and maximum between them: -203790, 3709760
+   domestic water demand for the year 2050 amounts to 770.5 km3 gross and 544.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2051    total population in billions for current year 2051 and reference: 9.188 6.873
+   and minimum and maximum between them: -202944, 3780157
+   domestic water demand for the year 2051 amounts to 775.4 km3 gross and 549.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2052    total population in billions for current year 2052 and reference: 9.210 6.873
+   and minimum and maximum between them: -208612, 3850554
+   domestic water demand for the year 2052 amounts to 780.3 km3 gross and 553.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2053    total population in billions for current year 2053 and reference: 9.231 6.873
+   and minimum and maximum between them: -224276, 3920951
+   domestic water demand for the year 2053 amounts to 785.2 km3 gross and 558.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2054    total population in billions for current year 2054 and reference: 9.252 6.873
+   and minimum and maximum between them: -239939, 3991348
+   domestic water demand for the year 2054 amounts to 790.0 km3 gross and 563.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2055    total population in billions for current year 2055 and reference: 9.274 6.873
+   and minimum and maximum between them: -255603, 4061745
+   domestic water demand for the year 2055 amounts to 794.8 km3 gross and 567.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2056    total population in billions for current year 2056 and reference: 9.295 6.873
+   and minimum and maximum between them: -274215, 4170320
+   domestic water demand for the year 2056 amounts to 799.5 km3 gross and 571.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2057    total population in billions for current year 2057 and reference: 9.316 6.873
+   and minimum and maximum between them: -295825, 4279635
+   domestic water demand for the year 2057 amounts to 804.3 km3 gross and 576.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2058    total population in billions for current year 2058 and reference: 9.338 6.873
+   and minimum and maximum between them: -317436, 4388949
+   domestic water demand for the year 2058 amounts to 808.9 km3 gross and 580.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2059    total population in billions for current year 2059 and reference: 9.359 6.873
+   and minimum and maximum between them: -339046, 4498264
+   domestic water demand for the year 2059 amounts to 813.6 km3 gross and 585.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2015    total population in billions for current year 2015 and reference: 7.246 6.873
+   and minimum and maximum between them: -352615, 1133687
+   domestic water demand for the year 2015 amounts to 501.7 km3 gross and 306.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2040    total population in billions for current year 2040 and reference: 8.789 6.873
+   and minimum and maximum between them: -221370, 2863159
+   domestic water demand for the year 2040 amounts to 707.6 km3 gross and 487.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2041    total population in billions for current year 2041 and reference: 8.827 6.873
+   and minimum and maximum between them: -219612, 2947819
+   domestic water demand for the year 2041 amounts to 714.0 km3 gross and 493.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2042    total population in billions for current year 2042 and reference: 8.865 6.873
+   and minimum and maximum between them: -217854, 3032479
+   domestic water demand for the year 2042 amounts to 720.4 km3 gross and 499.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2043    total population in billions for current year 2043 and reference: 8.903 6.873
+   and minimum and maximum between them: -216096, 3117139
+   domestic water demand for the year 2043 amounts to 726.7 km3 gross and 504.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2044    total population in billions for current year 2044 and reference: 8.941 6.873
+   and minimum and maximum between them: -214338, 3201799
+   domestic water demand for the year 2044 amounts to 733.0 km3 gross and 510.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2045    total population in billions for current year 2045 and reference: 8.978 6.873
+   and minimum and maximum between them: -212580, 3286459
+   domestic water demand for the year 2045 amounts to 739.3 km3 gross and 516.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2046    total population in billions for current year 2046 and reference: 9.016 6.873
+   and minimum and maximum between them: -210822, 3371120
+   domestic water demand for the year 2046 amounts to 745.5 km3 gross and 522.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2047    total population in billions for current year 2047 and reference: 9.054 6.873
+   and minimum and maximum between them: -209064, 3455780
+   domestic water demand for the year 2047 amounts to 751.8 km3 gross and 527.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2048    total population in billions for current year 2048 and reference: 9.092 6.873
+   and minimum and maximum between them: -207306, 3540440
+   domestic water demand for the year 2048 amounts to 758.0 km3 gross and 533.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2049    total population in billions for current year 2049 and reference: 9.129 6.873
+   and minimum and maximum between them: -205548, 3625100
+   domestic water demand for the year 2049 amounts to 764.3 km3 gross and 539.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2019    total population in billions for current year 2019 and reference: 7.544 6.873
+   and minimum and maximum between them: -295726, 1306291
+   domestic water demand for the year 2019 amounts to 540.4 km3 gross and 339.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2017    total population in billions for current year 2017 and reference: 7.395 6.873
+   and minimum and maximum between them: -330524, 1219989
+   domestic water demand for the year 2017 amounts to 521.2 km3 gross and 323.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2013    total population in billions for current year 2013 and reference: 7.097 6.873
+   and minimum and maximum between them: -374705, 1047384
+   domestic water demand for the year 2013 amounts to 482.3 km3 gross and 289.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2030    total population in billions for current year 2030 and reference: 8.267 6.873
+   and minimum and maximum between them: -242394, 1933921
+   domestic water demand for the year 2030 amounts to 633.7 km3 gross and 421.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2031    total population in billions for current year 2031 and reference: 8.319 6.873
+   and minimum and maximum between them: -240292, 2026845
+   domestic water demand for the year 2031 amounts to 641.1 km3 gross and 428.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2032    total population in billions for current year 2032 and reference: 8.372 6.873
+   and minimum and maximum between them: -238190, 2119769
+   domestic water demand for the year 2032 amounts to 648.5 km3 gross and 434.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2033    total population in billions for current year 2033 and reference: 8.424 6.873
+   and minimum and maximum between them: -236087, 2212693
+   domestic water demand for the year 2033 amounts to 655.9 km3 gross and 441.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2034    total population in billions for current year 2034 and reference: 8.477 6.873
+   and minimum and maximum between them: -233985, 2305616
+   domestic water demand for the year 2034 amounts to 663.4 km3 gross and 448.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2035    total population in billions for current year 2035 and reference: 8.529 6.873
+   and minimum and maximum between them: -231882, 2398540
+   domestic water demand for the year 2035 amounts to 670.9 km3 gross and 454.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2036    total population in billions for current year 2036 and reference: 8.582 6.873
+   and minimum and maximum between them: -229780, 2491464
+   domestic water demand for the year 2036 amounts to 678.2 km3 gross and 461.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2037    total population in billions for current year 2037 and reference: 8.633 6.873
+   and minimum and maximum between them: -227677, 2584388
+   domestic water demand for the year 2037 amounts to 685.5 km3 gross and 467.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2038    total population in billions for current year 2038 and reference: 8.685 6.873
+   and minimum and maximum between them: -225575, 2677312
+   domestic water demand for the year 2038 amounts to 692.9 km3 gross and 474.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2039    total population in billions for current year 2039 and reference: 8.737 6.873
+   and minimum and maximum between them: -223473, 2770235
+   domestic water demand for the year 2039 amounts to 700.2 km3 gross and 480.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2080    total population in billions for current year 2080 and reference: 9.405 6.873
+   and minimum and maximum between them: -821754, 6643755
+   domestic water demand for the year 2080 amounts to 871.3 km3 gross and 643.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2081    total population in billions for current year 2081 and reference: 9.390 6.873
+   and minimum and maximum between them: -843400, 6663146
+   domestic water demand for the year 2081 amounts to 872.2 km3 gross and 644.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2082    total population in billions for current year 2082 and reference: 9.374 6.873
+   and minimum and maximum between them: -865047, 6682537
+   domestic water demand for the year 2082 amounts to 873.1 km3 gross and 646.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2083    total population in billions for current year 2083 and reference: 9.358 6.873
+   and minimum and maximum between them: -886693, 6701928
+   domestic water demand for the year 2083 amounts to 874.0 km3 gross and 647.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2084    total population in billions for current year 2084 and reference: 9.343 6.873
+   and minimum and maximum between them: -908340, 6721320
+   domestic water demand for the year 2084 amounts to 874.8 km3 gross and 648.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2085    total population in billions for current year 2085 and reference: 9.327 6.873
+   and minimum and maximum between them: -929986, 6740711
+   domestic water demand for the year 2085 amounts to 875.7 km3 gross and 649.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2086    total population in billions for current year 2086 and reference: 9.312 6.873
+   and minimum and maximum between them: -951633, 6760102
+   domestic water demand for the year 2086 amounts to 876.5 km3 gross and 651.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2087    total population in billions for current year 2087 and reference: 9.296 6.873
+   and minimum and maximum between them: -973279, 6779493
+   domestic water demand for the year 2087 amounts to 877.3 km3 gross and 652.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2088    total population in billions for current year 2088 and reference: 9.281 6.873
+   and minimum and maximum between them: -994926, 6798885
+   domestic water demand for the year 2088 amounts to 878.1 km3 gross and 653.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2089    total population in billions for current year 2089 and reference: 9.265 6.873
+   and minimum and maximum between them: -1016572, 6818276
+   domestic water demand for the year 2089 amounts to 878.8 km3 gross and 654.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2060    total population in billions for current year 2060 and reference: 9.381 6.873
+   and minimum and maximum between them: -360657, 4607578
+   domestic water demand for the year 2060 amounts to 818.2 km3 gross and 589.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2061    total population in billions for current year 2061 and reference: 9.388 6.873
+   and minimum and maximum between them: -383856, 4713724
+   domestic water demand for the year 2061 amounts to 821.6 km3 gross and 592.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2062    total population in billions for current year 2062 and reference: 9.395 6.873
+   and minimum and maximum between them: -407056, 4819870
+   domestic water demand for the year 2062 amounts to 825.0 km3 gross and 596.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2063    total population in billions for current year 2063 and reference: 9.402 6.873
+   and minimum and maximum between them: -430255, 4926015
+   domestic water demand for the year 2063 amounts to 828.3 km3 gross and 599.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2064    total population in billions for current year 2064 and reference: 9.410 6.873
+   and minimum and maximum between them: -453455, 5032161
+   domestic water demand for the year 2064 amounts to 831.7 km3 gross and 602.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2065    total population in billions for current year 2065 and reference: 9.417 6.873
+   and minimum and maximum between them: -476654, 5138306
+   domestic water demand for the year 2065 amounts to 835.0 km3 gross and 605.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2066    total population in billions for current year 2066 and reference: 9.424 6.873
+   and minimum and maximum between them: -499854, 5244452
+   domestic water demand for the year 2066 amounts to 838.3 km3 gross and 609.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2067    total population in billions for current year 2067 and reference: 9.432 6.873
+   and minimum and maximum between them: -523053, 5350598
+   domestic water demand for the year 2067 amounts to 841.6 km3 gross and 612.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2068    total population in billions for current year 2068 and reference: 9.439 6.873
+   and minimum and maximum between them: -546253, 5456743
+   domestic water demand for the year 2068 amounts to 844.8 km3 gross and 615.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2069    total population in billions for current year 2069 and reference: 9.446 6.873
+   and minimum and maximum between them: -569452, 5562889
+   domestic water demand for the year 2069 amounts to 848.0 km3 gross and 618.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2016    total population in billions for current year 2016 and reference: 7.320 6.873
+   and minimum and maximum between them: -341569, 1176838
+   domestic water demand for the year 2016 amounts to 511.4 km3 gross and 314.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2010    total population in billions for current year 2010 and reference: 6.873 6.873
+   and minimum and maximum between them: 0, 0
+   domestic water demand for the year 2010 amounts to 454.5 km3 gross and 266.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2011    total population in billions for current year 2011 and reference: 6.948 6.873
+   and minimum and maximum between them: -9062, 98058
+   domestic water demand for the year 2011 amounts to 463.7 km3 gross and 274.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2090    total population in billions for current year 2090 and reference: 9.250 6.873
+   and minimum and maximum between them: -1038219, 6837667
+   domestic water demand for the year 2090 amounts to 879.5 km3 gross and 655.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2091    total population in billions for current year 2091 and reference: 9.227 6.873
+   and minimum and maximum between them: -1056718, 6837667
+   domestic water demand for the year 2091 amounts to 879.5 km3 gross and 656.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2092    total population in billions for current year 2092 and reference: 9.205 6.873
+   and minimum and maximum between them: -1075218, 6837667
+   domestic water demand for the year 2092 amounts to 879.4 km3 gross and 656.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2093    total population in billions for current year 2093 and reference: 9.182 6.873
+   and minimum and maximum between them: -1093718, 6837667
+   domestic water demand for the year 2093 amounts to 879.3 km3 gross and 657.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2094    total population in billions for current year 2094 and reference: 9.159 6.873
+   and minimum and maximum between them: -1112218, 6837667
+   domestic water demand for the year 2094 amounts to 879.2 km3 gross and 657.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2095    total population in billions for current year 2095 and reference: 9.137 6.873
+   and minimum and maximum between them: -1130718, 6837667
+   domestic water demand for the year 2095 amounts to 879.1 km3 gross and 658.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2096    total population in billions for current year 2096 and reference: 9.114 6.873
+   and minimum and maximum between them: -1149217, 6837667
+   domestic water demand for the year 2096 amounts to 879.0 km3 gross and 658.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2097    total population in billions for current year 2097 and reference: 9.091 6.873
+   and minimum and maximum between them: -1167717, 6837667
+   domestic water demand for the year 2097 amounts to 878.8 km3 gross and 658.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2098    total population in billions for current year 2098 and reference: 9.069 6.873
+   and minimum and maximum between them: -1186217, 6837667
+   domestic water demand for the year 2098 amounts to 878.7 km3 gross and 659.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2099    total population in billions for current year 2099 and reference: 9.046 6.873
+   and minimum and maximum between them: -1204717, 6837667
+   domestic water demand for the year 2099 amounts to 878.5 km3 gross and 659.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2018    total population in billions for current year 2018 and reference: 7.470 6.873
+   and minimum and maximum between them: -316796, 1263140
+   domestic water demand for the year 2018 amounts to 530.8 km3 gross and 331.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2070    total population in billions for current year 2070 and reference: 9.453 6.873
+   and minimum and maximum between them: -592652, 5669035
+   domestic water demand for the year 2070 amounts to 851.2 km3 gross and 621.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2071    total population in billions for current year 2071 and reference: 9.449 6.873
+   and minimum and maximum between them: -615562, 5766507
+   domestic water demand for the year 2071 amounts to 853.3 km3 gross and 624.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2072    total population in billions for current year 2072 and reference: 9.444 6.873
+   and minimum and maximum between them: -638472, 5863979
+   domestic water demand for the year 2072 amounts to 855.4 km3 gross and 626.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2073    total population in billions for current year 2073 and reference: 9.439 6.873
+   and minimum and maximum between them: -661382, 5961451
+   domestic water demand for the year 2073 amounts to 857.5 km3 gross and 628.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2074    total population in billions for current year 2074 and reference: 9.434 6.873
+   and minimum and maximum between them: -684293, 6058923
+   domestic water demand for the year 2074 amounts to 859.5 km3 gross and 630.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2075    total population in billions for current year 2075 and reference: 9.429 6.873
+   and minimum and maximum between them: -707203, 6156395
+   domestic water demand for the year 2075 amounts to 861.5 km3 gross and 632.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2076    total population in billions for current year 2076 and reference: 9.424 6.873
+   and minimum and maximum between them: -730113, 6253867
+   domestic water demand for the year 2076 amounts to 863.5 km3 gross and 635.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2077    total population in billions for current year 2077 and reference: 9.420 6.873
+   and minimum and maximum between them: -753023, 6351339
+   domestic water demand for the year 2077 amounts to 865.5 km3 gross and 637.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2078    total population in billions for current year 2078 and reference: 9.415 6.873
+   and minimum and maximum between them: -775933, 6448811
+   domestic water demand for the year 2078 amounts to 867.4 km3 gross and 639.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2079    total population in billions for current year 2079 and reference: 9.410 6.873
+   and minimum and maximum between them: -798844, 6546283
+   domestic water demand for the year 2079 amounts to 869.4 km3 gross and 641.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2014    total population in billions for current year 2014 and reference: 7.171 6.873
+   and minimum and maximum between them: -363660, 1090536
+   domestic water demand for the year 2014 amounts to 492.0 km3 gross and 298.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ * obtaining consumption per capita for industry under SSP3
+ * all data on water demand processed
+   industry water demand for the year 2010 amounts to 946.0 km3 gross and 285.6 km3 net per year
+
+   * netCDF file /storagetemp/rens/SSP3/WaterDemand/water_demand_industry_GrossDemand_SSP3_2010-2099_5min.nc initialized *
+   * netCDF file /storagetemp/rens/SSP3/WaterDemand/water_demand_industry_NettoDemand_SSP3_2010-2099_5min.nc initialized *
+ - 2012    total population in billions for current year 2012 and reference: 7.037 6.873
+   and minimum and maximum between them: -18416, 217235
+   industry water demand for the year 2012 amounts to 949.6 km3 gross and 285.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2020    total population in billions for current year 2020 and reference: 7.690 6.873
+   and minimum and maximum between them: -267955, 1289235
+   industry water demand for the year 2020 amounts to 997.7 km3 gross and 312.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2021    total population in billions for current year 2021 and reference: 7.771 6.873
+   and minimum and maximum between them: -264306, 1308975
+   industry water demand for the year 2021 amounts to 1001.7 km3 gross and 315.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2022    total population in billions for current year 2022 and reference: 7.852 6.873
+   and minimum and maximum between them: -261871, 1328715
+   industry water demand for the year 2022 amounts to 1005.7 km3 gross and 318.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2023    total population in billions for current year 2023 and reference: 7.933 6.873
+   and minimum and maximum between them: -259437, 1394499
+   industry water demand for the year 2023 amounts to 1009.8 km3 gross and 321.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2024    total population in billions for current year 2024 and reference: 8.014 6.873
+   and minimum and maximum between them: -257002, 1511450
+   industry water demand for the year 2024 amounts to 1013.9 km3 gross and 324.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2025    total population in billions for current year 2025 and reference: 8.095 6.873
+   and minimum and maximum between them: -254567, 1628401
+   industry water demand for the year 2025 amounts to 1018.1 km3 gross and 327.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2026    total population in billions for current year 2026 and reference: 8.176 6.873
+   and minimum and maximum between them: -252133, 1745353
+   industry water demand for the year 2026 amounts to 1022.2 km3 gross and 330.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2027    total population in billions for current year 2027 and reference: 8.257 6.873
+   and minimum and maximum between them: -249698, 1862304
+   industry water demand for the year 2027 amounts to 1026.4 km3 gross and 334.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2028    total population in billions for current year 2028 and reference: 8.337 6.873
+   and minimum and maximum between them: -247264, 1979255
+   industry water demand for the year 2028 amounts to 1030.5 km3 gross and 337.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2029    total population in billions for current year 2029 and reference: 8.418 6.873
+   and minimum and maximum between them: -244829, 2096207
+   industry water demand for the year 2029 amounts to 1034.7 km3 gross and 340.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2050    total population in billions for current year 2050 and reference: 9.912 6.873
+   and minimum and maximum between them: -298243, 4784540
+   industry water demand for the year 2050 amounts to 1086.0 km3 gross and 399.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2051    total population in billions for current year 2051 and reference: 9.972 6.873
+   and minimum and maximum between them: -320622, 4982954
+   industry water demand for the year 2051 amounts to 1087.1 km3 gross and 402.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2052    total population in billions for current year 2052 and reference: 10.032 6.873
+   and minimum and maximum between them: -343000, 5181369
+   industry water demand for the year 2052 amounts to 1088.2 km3 gross and 404.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2053    total population in billions for current year 2053 and reference: 10.092 6.873
+   and minimum and maximum between them: -365378, 5379783
+   industry water demand for the year 2053 amounts to 1089.4 km3 gross and 407.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2054    total population in billions for current year 2054 and reference: 10.152 6.873
+   and minimum and maximum between them: -387757, 5578197
+   industry water demand for the year 2054 amounts to 1090.6 km3 gross and 409.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2055    total population in billions for current year 2055 and reference: 10.212 6.873
+   and minimum and maximum between them: -410135, 5776611
+   industry water demand for the year 2055 amounts to 1091.7 km3 gross and 412.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2056    total population in billions for current year 2056 and reference: 10.272 6.873
+   and minimum and maximum between them: -432513, 5975025
+   industry water demand for the year 2056 amounts to 1092.9 km3 gross and 415.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2057    total population in billions for current year 2057 and reference: 10.332 6.873
+   and minimum and maximum between them: -454892, 6173440
+   industry water demand for the year 2057 amounts to 1094.1 km3 gross and 417.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2058    total population in billions for current year 2058 and reference: 10.392 6.873
+   and minimum and maximum between them: -477270, 6371854
+   industry water demand for the year 2058 amounts to 1095.3 km3 gross and 420.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2059    total population in billions for current year 2059 and reference: 10.453 6.873
+   and minimum and maximum between them: -499649, 6570268
+   industry water demand for the year 2059 amounts to 1096.5 km3 gross and 422.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2015    total population in billions for current year 2015 and reference: 7.282 6.873
+   and minimum and maximum between them: -350858, 1103583
+   industry water demand for the year 2015 amounts to 967.4 km3 gross and 295.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2040    total population in billions for current year 2040 and reference: 9.226 6.873
+   and minimum and maximum between them: -221370, 3387136
+   industry water demand for the year 2040 amounts to 1066.6 km3 gross and 372.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2041    total population in billions for current year 2041 and reference: 9.295 6.873
+   and minimum and maximum between them: -219612, 3500631
+   industry water demand for the year 2041 amounts to 1068.5 km3 gross and 374.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2042    total population in billions for current year 2042 and reference: 9.363 6.873
+   and minimum and maximum between them: -217854, 3614126
+   industry water demand for the year 2042 amounts to 1070.4 km3 gross and 377.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2043    total population in billions for current year 2043 and reference: 9.432 6.873
+   and minimum and maximum between them: -216096, 3727621
+   industry water demand for the year 2043 amounts to 1072.3 km3 gross and 380.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2044    total population in billions for current year 2044 and reference: 9.501 6.873
+   and minimum and maximum between them: -219739, 3841116
+   industry water demand for the year 2044 amounts to 1074.2 km3 gross and 383.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2045    total population in billions for current year 2045 and reference: 9.569 6.873
+   and minimum and maximum between them: -229202, 3954611
+   industry water demand for the year 2045 amounts to 1076.1 km3 gross and 385.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2046    total population in billions for current year 2046 and reference: 9.638 6.873
+   and minimum and maximum between them: -238665, 4091918
+   industry water demand for the year 2046 amounts to 1078.1 km3 gross and 388.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2047    total population in billions for current year 2047 and reference: 9.706 6.873
+   and minimum and maximum between them: -248127, 4265074
+   industry water demand for the year 2047 amounts to 1080.0 km3 gross and 391.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2048    total population in billions for current year 2048 and reference: 9.775 6.873
+   and minimum and maximum between them: -261048, 4438229
+   industry water demand for the year 2048 amounts to 1082.0 km3 gross and 394.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2049    total population in billions for current year 2049 and reference: 9.843 6.873
+   and minimum and maximum between them: -279646, 4611385
+   industry water demand for the year 2049 amounts to 1084.0 km3 gross and 396.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2019    total population in billions for current year 2019 and reference: 7.609 6.873
+   and minimum and maximum between them: -289695, 1252105
+   industry water demand for the year 2019 amounts to 991.5 km3 gross and 309.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2017    total population in billions for current year 2017 and reference: 7.445 6.873
+   and minimum and maximum between them: -328065, 1177844
+   industry water demand for the year 2017 amounts to 979.4 km3 gross and 302.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2013    total population in billions for current year 2013 and reference: 7.118 6.873
+   and minimum and maximum between them: -373651, 1029322
+   industry water demand for the year 2013 amounts to 955.5 km3 gross and 288.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2030    total population in billions for current year 2030 and reference: 8.499 6.873
+   and minimum and maximum between them: -242394, 2213158
+   industry water demand for the year 2030 amounts to 1038.9 km3 gross and 343.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2031    total population in billions for current year 2031 and reference: 8.573 6.873
+   and minimum and maximum between them: -240292, 2330556
+   industry water demand for the year 2031 amounts to 1041.6 km3 gross and 346.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2032    total population in billions for current year 2032 and reference: 8.645 6.873
+   and minimum and maximum between them: -238190, 2447954
+   industry water demand for the year 2032 amounts to 1044.4 km3 gross and 349.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2033    total population in billions for current year 2033 and reference: 8.717 6.873
+   and minimum and maximum between them: -236087, 2565352
+   industry water demand for the year 2033 amounts to 1047.1 km3 gross and 352.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2034    total population in billions for current year 2034 and reference: 8.790 6.873
+   and minimum and maximum between them: -233985, 2682749
+   industry water demand for the year 2034 amounts to 1049.8 km3 gross and 354.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2035    total population in billions for current year 2035 and reference: 8.863 6.873
+   and minimum and maximum between them: -231882, 2800147
+   industry water demand for the year 2035 amounts to 1052.6 km3 gross and 357.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2036    total population in billions for current year 2036 and reference: 8.936 6.873
+   and minimum and maximum between them: -229780, 2917545
+   industry water demand for the year 2036 amounts to 1055.4 km3 gross and 360.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2037    total population in billions for current year 2037 and reference: 9.008 6.873
+   and minimum and maximum between them: -227677, 3034943
+   industry water demand for the year 2037 amounts to 1058.2 km3 gross and 363.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2038    total population in billions for current year 2038 and reference: 9.081 6.873
+   and minimum and maximum between them: -225575, 3152341
+   industry water demand for the year 2038 amounts to 1061.0 km3 gross and 366.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2039    total population in billions for current year 2039 and reference: 9.153 6.873
+   and minimum and maximum between them: -223473, 3269738
+   industry water demand for the year 2039 amounts to 1063.8 km3 gross and 369.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2080    total population in billions for current year 2080 and reference: 11.539 6.873
+   and minimum and maximum between them: -950923, 6837667
+   industry water demand for the year 2080 amounts to 1113.3 km3 gross and 475.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2081    total population in billions for current year 2081 and reference: 11.587 6.873
+   and minimum and maximum between them: -969313, 6837667
+   industry water demand for the year 2081 amounts to 1113.9 km3 gross and 478.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2082    total population in billions for current year 2082 and reference: 11.634 6.873
+   and minimum and maximum between them: -987704, 6837667
+   industry water demand for the year 2082 amounts to 1114.5 km3 gross and 480.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2083    total population in billions for current year 2083 and reference: 11.681 6.873
+   and minimum and maximum between them: -1006094, 6837667
+   industry water demand for the year 2083 amounts to 1115.2 km3 gross and 483.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2084    total population in billions for current year 2084 and reference: 11.729 6.873
+   and minimum and maximum between them: -1024484, 6837667
+   industry water demand for the year 2084 amounts to 1115.8 km3 gross and 485.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2085    total population in billions for current year 2085 and reference: 11.776 6.873
+   and minimum and maximum between them: -1042874, 6837667
+   industry water demand for the year 2085 amounts to 1116.5 km3 gross and 488.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2086    total population in billions for current year 2086 and reference: 11.823 6.873
+   and minimum and maximum between them: -1061265, 6837667
+   industry water demand for the year 2086 amounts to 1117.1 km3 gross and 490.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2087    total population in billions for current year 2087 and reference: 11.870 6.873
+   and minimum and maximum between them: -1079655, 6837667
+   industry water demand for the year 2087 amounts to 1117.8 km3 gross and 493.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2088    total population in billions for current year 2088 and reference: 11.918 6.873
+   and minimum and maximum between them: -1098045, 6837667
+   industry water demand for the year 2088 amounts to 1118.5 km3 gross and 496.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2089    total population in billions for current year 2089 and reference: 11.965 6.873
+   and minimum and maximum between them: -1116436, 6837667
+   industry water demand for the year 2089 amounts to 1119.2 km3 gross and 498.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2060    total population in billions for current year 2060 and reference: 10.513 6.873
+   and minimum and maximum between them: -522027, 6768682
+   industry water demand for the year 2060 amounts to 1097.8 km3 gross and 425.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2061    total population in billions for current year 2061 and reference: 10.566 6.873
+   and minimum and maximum between them: -544323, 6775581
+   industry water demand for the year 2061 amounts to 1098.5 km3 gross and 427.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2062    total population in billions for current year 2062 and reference: 10.618 6.873
+   and minimum and maximum between them: -566618, 6782479
+   industry water demand for the year 2062 amounts to 1099.3 km3 gross and 430.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2063    total population in billions for current year 2063 and reference: 10.671 6.873
+   and minimum and maximum between them: -588914, 6789378
+   industry water demand for the year 2063 amounts to 1100.1 km3 gross and 432.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2064    total population in billions for current year 2064 and reference: 10.725 6.873
+   and minimum and maximum between them: -611210, 6796276
+   industry water demand for the year 2064 amounts to 1100.9 km3 gross and 435.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2065    total population in billions for current year 2065 and reference: 10.777 6.873
+   and minimum and maximum between them: -633505, 6803175
+   industry water demand for the year 2065 amounts to 1101.6 km3 gross and 437.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2066    total population in billions for current year 2066 and reference: 10.830 6.873
+   and minimum and maximum between them: -655801, 6810073
+   industry water demand for the year 2066 amounts to 1102.5 km3 gross and 440.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2067    total population in billions for current year 2067 and reference: 10.884 6.873
+   and minimum and maximum between them: -678097, 6816972
+   industry water demand for the year 2067 amounts to 1103.3 km3 gross and 442.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2068    total population in billions for current year 2068 and reference: 10.937 6.873
+   and minimum and maximum between them: -700393, 6823870
+   industry water demand for the year 2068 amounts to 1104.2 km3 gross and 445.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2069    total population in billions for current year 2069 and reference: 10.989 6.873
+   and minimum and maximum between them: -722688, 6830769
+   industry water demand for the year 2069 amounts to 1105.0 km3 gross and 447.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2016    total population in billions for current year 2016 and reference: 7.363 6.873
+   and minimum and maximum between them: -339462, 1140713
+   industry water demand for the year 2016 amounts to 973.4 km3 gross and 298.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2010    total population in billions for current year 2010 and reference: 6.873 6.873
+   and minimum and maximum between them: 0, 0
+   industry water demand for the year 2010 amounts to 940.9 km3 gross and 279.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2011    total population in billions for current year 2011 and reference: 6.955 6.873
+   and minimum and maximum between them: -9170, 108290
+   industry water demand for the year 2011 amounts to 945.2 km3 gross and 282.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2090    total population in billions for current year 2090 and reference: 12.012 6.873
+   and minimum and maximum between them: -1134826, 6838164
+   industry water demand for the year 2090 amounts to 1120.0 km3 gross and 501.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2091    total population in billions for current year 2091 and reference: 12.057 6.873
+   and minimum and maximum between them: -1150245, 6846008
+   industry water demand for the year 2091 amounts to 1120.6 km3 gross and 504.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2092    total population in billions for current year 2092 and reference: 12.102 6.873
+   and minimum and maximum between them: -1165664, 6853853
+   industry water demand for the year 2092 amounts to 1121.2 km3 gross and 506.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2093    total population in billions for current year 2093 and reference: 12.147 6.873
+   and minimum and maximum between them: -1181082, 6861697
+   industry water demand for the year 2093 amounts to 1121.9 km3 gross and 509.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2094    total population in billions for current year 2094 and reference: 12.192 6.873
+   and minimum and maximum between them: -1196501, 6869541
+   industry water demand for the year 2094 amounts to 1122.5 km3 gross and 511.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2095    total population in billions for current year 2095 and reference: 12.237 6.873
+   and minimum and maximum between them: -1211920, 6877385
+   industry water demand for the year 2095 amounts to 1123.2 km3 gross and 514.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2096    total population in billions for current year 2096 and reference: 12.282 6.873
+   and minimum and maximum between them: -1227339, 6885230
+   industry water demand for the year 2096 amounts to 1123.9 km3 gross and 517.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2097    total population in billions for current year 2097 and reference: 12.327 6.873
+   and minimum and maximum between them: -1242758, 6893074
+   industry water demand for the year 2097 amounts to 1124.6 km3 gross and 519.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2098    total population in billions for current year 2098 and reference: 12.372 6.873
+   and minimum and maximum between them: -1258177, 6900918
+   industry water demand for the year 2098 amounts to 1125.3 km3 gross and 522.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2099    total population in billions for current year 2099 and reference: 12.417 6.873
+   and minimum and maximum between them: -1273596, 6908763
+   industry water demand for the year 2099 amounts to 1126.0 km3 gross and 525.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2018    total population in billions for current year 2018 and reference: 7.527 6.873
+   and minimum and maximum between them: -311435, 1214974
+   industry water demand for the year 2018 amounts to 985.5 km3 gross and 305.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2070    total population in billions for current year 2070 and reference: 11.042 6.873
+   and minimum and maximum between them: -744984, 6837667
+   industry water demand for the year 2070 amounts to 1105.9 km3 gross and 450.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2071    total population in billions for current year 2071 and reference: 11.092 6.873
+   and minimum and maximum between them: -765578, 6837667
+   industry water demand for the year 2071 amounts to 1106.6 km3 gross and 452.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2072    total population in billions for current year 2072 and reference: 11.142 6.873
+   and minimum and maximum between them: -786172, 6837667
+   industry water demand for the year 2072 amounts to 1107.3 km3 gross and 455.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2073    total population in billions for current year 2073 and reference: 11.192 6.873
+   and minimum and maximum between them: -806766, 6837667
+   industry water demand for the year 2073 amounts to 1108.0 km3 gross and 457.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2074    total population in billions for current year 2074 and reference: 11.241 6.873
+   and minimum and maximum between them: -827360, 6837667
+   industry water demand for the year 2074 amounts to 1108.7 km3 gross and 460.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2075    total population in billions for current year 2075 and reference: 11.291 6.873
+   and minimum and maximum between them: -847953, 6837667
+   industry water demand for the year 2075 amounts to 1109.5 km3 gross and 462.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2076    total population in billions for current year 2076 and reference: 11.340 6.873
+   and minimum and maximum between them: -868547, 6837667
+   industry water demand for the year 2076 amounts to 1110.2 km3 gross and 465.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2077    total population in billions for current year 2077 and reference: 11.390 6.873
+   and minimum and maximum between them: -889141, 6837667
+   industry water demand for the year 2077 amounts to 1111.0 km3 gross and 467.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2078    total population in billions for current year 2078 and reference: 11.440 6.873
+   and minimum and maximum between them: -909735, 6837667
+   industry water demand for the year 2078 amounts to 1111.7 km3 gross and 470.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2079    total population in billions for current year 2079 and reference: 11.490 6.873
+   and minimum and maximum between them: -930329, 6837667
+   industry water demand for the year 2079 amounts to 1112.5 km3 gross and 472.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2014    total population in billions for current year 2014 and reference: 7.200 6.873
+   and minimum and maximum between them: -362255, 1066453
+   industry water demand for the year 2014 amounts to 961.5 km3 gross and 292.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ * obtaining consumption per capita for domestic under SSP3
+ * all data on water demand processed
+   domestic water demand for the year 2010 amounts to 458.1 km3 gross and 266.4 km3 net per year
+
+   * netCDF file /storagetemp/rens/SSP3/WaterDemand/water_demand_domestic_GrossDemand_SSP3_2010-2099_5min.nc initialized *
+   * netCDF file /storagetemp/rens/SSP3/WaterDemand/water_demand_domestic_NettoDemand_SSP3_2010-2099_5min.nc initialized *
+ - 2012    total population in billions for current year 2012 and reference: 7.037 6.873
+   and minimum and maximum between them: -18416, 217235
+   domestic water demand for the year 2012 amounts to 471.8 km3 gross and 281.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2020    total population in billions for current year 2020 and reference: 7.690 6.873
+   and minimum and maximum between them: -267955, 1289235
+   domestic water demand for the year 2020 amounts to 544.9 km3 gross and 344.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2021    total population in billions for current year 2021 and reference: 7.771 6.873
+   and minimum and maximum between them: -264306, 1308975
+   domestic water demand for the year 2021 amounts to 553.3 km3 gross and 351.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2022    total population in billions for current year 2022 and reference: 7.852 6.873
+   and minimum and maximum between them: -261871, 1328715
+   domestic water demand for the year 2022 amounts to 561.7 km3 gross and 359.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2023    total population in billions for current year 2023 and reference: 7.933 6.873
+   and minimum and maximum between them: -259437, 1394499
+   domestic water demand for the year 2023 amounts to 570.1 km3 gross and 367.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2024    total population in billions for current year 2024 and reference: 8.014 6.873
+   and minimum and maximum between them: -257002, 1511450
+   domestic water demand for the year 2024 amounts to 578.5 km3 gross and 374.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2025    total population in billions for current year 2025 and reference: 8.095 6.873
+   and minimum and maximum between them: -254567, 1628401
+   domestic water demand for the year 2025 amounts to 586.9 km3 gross and 382.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2026    total population in billions for current year 2026 and reference: 8.176 6.873
+   and minimum and maximum between them: -252133, 1745353
+   domestic water demand for the year 2026 amounts to 595.3 km3 gross and 389.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2027    total population in billions for current year 2027 and reference: 8.257 6.873
+   and minimum and maximum between them: -249698, 1862304
+   domestic water demand for the year 2027 amounts to 603.7 km3 gross and 397.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2028    total population in billions for current year 2028 and reference: 8.337 6.873
+   and minimum and maximum between them: -247264, 1979255
+   domestic water demand for the year 2028 amounts to 612.1 km3 gross and 405.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2029    total population in billions for current year 2029 and reference: 8.418 6.873
+   and minimum and maximum between them: -244829, 2096207
+   domestic water demand for the year 2029 amounts to 620.6 km3 gross and 412.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2050    total population in billions for current year 2050 and reference: 9.912 6.873
+   and minimum and maximum between them: -298243, 4784540
+   domestic water demand for the year 2050 amounts to 787.1 km3 gross and 570.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2051    total population in billions for current year 2051 and reference: 9.972 6.873
+   and minimum and maximum between them: -320622, 4982954
+   domestic water demand for the year 2051 amounts to 794.5 km3 gross and 577.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2052    total population in billions for current year 2052 and reference: 10.032 6.873
+   and minimum and maximum between them: -343000, 5181369
+   domestic water demand for the year 2052 amounts to 801.9 km3 gross and 584.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2053    total population in billions for current year 2053 and reference: 10.092 6.873
+   and minimum and maximum between them: -365378, 5379783
+   domestic water demand for the year 2053 amounts to 809.3 km3 gross and 592.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2054    total population in billions for current year 2054 and reference: 10.152 6.873
+   and minimum and maximum between them: -387757, 5578197
+   domestic water demand for the year 2054 amounts to 816.8 km3 gross and 599.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2055    total population in billions for current year 2055 and reference: 10.212 6.873
+   and minimum and maximum between them: -410135, 5776611
+   domestic water demand for the year 2055 amounts to 824.2 km3 gross and 606.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2056    total population in billions for current year 2056 and reference: 10.272 6.873
+   and minimum and maximum between them: -432513, 5975025
+   domestic water demand for the year 2056 amounts to 831.7 km3 gross and 614.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2057    total population in billions for current year 2057 and reference: 10.332 6.873
+   and minimum and maximum between them: -454892, 6173440
+   domestic water demand for the year 2057 amounts to 839.2 km3 gross and 621.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2058    total population in billions for current year 2058 and reference: 10.392 6.873
+   and minimum and maximum between them: -477270, 6371854
+   domestic water demand for the year 2058 amounts to 846.8 km3 gross and 629.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2059    total population in billions for current year 2059 and reference: 10.453 6.873
+   and minimum and maximum between them: -499649, 6570268
+   domestic water demand for the year 2059 amounts to 854.3 km3 gross and 636.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2015    total population in billions for current year 2015 and reference: 7.282 6.873
+   and minimum and maximum between them: -350858, 1103583
+   domestic water demand for the year 2015 amounts to 498.8 km3 gross and 304.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2040    total population in billions for current year 2040 and reference: 9.226 6.873
+   and minimum and maximum between them: -221370, 3387136
+   domestic water demand for the year 2040 amounts to 708.2 km3 gross and 494.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2041    total population in billions for current year 2041 and reference: 9.295 6.873
+   and minimum and maximum between them: -219612, 3500631
+   domestic water demand for the year 2041 amounts to 715.8 km3 gross and 501.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2042    total population in billions for current year 2042 and reference: 9.363 6.873
+   and minimum and maximum between them: -217854, 3614126
+   domestic water demand for the year 2042 amounts to 723.5 km3 gross and 509.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2043    total population in billions for current year 2043 and reference: 9.432 6.873
+   and minimum and maximum between them: -216096, 3727621
+   domestic water demand for the year 2043 amounts to 731.2 km3 gross and 516.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2044    total population in billions for current year 2044 and reference: 9.501 6.873
+   and minimum and maximum between them: -219739, 3841116
+   domestic water demand for the year 2044 amounts to 739.1 km3 gross and 524.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2045    total population in billions for current year 2045 and reference: 9.569 6.873
+   and minimum and maximum between them: -229202, 3954611
+   domestic water demand for the year 2045 amounts to 747.0 km3 gross and 531.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2046    total population in billions for current year 2046 and reference: 9.638 6.873
+   and minimum and maximum between them: -238665, 4091918
+   domestic water demand for the year 2046 amounts to 754.9 km3 gross and 539.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2047    total population in billions for current year 2047 and reference: 9.706 6.873
+   and minimum and maximum between them: -248127, 4265074
+   domestic water demand for the year 2047 amounts to 762.9 km3 gross and 546.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2048    total population in billions for current year 2048 and reference: 9.775 6.873
+   and minimum and maximum between them: -261048, 4438229
+   domestic water demand for the year 2048 amounts to 770.9 km3 gross and 554.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2049    total population in billions for current year 2049 and reference: 9.843 6.873
+   and minimum and maximum between them: -279646, 4611385
+   domestic water demand for the year 2049 amounts to 779.0 km3 gross and 562.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2019    total population in billions for current year 2019 and reference: 7.609 6.873
+   and minimum and maximum between them: -289695, 1252105
+   domestic water demand for the year 2019 amounts to 535.7 km3 gross and 336.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2017    total population in billions for current year 2017 and reference: 7.445 6.873
+   and minimum and maximum between them: -328065, 1177844
+   domestic water demand for the year 2017 amounts to 517.3 km3 gross and 320.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2013    total population in billions for current year 2013 and reference: 7.118 6.873
+   and minimum and maximum between them: -373651, 1029322
+   domestic water demand for the year 2013 amounts to 480.5 km3 gross and 288.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2030    total population in billions for current year 2030 and reference: 8.499 6.873
+   and minimum and maximum between them: -242394, 2213158
+   domestic water demand for the year 2030 amounts to 629.0 km3 gross and 420.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2031    total population in billions for current year 2031 and reference: 8.573 6.873
+   and minimum and maximum between them: -240292, 2330556
+   domestic water demand for the year 2031 amounts to 636.8 km3 gross and 427.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2032    total population in billions for current year 2032 and reference: 8.645 6.873
+   and minimum and maximum between them: -238190, 2447954
+   domestic water demand for the year 2032 amounts to 644.6 km3 gross and 434.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2033    total population in billions for current year 2033 and reference: 8.717 6.873
+   and minimum and maximum between them: -236087, 2565352
+   domestic water demand for the year 2033 amounts to 652.4 km3 gross and 442.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2034    total population in billions for current year 2034 and reference: 8.790 6.873
+   and minimum and maximum between them: -233985, 2682749
+   domestic water demand for the year 2034 amounts to 660.3 km3 gross and 449.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2035    total population in billions for current year 2035 and reference: 8.863 6.873
+   and minimum and maximum between them: -231882, 2800147
+   domestic water demand for the year 2035 amounts to 668.3 km3 gross and 457.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2036    total population in billions for current year 2036 and reference: 8.936 6.873
+   and minimum and maximum between them: -229780, 2917545
+   domestic water demand for the year 2036 amounts to 676.3 km3 gross and 464.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2037    total population in billions for current year 2037 and reference: 9.008 6.873
+   and minimum and maximum between them: -227677, 3034943
+   domestic water demand for the year 2037 amounts to 684.2 km3 gross and 471.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2038    total population in billions for current year 2038 and reference: 9.081 6.873
+   and minimum and maximum between them: -225575, 3152341
+   domestic water demand for the year 2038 amounts to 692.1 km3 gross and 479.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2039    total population in billions for current year 2039 and reference: 9.153 6.873
+   and minimum and maximum between them: -223473, 3269738
+   domestic water demand for the year 2039 amounts to 700.1 km3 gross and 486.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2080    total population in billions for current year 2080 and reference: 11.539 6.873
+   and minimum and maximum between them: -950923, 6837667
+   domestic water demand for the year 2080 amounts to 996.2 km3 gross and 780.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2081    total population in billions for current year 2081 and reference: 11.587 6.873
+   and minimum and maximum between them: -969313, 6837667
+   domestic water demand for the year 2081 amounts to 1002.5 km3 gross and 787.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2082    total population in billions for current year 2082 and reference: 11.634 6.873
+   and minimum and maximum between them: -987704, 6837667
+   domestic water demand for the year 2082 amounts to 1008.7 km3 gross and 793.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2083    total population in billions for current year 2083 and reference: 11.681 6.873
+   and minimum and maximum between them: -1006094, 6837667
+   domestic water demand for the year 2083 amounts to 1014.9 km3 gross and 800.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2084    total population in billions for current year 2084 and reference: 11.729 6.873
+   and minimum and maximum between them: -1024484, 6837667
+   domestic water demand for the year 2084 amounts to 1021.2 km3 gross and 806.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2085    total population in billions for current year 2085 and reference: 11.776 6.873
+   and minimum and maximum between them: -1042874, 6837667
+   domestic water demand for the year 2085 amounts to 1027.4 km3 gross and 812.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2086    total population in billions for current year 2086 and reference: 11.823 6.873
+   and minimum and maximum between them: -1061265, 6837667
+   domestic water demand for the year 2086 amounts to 1033.6 km3 gross and 819.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2087    total population in billions for current year 2087 and reference: 11.870 6.873
+   and minimum and maximum between them: -1079655, 6837667
+   domestic water demand for the year 2087 amounts to 1039.8 km3 gross and 825.6 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2088    total population in billions for current year 2088 and reference: 11.918 6.873
+   and minimum and maximum between them: -1098045, 6837667
+   domestic water demand for the year 2088 amounts to 1046.0 km3 gross and 832.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2089    total population in billions for current year 2089 and reference: 11.965 6.873
+   and minimum and maximum between them: -1116436, 6837667
+   domestic water demand for the year 2089 amounts to 1052.2 km3 gross and 838.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2060    total population in billions for current year 2060 and reference: 10.513 6.873
+   and minimum and maximum between them: -522027, 6768682
+   domestic water demand for the year 2060 amounts to 861.8 km3 gross and 644.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2061    total population in billions for current year 2061 and reference: 10.566 6.873
+   and minimum and maximum between them: -544323, 6775581
+   domestic water demand for the year 2061 amounts to 868.8 km3 gross and 651.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2062    total population in billions for current year 2062 and reference: 10.618 6.873
+   and minimum and maximum between them: -566618, 6782479
+   domestic water demand for the year 2062 amounts to 875.8 km3 gross and 658.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2063    total population in billions for current year 2063 and reference: 10.671 6.873
+   and minimum and maximum between them: -588914, 6789378
+   domestic water demand for the year 2063 amounts to 882.7 km3 gross and 665.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2064    total population in billions for current year 2064 and reference: 10.725 6.873
+   and minimum and maximum between them: -611210, 6796276
+   domestic water demand for the year 2064 amounts to 889.6 km3 gross and 672.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2065    total population in billions for current year 2065 and reference: 10.777 6.873
+   and minimum and maximum between them: -633505, 6803175
+   domestic water demand for the year 2065 amounts to 896.6 km3 gross and 679.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2066    total population in billions for current year 2066 and reference: 10.830 6.873
+   and minimum and maximum between them: -655801, 6810073
+   domestic water demand for the year 2066 amounts to 903.5 km3 gross and 686.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2067    total population in billions for current year 2067 and reference: 10.884 6.873
+   and minimum and maximum between them: -678097, 6816972
+   domestic water demand for the year 2067 amounts to 910.4 km3 gross and 693.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2068    total population in billions for current year 2068 and reference: 10.937 6.873
+   and minimum and maximum between them: -700393, 6823870
+   domestic water demand for the year 2068 amounts to 917.2 km3 gross and 700.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2069    total population in billions for current year 2069 and reference: 10.989 6.873
+   and minimum and maximum between them: -722688, 6830769
+   domestic water demand for the year 2069 amounts to 924.2 km3 gross and 707.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2016    total population in billions for current year 2016 and reference: 7.363 6.873
+   and minimum and maximum between them: -339462, 1140713
+   domestic water demand for the year 2016 amounts to 508.0 km3 gross and 312.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2010    total population in billions for current year 2010 and reference: 6.873 6.873
+   and minimum and maximum between them: 0, 0
+   domestic water demand for the year 2010 amounts to 454.5 km3 gross and 266.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2011    total population in billions for current year 2011 and reference: 6.955 6.873
+   and minimum and maximum between them: -9170, 108290
+   domestic water demand for the year 2011 amounts to 463.1 km3 gross and 274.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2090    total population in billions for current year 2090 and reference: 12.012 6.873
+   and minimum and maximum between them: -1134826, 6838164
+   domestic water demand for the year 2090 amounts to 1058.4 km3 gross and 844.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2091    total population in billions for current year 2091 and reference: 12.057 6.873
+   and minimum and maximum between them: -1150245, 6846008
+   domestic water demand for the year 2091 amounts to 1064.3 km3 gross and 851.0 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2092    total population in billions for current year 2092 and reference: 12.102 6.873
+   and minimum and maximum between them: -1165664, 6853853
+   domestic water demand for the year 2092 amounts to 1070.2 km3 gross and 857.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2093    total population in billions for current year 2093 and reference: 12.147 6.873
+   and minimum and maximum between them: -1181082, 6861697
+   domestic water demand for the year 2093 amounts to 1076.1 km3 gross and 863.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2094    total population in billions for current year 2094 and reference: 12.192 6.873
+   and minimum and maximum between them: -1196501, 6869541
+   domestic water demand for the year 2094 amounts to 1082.1 km3 gross and 869.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2095    total population in billions for current year 2095 and reference: 12.237 6.873
+   and minimum and maximum between them: -1211920, 6877385
+   domestic water demand for the year 2095 amounts to 1088.1 km3 gross and 875.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2096    total population in billions for current year 2096 and reference: 12.282 6.873
+   and minimum and maximum between them: -1227339, 6885230
+   domestic water demand for the year 2096 amounts to 1094.1 km3 gross and 881.9 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2097    total population in billions for current year 2097 and reference: 12.327 6.873
+   and minimum and maximum between them: -1242758, 6893074
+   domestic water demand for the year 2097 amounts to 1100.1 km3 gross and 888.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2098    total population in billions for current year 2098 and reference: 12.372 6.873
+   and minimum and maximum between them: -1258177, 6900918
+   domestic water demand for the year 2098 amounts to 1106.1 km3 gross and 894.3 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2099    total population in billions for current year 2099 and reference: 12.417 6.873
+   and minimum and maximum between them: -1273596, 6908763
+   domestic water demand for the year 2099 amounts to 1112.0 km3 gross and 900.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2018    total population in billions for current year 2018 and reference: 7.527 6.873
+   and minimum and maximum between them: -311435, 1214974
+   domestic water demand for the year 2018 amounts to 526.5 km3 gross and 328.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2070    total population in billions for current year 2070 and reference: 11.042 6.873
+   and minimum and maximum between them: -744984, 6837667
+   domestic water demand for the year 2070 amounts to 931.0 km3 gross and 714.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2071    total population in billions for current year 2071 and reference: 11.092 6.873
+   and minimum and maximum between them: -765578, 6837667
+   domestic water demand for the year 2071 amounts to 937.6 km3 gross and 720.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2072    total population in billions for current year 2072 and reference: 11.142 6.873
+   and minimum and maximum between them: -786172, 6837667
+   domestic water demand for the year 2072 amounts to 944.1 km3 gross and 727.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2073    total population in billions for current year 2073 and reference: 11.192 6.873
+   and minimum and maximum between them: -806766, 6837667
+   domestic water demand for the year 2073 amounts to 950.6 km3 gross and 734.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2074    total population in billions for current year 2074 and reference: 11.241 6.873
+   and minimum and maximum between them: -827360, 6837667
+   domestic water demand for the year 2074 amounts to 957.1 km3 gross and 740.8 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2075    total population in billions for current year 2075 and reference: 11.291 6.873
+   and minimum and maximum between them: -847953, 6837667
+   domestic water demand for the year 2075 amounts to 963.6 km3 gross and 747.5 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2076    total population in billions for current year 2076 and reference: 11.340 6.873
+   and minimum and maximum between them: -868547, 6837667
+   domestic water demand for the year 2076 amounts to 970.1 km3 gross and 754.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2077    total population in billions for current year 2077 and reference: 11.390 6.873
+   and minimum and maximum between them: -889141, 6837667
+   domestic water demand for the year 2077 amounts to 976.6 km3 gross and 760.7 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2078    total population in billions for current year 2078 and reference: 11.440 6.873
+   and minimum and maximum between them: -909735, 6837667
+   domestic water demand for the year 2078 amounts to 983.2 km3 gross and 767.4 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2079    total population in billions for current year 2079 and reference: 11.490 6.873
+   and minimum and maximum between them: -930329, 6837667
+   domestic water demand for the year 2079 amounts to 989.7 km3 gross and 774.1 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+ - 2014    total population in billions for current year 2014 and reference: 7.200 6.873
+   and minimum and maximum between them: -362255, 1066453
+   domestic water demand for the year 2014 amounts to 489.6 km3 gross and 296.2 km3 net per year
+
+   writing monthly values GrossDemand NettoDemand
+
